@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhi4esrgo13w"]
+
+[ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/level_1.gd" id="1_6s2ob"]
+[ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="1_un3gw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un3gw"]
+size = Vector2(2377, 20)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_6s2ob")
+
+[node name="Player" parent="." instance=ExtResource("1_un3gw")]
+unique_name_in_owner = true
+position = Vector2(547, 261)
+
+[node name="KillPlane" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlane"]
+position = Vector2(574.5, 796.82)
+shape = SubResource("RectangleShape2D_un3gw")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
