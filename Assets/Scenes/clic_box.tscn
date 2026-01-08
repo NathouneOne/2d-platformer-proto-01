@@ -5,9 +5,11 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pv60e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v7e2"]
+resource_local_to_scene = true
 
 [node name="clic_box" type="Area2D"]
 material = SubResource("CanvasItemMaterial_pv60e")
+collision_layer = 0
 script = ExtResource("1_pv60e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

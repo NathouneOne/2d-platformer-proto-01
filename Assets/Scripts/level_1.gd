@@ -40,11 +40,12 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2) :
 	
 	clic_box.get_child(1).position = Vector2(0,0)
 	clic_box.get_child(0).shape.size = box_size
-	clic_box.get_child(0).position=Vector2(box_size.x/2, -box_size.y)
+	clic_box.get_child(0).position.x=box_size.x/2
 	clic_box.get_child(1).size = box_size
+	print("\n\nposition clic 1 : ", box_coordinate_1,"\nposition parent : ", clic_box.global_position, "\nposition collisionShape : ", clic_box.get_child(0).global_position, "\nposition rectangle affiché : ", clic_box.get_child(1).global_position)
 	clic_box.global_rotation = box_angle
 	
-	print("\n\nposition clic 1 : ", box_coordinate_1,"\nposition parent : ", clic_box.global_position, "\nposition collisionShape : ", clic_box.get_child(0).global_position, "\nposition rectangle affiché : ", clic_box.get_child(1).global_position)
+	
 	
 	add_child(clic_box)
 
