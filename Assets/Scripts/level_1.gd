@@ -25,11 +25,18 @@ func _process(_delta: float) -> void:
 		box_coordinate_2 = get_global_mouse_position()
 		print(box_coordinate_2)
 		var clic_box = CLIC_BOX.instantiate()
-		clic_box.get_child(0).shape.size = box_coordinate_2-box_coordinate_1
-		clic_box.get_child(0).get_child(0).size = box_coordinate_2-box_coordinate_1
-		print("size = ", box_coordinate_2-box_coordinate_1)
-		clic_box.position.x = box_coordinate_1.x
-		clic_box.position.y = box_coordinate_1.y
+		var rectangle_shape_size = abs(box_coordinate_2-box_coordinate_1)
+		clic_box.get_child(0).shape.size = rectangle_shape_size
+		clic_box.get_child(0).get_child(0).size = rectangle_shape_size
+		print("size = ", rectangle_shape_size)
+		if box_coordinate_2.x-box_coordinate_1.x>0 :
+			clic_box.position.x = box_coordinate_1.x
+		else : 
+			clic_box.position.x = box_coordinate_2.x
+		if box_coordinate_2.y-box_coordinate_1.y>0 :
+			clic_box.position.y = box_coordinate_1.y
+		else : 
+			clic_box.position.y = box_coordinate_2.y
 		print("x= ", clic_box.position.x, "\ny= ", clic_box.position.y)
 		
 		add_child(clic_box)

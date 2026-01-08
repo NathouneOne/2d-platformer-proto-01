@@ -19,6 +19,7 @@ offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
+size_flags_horizontal = 4
 color = Color(0.4710104, 0.21653157, 0.2365835, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
