@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var timer: Timer = %Timer
 const TIMER_TIME = 2
+const BOX_Y_SIZE = 5
 
 const CLIC_BOX = preload("uid://bobxjb73lgyn3")
 
@@ -20,23 +21,23 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("left_clic"):
 		box_coordinate_1 = get_global_mouse_position()
-		print(box_coordinate_1)
 	if Input.is_action_just_released("left_clic"):
 		box_coordinate_2 = get_global_mouse_position()
-		print(box_coordinate_2)
+		
 		var clic_box = CLIC_BOX.instantiate()
-		var rectangle_shape_size = abs(box_coordinate_2-box_coordinate_1)
-		clic_box.get_child(0).shape.size = rectangle_shape_size
-		clic_box.get_child(0).get_child(0).size = rectangle_shape_size
-		print("size = ", rectangle_shape_size)
-		if box_coordinate_2.x-box_coordinate_1.x>0 :
-			clic_box.position.x = box_coordinate_1.x
-		else : 
-			clic_box.position.x = box_coordinate_2.x
-		if box_coordinate_2.y-box_coordinate_1.y>0 :
-			clic_box.position.y = box_coordinate_1.y
-		else : 
-			clic_box.position.y = box_coordinate_2.y
+		
+		var box_size = Vector2(box_coordinate_1.distance_to(box_coordinate_2), BOX_Y_SIZE)
+		var box_angle = box_coordinate_1.angle_to_point(box_coordinate_2)
+		
+		
+		clic_box.global_position.x=box_coordinate_1.x
+		clic_box.global_position.y=box_coordinate_1.y
+		
+		clic_box.get_child(0).shape.size = box_size
+		clic_box.get_child(1).size = box_size
+		clic_box.global_rotation = box_angle
+		print("angle = ", rad_to_deg(box_angle))
+		
 		print("x= ", clic_box.position.x, "\ny= ", clic_box.position.y)
 		
 		add_child(clic_box)

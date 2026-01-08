@@ -11,7 +11,7 @@ script = ExtResource("1_6s2ob")
 
 [node name="Player" parent="." instance=ExtResource("1_un3gw")]
 unique_name_in_owner = true
-position = Vector2(547, 261)
+position = Vector2(552, 40)
 
 [node name="KillPlane" type="Area2D" parent="."]
 unique_name_in_owner = true
