@@ -20,8 +20,8 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, 1) 		##Ralentissement horizontal je sais pas si on garde
+	#else:
+	#	velocity.x = move_toward(velocity.x, 0, 1) 		##Ralentissement horizontal je sais pas si on garde --> on garde pas on veut du SPEEDRUUUUUUNNNNNNN
 
 	move_and_slide()
 
