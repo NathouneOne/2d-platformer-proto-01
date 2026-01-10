@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bobxjb73lgyn3"]
 
-[ext_resource type="Script" uid="uid://blj6k8bitt51l" path="res://Assets/clic_box.gd" id="1_pv60e"]
+[ext_resource type="Script" uid="uid://blj6k8bitt51l" path="res://Assets/Scripts/Boxes/jump_box.gd" id="1_g6mln"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pv60e"]
 
@@ -10,7 +10,7 @@ resource_local_to_scene = true
 [node name="clic_box" type="Area2D"]
 material = SubResource("CanvasItemMaterial_pv60e")
 collision_layer = 0
-script = ExtResource("1_pv60e")
+script = ExtResource("1_g6mln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3v7e2")
@@ -22,6 +22,6 @@ offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
 size_flags_horizontal = 0
-color = Color(0.4710104, 0.21653157, 0.2365835, 1)
+color = Color(0.6795038, 0.24030817, 0.27690786, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkowtkrnf7xq"]
+
+[ext_resource type="Script" uid="uid://0swi30ptouin" path="res://Assets/Scripts/Boxes/ground_box.gd" id="1_roho7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12l8v"]
+resource_local_to_scene = true
+
+[node name="GroundBox" type="StaticBody2D"]
+script = ExtResource("1_roho7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_12l8v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.8477947, 0.8437278, 0, 1)
