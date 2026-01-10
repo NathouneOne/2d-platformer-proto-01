@@ -1,3 +1,3 @@
 extends StaticBody2D
 
-const ISGROUND=1
+const ISGROUND=0
