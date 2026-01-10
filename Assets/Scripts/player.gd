@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+const AIRCONTROL_FORCE = 300.0
 const JUMP_VELOCITY = -500.0
 
 const GRAVITY = 700.0
@@ -22,16 +23,19 @@ func _physics_process(delta: float) -> void:
 	## Movement only on ground_boxes
 	if is_on_floor():
 		if direction:
-			#velocity.x = direction * SPEED ##instant acceleration
+			#velocity.x = direction * SPEED ##no acceleration
+			## apply direction with acceleration
 			if direction == 1:
 				velocity.x = move_toward(velocity.x, SPEED, SPEED/4)
 			else:
 				velocity.x = move_toward(velocity.x, -SPEED, SPEED/4)
+		##Ralentissement horizontal que si sur ground_box on garde pas on veut du SPEEDRUUUUUUNNNNNNN
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED/4) 		##Ralentissement horizontal que si sur ground_box on garde pas on veut du SPEEDRUUUUUUNNNNNNN
+			velocity.x = move_toward(velocity.x, 0, SPEED/4) 		
+	## allowing air control in the scope of -SPEED -> SPEED
 	else :
 		if direction and (velocity.x>-SPEED and velocity.x<SPEED):
-			velocity.x += direction * SPEED * delta
+			velocity.x += direction * AIRCONTROL_FORCE * delta
 
 	move_and_slide()
 
