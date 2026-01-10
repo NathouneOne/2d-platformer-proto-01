@@ -7,6 +7,9 @@ const JUMP_VELOCITY = -500.0
 
 const GRAVITY = 700.0
 
+#func _ready():
+	#motion_mode=MOTION_MODE_FLOATING
+
 
 func _physics_process(delta: float) -> void:
 	## Add the gravity.
@@ -32,10 +35,10 @@ func _physics_process(delta: float) -> void:
 		##Ralentissement horizontal que si sur ground_box on garde pas on veut du SPEEDRUUUUUUNNNNNNN
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED/4) 		
-	## allowing air control in the scope of -SPEED -> SPEED
-	else :
-		if direction and (velocity.x>-SPEED and velocity.x<SPEED):
-			velocity.x += direction * AIRCONTROL_FORCE * delta
+	## allowing right direction air control in the scope of SPEED for jump control, left is always allowed to brake whatever your speed, you aim to go to the right anyway ?
+	elif (direction == 1 and (velocity.x<=SPEED)) or direction == -1:
+		velocity.x += direction * AIRCONTROL_FORCE * delta
+	
 
 	move_and_slide()
 
