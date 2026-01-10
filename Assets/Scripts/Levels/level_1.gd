@@ -8,6 +8,8 @@ const GBOX_SELECTED = 0
 const JBOX_SELECTED = 1
 const SBOX_SELECTED = 2
 
+const SLOWMO = 0.1
+
 const J_BOX = preload("uid://bobxjb73lgyn3")
 const G_BOX = preload("uid://mkowtkrnf7xq")
 
@@ -26,21 +28,24 @@ func _process(_delta: float) -> void:
 	if %KillPlane.has_overlapping_bodies() :
 		%Timer.start(TIMER_TIME)
 	
-	# Create a box
-	if Input.is_action_just_pressed("left_clic"):
-		clic1 = get_global_mouse_position()
-	if Input.is_action_just_released("left_clic"):
-		clic2 = get_global_mouse_position()
-		create_box(clic1, clic2, selected_box)
+	# Create a box if no time slow
+	if not Input.is_action_pressed("right_clic"):
+		if Input.is_action_just_pressed("left_clic"):
+			clic1 = get_global_mouse_position()
+		if Input.is_action_just_released("left_clic"):
+			clic2 = get_global_mouse_position()
+			create_box(clic1, clic2, selected_box)
 	
 	#Select type of box
 	if Input.is_action_just_pressed("right_clic"):
 		clic1 = get_global_mouse_position()
-		#Add a slow_time function here
+		#Slow_mo function 
+		Engine.time_scale = SLOWMO
 		#Add a dynamic box selection UI here
 	if Input.is_action_just_released("right_clic"):
 		clic2 = get_global_mouse_position()
-		#End slow_time function here
+		#End slow_mo
+		Engine.time_scale = 1
 		#End dynamic box selection UI here
 		
 		if clic1.angle_to_point(clic2) > 0 :
@@ -83,5 +88,5 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	add_child(box)
 
 
-#func _on_timer_timeout() -> void:
-#	get_tree().reload_current_scene()
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
