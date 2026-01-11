@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = %Timer
-const TIMER_TIME = 2
+const TIMER_TIME = 1
 const BOX_Y_SIZE = 10
 
 const JBOX_SELECTED = 4
@@ -21,19 +21,18 @@ var selected_box : int = GBOX_SELECTED
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	#Set selector opacity
 	%UI_box_wheel_selector.modulate.a=0.6
-
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	#Reset level on fall
+	## Find something else than an area 2D, like an infinite plane on x
 	if %KillPlane.has_overlapping_bodies() :
 		%Timer.start(TIMER_TIME)
 	
-	# Create a box if no time slow
+	# Create a box if not in box selection
 	if not Input.is_action_pressed("right_clic"):
 		if Input.is_action_just_pressed("left_clic"):
 			if selected_box == ERASER_SELECTED :
@@ -53,11 +52,10 @@ func _process(_delta: float) -> void:
 		#Slow_mo function 
 		Engine.time_scale = SLOWMO
 		#Add a dynamic box selection UI here
-		%UI_box_wheel_selector.show()
 		%UI_box_wheel_selector.global_position=clic1
+		%UI_box_wheel_selector.show()
 		
 	if Input.is_action_just_released("right_clic"):
-		clic2 = get_global_mouse_position()
 		#End slow_mo
 		Engine.time_scale = 1
 		#End dynamic box selection UI here
@@ -79,10 +77,6 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 			box = J_BOX.instantiate()
 		ABOX_SELECTED :
 			box = A_BOX.instantiate()
-		ERASER_SELECTED :
-			pass
-		
-	
 	
 	
 	var box_size = Vector2(box_coordinate_1.distance_to(box_coordinate_2), BOX_Y_SIZE)
@@ -100,15 +94,16 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	box.global_position.y=box_coordinate_1.y
 	
 	box.get_child(1).position = Vector2(0,0)
+	box.get_child(1).size = box_size
 	box.get_child(0).shape.size = box_size
 	box.get_child(0).position.x=box_size.x/2
 	box.get_child(0).position.y=box_size.y/2
-	box.get_child(1).size = box_size
+	
 	box.global_rotation = box_angle
 	
 	
 	add_child(box)
 
 
-#func _on_timer_timeout() -> void:
-#	get_tree().reload_current_scene()
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()

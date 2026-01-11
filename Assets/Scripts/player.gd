@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const AIRCONTROL_FORCE = 800.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -350.0
 const ABOX_ACCEL = 25
 
 const GRAVITY = 700.0
@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 			var collider = %RayCast2D.get_collider()
 			
 			if collider is StaticBody2D :
+				#A GERER DIFFEREMMENT POUR ENNEMIES ça va foutre le bordel I guess
 				if collider.ISGROUND :
 					#if direction:
 					#	## apply direction with acceleration
@@ -56,7 +57,6 @@ func _physics_process(delta: float) -> void:
 					#	velocity.x = move_toward(velocity.x, 0, SPEED/4) 
 					pass
 				else :
-					print(collider.angle)
 					if collider.angle :
 						velocity.x += ABOX_ACCEL
 					else :
@@ -73,5 +73,9 @@ func _physics_process(delta: float) -> void:
 
 
 func box_jump(angle : float):
-	velocity.x = -sin(angle)*JUMP_VELOCITY
-	velocity.y = cos(angle)*JUMP_VELOCITY
+	if abs(velocity.length())<abs(JUMP_VELOCITY):
+		velocity.x = -sin(angle)*JUMP_VELOCITY
+		velocity.y = cos(angle)*JUMP_VELOCITY
+	else :
+		velocity.x = sin(angle)*velocity.length()
+		velocity.y = -cos(angle)*velocity.length()
