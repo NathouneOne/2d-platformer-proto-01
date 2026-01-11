@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://q7xl8yhad1q1"]
+
+[ext_resource type="Script" uid="uid://ddaqsfsqp1fe3" path="res://Assets/Scripts/Level_assets/walls.gd" id="1_rs37p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj2rk"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_jj2rk"]
+offsets = PackedFloat32Array(0, 0.82738096)
+colors = PackedColorArray(0.51212007, 0.20059997, 0.59, 0.5647059, 0.51212007, 0.20059997, 0.59, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rs37p"]
+gradient = SubResource("Gradient_jj2rk")
+fill = 2
+fill_from = Vector2(0.5, 0.49137932)
+
+[node name="walls" type="StaticBody2D"]
+script = ExtResource("1_rs37p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jj2rk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_rs37p")

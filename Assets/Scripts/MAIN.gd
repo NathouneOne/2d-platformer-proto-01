@@ -34,10 +34,6 @@ func _process(_delta: float) -> void:
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
 	
-	#Reset level on fall
-	## Find something else than an area 2D, like an infinite plane on x
-	if %KillPlane.has_overlapping_bodies() :
-		%Timer.start(TIMER_TIME)
 	
 	# Create a box if not in box selection
 	if not Input.is_action_pressed("right_clic"):
@@ -112,5 +108,9 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	add_child(box)
 
 
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+
+
+func _on_kill_plane_body_entered(body: Node2D) -> void:
+	print("body")
+	if body == %Player :
+		get_tree().reload_current_scene()

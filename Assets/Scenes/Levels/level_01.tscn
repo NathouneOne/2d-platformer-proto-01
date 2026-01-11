@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://dukeajinfui7p"]
+
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="1_lsyt4"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_r5n6j"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="3_ge381"]
+
+[node name="Level_01" type="Node2D"]
+
+[node name="walls20" parent="." instance=ExtResource("1_lsyt4")]
+position = Vector2(1397, -139)
+scale = Vector2(1, 9.11)
+
+[node name="walls21" parent="." instance=ExtResource("1_lsyt4")]
+position = Vector2(1397, 643.99994)
+scale = Vector2(1, 9.11)
+
+[node name="walls22" parent="." instance=ExtResource("1_lsyt4")]
+position = Vector2(1732, -145)
+scale = Vector2(1, 15.58)
+
+[node name="walls23" parent="." instance=ExtResource("1_lsyt4")]
+position = Vector2(1732, 775)
+scale = Vector2(1, 9.11)
+
+[node name="FinishLine" parent="." instance=ExtResource("2_r5n6j")]
+position = Vector2(2391, -91)
+scale = Vector2(1, 1.4800007)
+
+[node name="Killer_static" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1571, 582)
+
+[node name="Killer_static2" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1571, 162)
+
+[node name="Killer_static3" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1857, 586)
+
+[node name="Killer_static4" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1935, 555)
+
+[node name="Killer_static5" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2003, 519)
+
+[node name="Killer_static6" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2083, 506)
+
+[node name="Killer_static7" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2155, 535)
+
+[node name="Killer_static8" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2220, 569)
+
+[node name="Killer_static9" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2278, 608)
+
+[node name="Killer_static12" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1857, 256)
+
+[node name="Killer_static13" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(1935, 225)
+
+[node name="Killer_static14" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2003, 189)
+
+[node name="Killer_static15" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2083, 176)
+
+[node name="Killer_static16" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2155, 205)
+
+[node name="Killer_static17" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2220, 239)
+
+[node name="Killer_static18" parent="." instance=ExtResource("3_ge381")]
+position = Vector2(2278, 278)
