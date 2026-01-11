@@ -19,8 +19,6 @@ const GRAVITY = 700.0
 
 func _physics_process(delta: float) -> void:
 	
-	# Fix camera on y, allowing only X to move.
-	%Camera2D.global_position.y=0
 	
 	## Add the gravity.
 	#	velocity += get_gravity() * delta
@@ -85,4 +83,3 @@ func box_jump(angle : float):
 		if abs(-cos(angle)*velocity.length())<abs(JUMP_VELOCITY):
 			velocity.y = cos(angle)*JUMP_VELOCITY
 		velocity.y = -cos(angle)*velocity.length()
-		print("cos = ", cos(angle))

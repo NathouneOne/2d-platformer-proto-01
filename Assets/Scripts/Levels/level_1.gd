@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = %Timer
-const TIMER_TIME = 1
+const TIMER_TIME = 0.5
 const BOX_Y_SIZE = 10
 
 const JBOX_SELECTED = 4
@@ -28,6 +28,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	
+	
+	# Fix camera on y, allowing only X to move.
+	%Camera2D.global_position.y=0
 	
 	#Reset level on fall
 	## Find something else than an area 2D, like an infinite plane on x
@@ -65,8 +70,6 @@ func _process(_delta: float) -> void:
 			selected_box=%UI_box_wheel_selector.selection
 		%UI_box_wheel_selector.hide()
 		
-		
-		#%Camera2D.global_position.x=%Player.global_position.x
 		
 
 #create a typed box, called when left click is pressed and released, and eraser is not selected
