@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const AIRCONTROL_FORCE = 800.0
 const JUMP_VELOCITY = -350.0
-const ABOX_ACCEL = 25
+const ABOX_ACCEL = 500
 
 const GRAVITY = 700.0
 
@@ -58,9 +58,9 @@ func _physics_process(delta: float) -> void:
 					pass
 				else :
 					if collider.angle :
-						velocity.x += ABOX_ACCEL
+						velocity.x += ABOX_ACCEL*delta
 					else :
-						velocity.x -= ABOX_ACCEL
+						velocity.x -= ABOX_ACCEL*delta
 			
 		
 	## WARNING limit left aircontrol ? or remove input totally anyway
@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 
 #jump handler
 func box_jump(angle : float):
-	print("\n\n velocity.length = ", velocity.length())
+	#print("\n\n velocity.length = ", velocity.length())
 	if abs(velocity.length())<abs(JUMP_VELOCITY):
 		velocity.x += -sin(angle)*JUMP_VELOCITY
 		velocity.y = cos(angle)*JUMP_VELOCITY

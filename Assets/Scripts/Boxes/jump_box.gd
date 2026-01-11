@@ -8,8 +8,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 ## eraser handling
+
 func _on_mouse_entered() -> void:
-	
 	## check if eraser selected
 	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
 		queue_free()
