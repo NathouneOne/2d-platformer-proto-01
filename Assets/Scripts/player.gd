@@ -11,7 +11,6 @@ const GRAVITY = 700.0
 #func _ready() -> void:
 #	apply_floor_snap()
 #	floor_snap_length=10
-	
 
 
 ## Do I need to limit box max lenght ?
@@ -19,6 +18,10 @@ const GRAVITY = 700.0
 ## eraser ?
 
 func _physics_process(delta: float) -> void:
+	
+	# Fix camera on y, allowing only X to move.
+	%Camera2D.global_position.y=0
+	
 	## Add the gravity.
 	#	velocity += get_gravity() * delta
 	##Custom gravity so I can easily change const value, might go back to get gravity and change the project parameter when adjusted
@@ -31,7 +34,6 @@ func _physics_process(delta: float) -> void:
 
 	#var direction := Input.get_axis("left", "right")
 	
-
 	
 	## Movement only on ground_boxes
 	## WARNING Might have bugs on ground detection when inertia due to get_slide_collision not detecting in down slopes
@@ -71,11 +73,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	velocity=get_real_velocity()
 
-
 func box_jump(angle : float):
+	print("\n\n velocity.length = ", velocity.length())
 	if abs(velocity.length())<abs(JUMP_VELOCITY):
-		velocity.x = -sin(angle)*JUMP_VELOCITY
+		velocity.x += -sin(angle)*JUMP_VELOCITY
 		velocity.y = cos(angle)*JUMP_VELOCITY
 	else :
-		velocity.x = sin(angle)*velocity.length()
+		velocity.x += sin(angle)*velocity.length()
+		if abs(-cos(angle)*velocity.length())<abs(JUMP_VELOCITY):
+			velocity.y = cos(angle)*JUMP_VELOCITY
 		velocity.y = -cos(angle)*velocity.length()
+		print("cos = ", cos(angle))

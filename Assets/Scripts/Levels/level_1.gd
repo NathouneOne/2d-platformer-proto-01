@@ -23,6 +23,8 @@ var selected_box : int = GBOX_SELECTED
 func _ready() -> void:
 	#Set selector opacity
 	%UI_box_wheel_selector.modulate.a=0.6
+	#var camera_size = get_viewport_rect().size
+	#%Camera2D.global_position.y=camera_size.y/2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -63,6 +65,8 @@ func _process(_delta: float) -> void:
 			selected_box=%UI_box_wheel_selector.selection
 		%UI_box_wheel_selector.hide()
 		
+		
+		#%Camera2D.global_position.x=%Player.global_position.x
 		
 
 #create a typed box, called when left click is pressed and released, and eraser is not selected
