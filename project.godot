@@ -49,4 +49,5 @@ right_clic={
 [rendering]
 
 renderer/rendering_method="mobile"
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.00068725075, 0.00074347144, 0.006592834, 1)

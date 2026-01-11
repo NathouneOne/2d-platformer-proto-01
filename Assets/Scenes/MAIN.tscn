@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhi4esrgo13w"]
+[gd_scene load_steps=8 format=3 uid="uid://dhi4esrgo13w"]
 
 [ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/MAIN.gd" id="1_qhfm1"]
 [ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="2_stkbw"]
@@ -11,6 +11,25 @@ distance = 101.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oybyx"]
 normal = Vector2(0, 1)
 distance = 191.0
+
+[sub_resource type="Environment" id="Environment_stkbw"]
+background_mode = 3
+tonemap_mode = 2
+tonemap_exposure = 2.32
+tonemap_white = 0.93
+glow_enabled = true
+glow_levels/1 = 2.0
+glow_levels/2 = 4.0
+glow_levels/3 = 8.0
+glow_levels/4 = 16.0
+glow_levels/5 = 32.0
+glow_levels/6 = 64.0
+glow_levels/7 = 128.0
+glow_normalized = true
+glow_intensity = 0.87
+glow_strength = 0.7
+glow_bloom = 0.64
+glow_blend_mode = 1
 
 [node name="MAIN" type="Node2D"]
 script = ExtResource("1_qhfm1")
@@ -39,8 +58,8 @@ mouse_filter = 2
 bkg_color = Color(0.15082997, 0.23720983, 0.20831388, 1)
 line_color = Color(0.031200001, 0.034493327, 0.13, 1)
 inner_radius = 15.0
-option_colors = Array[Color]([Color(0.644511, 0.60616297, 0.6118528, 1), Color(0.61, 0.18300001, 0.21858342, 1), Color(0.18855935, 0.3106646, 0.78814065, 1), Color(0.2462464, 0.50748646, 0.26699582, 1)])
-highlight_color = Color(0.46709955, 0.47035164, 0.39399168, 1)
+option_colors = Array[Color]([Color(0.31499544, 0.28862596, 0.29161543, 1), Color(0.34351376, 0.08499434, 0.10720136, 1), Color(0.08055847, 0.15046287, 0.44672155, 1), Color(0.10207898, 0.2369433, 0.11231408, 1)])
+highlight_color = Color(0.3471782, 0.35032663, 0.28555983, 1)
 
 [node name="Level_01" parent="." instance=ExtResource("4_stkbw")]
 
@@ -54,6 +73,9 @@ shape = SubResource("WorldBoundaryShape2D_stkbw")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="KillPlane"]
 position = Vector2(-19, -235)
 shape = SubResource("WorldBoundaryShape2D_oybyx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_stkbw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
