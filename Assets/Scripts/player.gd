@@ -73,6 +73,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	velocity=get_real_velocity()
 
+
+#jump handler
 func box_jump(angle : float):
 	print("\n\n velocity.length = ", velocity.length())
 	if abs(velocity.length())<abs(JUMP_VELOCITY):
