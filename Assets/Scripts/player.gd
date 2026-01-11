@@ -56,7 +56,11 @@ func _physics_process(delta: float) -> void:
 					#	velocity.x = move_toward(velocity.x, 0, SPEED/4) 
 					pass
 				else :
-					velocity.x += ABOX_ACCEL
+					print(collider.angle)
+					if collider.angle :
+						velocity.x += ABOX_ACCEL
+					else :
+						velocity.x -= ABOX_ACCEL
 			
 		
 	## WARNING limit left aircontrol ? or remove input totally anyway

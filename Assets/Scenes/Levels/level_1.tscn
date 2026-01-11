@@ -29,6 +29,7 @@ one_shot = true
 [node name="UI_box_wheel_selector" parent="." instance=ExtResource("3_asalx")]
 unique_name_in_owner = true
 visible = false
+mouse_filter = 2
 bkg_color = Color(0.15082997, 0.23720983, 0.20831388, 1)
 line_color = Color(0.031200001, 0.034493327, 0.13, 1)
 inner_radius = 15.0

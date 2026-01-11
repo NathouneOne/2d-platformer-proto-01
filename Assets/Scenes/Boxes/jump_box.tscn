@@ -9,7 +9,6 @@ resource_local_to_scene = true
 
 [node name="jump_box" type="Area2D"]
 material = SubResource("CanvasItemMaterial_pv60e")
-collision_layer = 0
 script = ExtResource("1_g6mln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,11 +16,15 @@ shape = SubResource("RectangleShape2D_3v7e2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
 offset_bottom = 10.0
 size_flags_horizontal = 0
+mouse_filter = 1
 color = Color(0.24601504, 0.63, 0.1953, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -9,11 +9,7 @@ extends Control
 @export var option_colors : Array[Color]
 @export var highlight_color: Color
 
-
-
 var selection = 0
-
-#const inner_radius = 15.0
 
 func _draw() -> void:
 	draw_circle(Vector2.ZERO, outer_radius, bkg_color)
@@ -39,6 +35,5 @@ func _process(_delta: float) -> void:
 	else : 
 		var mouse_rad = fposmod(mouse_position.angle(), TAU)
 		selection = ceil((mouse_rad/TAU)*nb_options)
-		
-	print(selection)
+	
 	queue_redraw()
