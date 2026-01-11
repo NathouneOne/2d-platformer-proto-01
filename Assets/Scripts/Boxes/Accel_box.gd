@@ -1,10 +1,8 @@
-extends Area2D
+extends StaticBody2D
 
+const ISGROUND=0
+var angle = 0
 
-#Set les layers pour détercter que le player, ça allegera le programme
-func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("box_jump") :
-		body.box_jump(global_rotation)
 
 
 ## eraser handling

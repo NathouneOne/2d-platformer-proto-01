@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7ffle0ebnwv"]
+
+[ext_resource type="Script" uid="uid://btxsxfqkvcch" path="res://Assets/Scripts/UI/ui_box_wheel_selector.gd" id="1_po6j0"]
+
+[node name="UI_box_wheel_selector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_po6j0")
+bkg_color = Color(0.23119953, 0.24946287, 0.2475802, 1)
+line_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+option_colors = Array[Color]([Color(0.46367484, 0.47239316, 0.51084834, 1), Color(0.7620125, 0.35401967, 0.25758237, 1), Color(0.3161123, 0.61911106, 0.37801778, 1), Color(0.2277, 0.37409508, 0.69, 1)])
