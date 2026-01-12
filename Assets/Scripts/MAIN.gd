@@ -17,6 +17,8 @@ var clic1 : Vector2
 var clic2 : Vector2
 var selected_box : int = GBOX_SELECTED
 
+var current_box = G_BOX.instantiate()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Set selector opacity
@@ -32,20 +34,32 @@ func _process(_delta: float) -> void:
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
 	
-	
 	# Create a box if not in box selection
-	if not Input.is_action_pressed("right_clic"):
+	if not Input.is_action_pressed("right_clic") and not selected_box == ERASER_SELECTED:
 		if Input.is_action_just_pressed("left_clic"):
-			if selected_box == ERASER_SELECTED :
-				pass
-			else :
-				clic1 = get_global_mouse_position()
+			clic1 = get_global_mouse_position()
+			clic2 = get_global_mouse_position()
+			current_box = create_box(clic1, clic2, selected_box)
+		
+		if Input.is_action_pressed("left_clic"):
+			clic2 = get_global_mouse_position()
+			update_box(clic1, clic2, current_box)
+		
 		if Input.is_action_just_released("left_clic"):
-			if selected_box == ERASER_SELECTED :
-				pass
-			else :
-				clic2 = get_global_mouse_position()
-				create_box(clic1, clic2, selected_box)
+			clic2 = get_global_mouse_position()
+			update_box(clic1, clic2, current_box)
+			##if Acceleration box, pass the right/left acceleration variable
+			if selected_box == ABOX_SELECTED :
+				if clic1.x>clic2.x :
+					current_box.angle = 0
+				else :
+					current_box.angle = 1
+			current_box.set_collision_layer(1)
+			current_box.set_collision_mask(1)
+			
+	
+	
+	
 	
 	#Select type of box
 	if Input.is_action_just_pressed("right_clic"):
@@ -79,16 +93,19 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 		ABOX_SELECTED :
 			box = A_BOX.instantiate()
 	
+	box.set_collision_layer(0)
+	box.set_collision_mask(0)
 	
+	update_box(box_coordinate_1, box_coordinate_2, box)
+	
+	add_child(box)
+	
+	return box
+
+
+func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : Node):
 	var box_size = Vector2(box_coordinate_1.distance_to(box_coordinate_2), BOX_Y_SIZE)
 	var box_angle = box_coordinate_1.angle_to_point(box_coordinate_2)
-	
-	#if Acceleration box, pass the right/left acceleration variable
-	if box_type == ABOX_SELECTED :
-		if box_coordinate_1.x>box_coordinate_2.x :
-			box.angle = 0
-		else :
-			box.angle = 1
 	
 	#position box, collision shape & skin
 	box.global_position.x=box_coordinate_1.x
@@ -101,13 +118,8 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	box.get_child(0).position.y=box_size.y/2
 	
 	box.global_rotation = box_angle
-	
-	
-	add_child(box)
 
 
-
-
-#func _on_kill_plane_body_entered(body: Node2D) -> void:
-#	if body == %Player :
-#		get_tree().reload_current_scene()
+func _on_kill_plane_body_entered(body: Node2D) -> void:
+	if body == %Player :
+		get_tree().reload_current_scene()
