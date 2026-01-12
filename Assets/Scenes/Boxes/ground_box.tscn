@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://mkowtkrnf7xq"]
+[gd_scene load_steps=4 format=3 uid="uid://mkowtkrnf7xq"]
 
 [ext_resource type="Script" uid="uid://0swi30ptouin" path="res://Assets/Scripts/Boxes/ground_box.gd" id="1_roho7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12l8v"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roho7"]
 resource_local_to_scene = true
 
 [node name="GroundBox" type="StaticBody2D"]
@@ -20,3 +23,10 @@ offset_right = 10.0
 offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.25071412, 0.45025605, 0.76044625, 1)
+
+[node name="Static2D_Box_Player_detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static2D_Box_Player_detection"]
+shape = SubResource("RectangleShape2D_roho7")
+
+[connection signal="body_entered" from="Static2D_Box_Player_detection" to="." method="_on_static_2d_box_player_detection_body_entered"]

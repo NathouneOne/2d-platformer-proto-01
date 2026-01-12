@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4lcsj5yhdf7n"]
+
+[ext_resource type="Script" uid="uid://cqgk5q5ldjgil" path="res://Assets/Scripts/UI/welcome_screen.gd" id="1_kh213"]
+
+[node name="WelcomeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kh213")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.026266154, 0.029377338, 0.039243706, 1)
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = 149.0
+offset_right = 178.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Understood, I'm ready, oh mighty dev (hihi)"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -326.0
+offset_top = 170.0
+offset_right = 326.0
+offset_bottom = 243.0
+grow_horizontal = 2
+text = "Welcome to you my friend ! (mostly my friend I guess as the game is still in dev haha je sais pas pourquoi j'écris en anglais)
+
+Commands input : 
+     A to select the blue platform
+     Z to select the green platform
+     E to select the red platform
+     Left click and drag to create a platform
+     Right click and drag to delete existing platforms
+
+
+
+Enjoy ! 
+(et oubliez pas de me faire tous les retours que vous pouvez plzplzplz)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

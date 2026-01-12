@@ -25,13 +25,11 @@ var current_box = G_BOX.instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Set selector opacity
 	%Player.get_child(2).texture = G_TEXTURE
-	#var camera_size = get_viewport_rect().size
-	#%Camera2D.global_position.y=camera_size.y/2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
 	
@@ -50,15 +48,28 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_released("left_clic"):
 		clic2 = get_global_mouse_position()
+		
+		#Trying to replace box on release under player if collision to avoid unwanted jumps
+		for i in current_box.get_child(2).get_overlapping_bodies() :
+			print(1)
+			if i == %Player :
+				clic1.y += %Player.get_child(0).shape.size.y/2
+				clic2.y += %Player.get_child(0).shape.size.y/2
+				print(2)
+				
+			
+		current_box.set_collision_layer(1)
+		current_box.set_collision_mask(1)
+		
 		update_box(clic1, clic2, current_box)
+		
 		##if Acceleration box, pass the right/left acceleration variable
 		if selected_box == ABOX_SELECTED :
 			if clic1.x>clic2.x :
 				current_box.angle = 0
 			else :
 				current_box.angle = 1
-		current_box.set_collision_layer(1)
-		current_box.set_collision_mask(1)
+				
 			
 	
 	#Select type of box
@@ -99,10 +110,13 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 
 
 func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : Node):
+	if box == StaticBody2D :
+		pass
+	
 	var box_size = Vector2(box_coordinate_1.distance_to(box_coordinate_2), BOX_Y_SIZE)
 	var box_angle = box_coordinate_1.angle_to_point(box_coordinate_2)
 	
-	#position box, collision shape & skin
+	#position box, collision_shape & skin
 	box.global_position.x=box_coordinate_1.x
 	box.global_position.y=box_coordinate_1.y
 	
@@ -111,6 +125,9 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 	box.get_child(0).shape.size = box_size
 	box.get_child(0).position.x=box_size.x/2
 	box.get_child(0).position.y=box_size.y/2
+	box.get_child(2).get_child(0).shape.size = box_size
+	box.get_child(2).get_child(0).position.x=box_size.x/2
+	box.get_child(2).get_child(0).position.y=box_size.y/2
 	
 	box.global_rotation = box_angle
 

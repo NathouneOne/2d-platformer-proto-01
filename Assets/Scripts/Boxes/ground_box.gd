@@ -7,7 +7,6 @@ const ISGROUND=1
 func _ready() -> void:
 	input_pickable = true
 
-
 func _input(_event: InputEvent) -> void:
 	var m_position=get_local_mouse_position()
 	if (m_position.x <= %CollisionShape2D.shape.size.x and 
@@ -34,3 +33,7 @@ func _input(_event: InputEvent) -> void:
 #	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
 #		queue_free()
 #
+
+
+#func _on_static_2d_box_player_detection_body_entered(body: Node2D) -> void:
+#	pass # Replace with function body.
