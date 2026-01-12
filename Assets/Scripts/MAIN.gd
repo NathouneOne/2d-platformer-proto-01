@@ -23,15 +23,31 @@ var selected_box : int = GBOX_SELECTED
 
 var current_box = G_BOX.instantiate()
 
+var shader_aberration = 0.0
+var shader_strength = 0.0
+const SHADER_ABERRATION_DIVIDER = 4000
+const SHADER_STRENGTH_DIVIDER = 20000
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%Player.get_child(2).texture = G_TEXTURE
+	%Shader.material.set_shader_parameter('aberration',shader_aberration)
+	%Shader.material.set_shader_parameter('strength',shader_strength)
+	#%ColorRect.modulate.a = 0.2
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
+	
+	
+	#Adapt shader
+	shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
+	shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.1), 0.001)
+	%Shader.material.set_shader_parameter('aberration',shader_aberration)
+	%Shader.material.set_shader_parameter('strength',shader_strength)
 	
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
@@ -50,12 +66,11 @@ func _process(_delta: float) -> void:
 		clic2 = get_global_mouse_position()
 		
 		#Trying to replace box on release under player if collision to avoid unwanted jumps
-		for i in current_box.get_child(2).get_overlapping_bodies() :
-			print(1)
-			if i == %Player :
-				clic1.y += %Player.get_child(0).shape.size.y/2
-				clic2.y += %Player.get_child(0).shape.size.y/2
-				print(2)
+		if current_box==StaticBody2D :
+			for i in current_box.get_child(2).get_overlapping_bodies() :
+				if i == %Player :
+					clic1.y += %Player.get_child(0).shape.size.y/2
+					clic2.y += %Player.get_child(0).shape.size.y/2
 				
 			
 		current_box.set_collision_layer(1)
@@ -125,9 +140,10 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 	box.get_child(0).shape.size = box_size
 	box.get_child(0).position.x=box_size.x/2
 	box.get_child(0).position.y=box_size.y/2
-	box.get_child(2).get_child(0).shape.size = box_size
-	box.get_child(2).get_child(0).position.x=box_size.x/2
-	box.get_child(2).get_child(0).position.y=box_size.y/2
+	if box == StaticBody2D :
+		box.get_child(2).get_child(0).shape.size = box_size
+		box.get_child(2).get_child(0).position.x=box_size.x/2
+		box.get_child(2).get_child(0).position.y=box_size.y/2
 	
 	box.global_rotation = box_angle
 

@@ -7,11 +7,11 @@
 [node name="Level_01" type="Node2D"]
 
 [node name="walls20" parent="." instance=ExtResource("1_lsyt4")]
-position = Vector2(1089, -139)
+position = Vector2(9430, 232)
 scale = Vector2(1, 9.11)
 
 [node name="walls21" parent="." instance=ExtResource("1_lsyt4")]
-position = Vector2(1089, 643.99994)
+position = Vector2(1425, 1108)
 scale = Vector2(1, 9.11)
 
 [node name="walls22" parent="." instance=ExtResource("1_lsyt4")]
@@ -19,57 +19,75 @@ position = Vector2(1424, -145)
 scale = Vector2(1, 15.58)
 
 [node name="walls23" parent="." instance=ExtResource("1_lsyt4")]
-position = Vector2(1424, 775)
+position = Vector2(6282, 1021)
 scale = Vector2(1, 9.11)
 
 [node name="FinishLine" parent="." instance=ExtResource("2_r5n6j")]
-position = Vector2(2083, -91)
+position = Vector2(10649, -2)
 scale = Vector2(1, 1.4800007)
 
 [node name="Killer_static" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1263, 582)
+position = Vector2(1775, 921)
 
 [node name="Killer_static2" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1263, 162)
+position = Vector2(1956, 926)
 
 [node name="Killer_static3" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1549, 586)
+position = Vector2(1624, 903)
 
 [node name="Killer_static4" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1627, 555)
+position = Vector2(2259, 826)
+
+[node name="Killer_static4" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(6300, -148)
+
+[node name="Killer_static5" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(6519, -157)
+
+[node name="Killer_static6" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(6709, -140)
+
+[node name="Killer_static7" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(6960, -73)
+
+[node name="Killer_static8" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(7258, 50)
+
+[node name="Killer_static9" parent="Killer_static4" instance=ExtResource("3_ge381")]
+position = Vector2(7626, -196)
 
 [node name="Killer_static5" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1695, 519)
+position = Vector2(2669, 717)
 
 [node name="Killer_static6" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1775, 506)
+position = Vector2(2956, 596)
 
 [node name="Killer_static7" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1847, 535)
+position = Vector2(3382, 491)
 
 [node name="Killer_static8" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1912, 569)
+position = Vector2(3827, 553)
 
 [node name="Killer_static9" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1970, 608)
+position = Vector2(4458, 686)
 
 [node name="Killer_static12" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1549, 256)
+position = Vector2(5208, 431)
 
 [node name="Killer_static13" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1627, 225)
+position = Vector2(5952, 252)
 
 [node name="Killer_static14" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1695, 189)
+position = Vector2(6517, 140)
 
 [node name="Killer_static15" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1775, 176)
+position = Vector2(7370, 65)
 
 [node name="Killer_static16" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1847, 205)
+position = Vector2(8317, 700)
 
 [node name="Killer_static17" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1912, 239)
+position = Vector2(8100, 823)
 
 [node name="Killer_static18" parent="." instance=ExtResource("3_ge381")]
-position = Vector2(1970, 278)
+position = Vector2(8114, 1003)

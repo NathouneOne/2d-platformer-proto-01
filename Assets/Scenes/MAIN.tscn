@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhi4esrgo13w"]
+[gd_scene load_steps=12 format=3 uid="uid://dhi4esrgo13w"]
 
 [ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/MAIN.gd" id="1_qhfm1"]
 [ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="2_stkbw"]
 [ext_resource type="PackedScene" uid="uid://bk4l8evhb6ckc" path="res://Assets/Scenes/UI/clock_display.tscn" id="3_yv3l3"]
 [ext_resource type="PackedScene" uid="uid://dukeajinfui7p" path="res://Assets/Scenes/Levels/level_01.tscn" id="4_stkbw"]
+[ext_resource type="Shader" uid="uid://ctyow8d2wxrir" path="res://Assets/Graphics/Shaders/ChromaticAberration.gdshader" id="5_oybyx"]
+[ext_resource type="Shader" uid="uid://dxaal7pjcy7tj" path="res://Assets/Graphics/Shaders/VHS.gdshader" id="6_yv3l3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_stkbw"]
 distance = -322.0
@@ -11,6 +13,67 @@ distance = -322.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oybyx"]
 normal = Vector2(0, 1)
 distance = 191.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yv3l3"]
+shader = ExtResource("5_oybyx")
+shader_parameter/aberration = 0.242000011495
+shader_parameter/strength = 0.010000000475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rv0o"]
+shader = ExtResource("6_yv3l3")
+shader_parameter/screen_size = Vector2(3840, 2160)
+shader_parameter/viewport_size = Vector2(3840, 2160)
+shader_parameter/hardScan = -13.0
+shader_parameter/hardPix = -3.0
+shader_parameter/warpX = 0.0
+shader_parameter/warpY = 0.014000000665
+shader_parameter/maskDark = 0.20000000298024
+shader_parameter/maskLight = 0.30000000447036
+shader_parameter/scaleInLinearGamma = true
+shader_parameter/shadowMask = 3
+shader_parameter/brightBoost = 0.30000000447036
+shader_parameter/hardBloomPix = -1.69999999552964
+shader_parameter/hardBloomScan = -3.29999998956916
+shader_parameter/bloomAmount = 0.05000000074506
+shader_parameter/shape = 1.2500000186265
+shader_parameter/doBloom = true
+shader_parameter/enable_compression = true
+shader_parameter/compression_intensity = 0.70000001043084
+shader_parameter/compression_quantization = 12.0
+shader_parameter/compression_block_size = 8.0
+shader_parameter/compression_blend = 0.15000000223518
+shader_parameter/enable_chromatic_aberration = false
+shader_parameter/red_shift = Vector2(0.002, 0)
+shader_parameter/green_shift = Vector2(0, 0)
+shader_parameter/blue_shift = Vector2(-0.002, 0)
+shader_parameter/aberration_bias = 1.0
+shader_parameter/aberration_blend = 0.8
+shader_parameter/enable_lens_distortion = true
+shader_parameter/distortion_intensity = 0.06999995373135981
+shader_parameter/distortion_magnifier = 1.0
+shader_parameter/distortion_invert = false
+shader_parameter/enable_noise = false
+shader_parameter/noise_intensity = 0.00999999977648
+shader_parameter/noise_scale = 47.0
+shader_parameter/noise_framerate = 25.0
+shader_parameter/noise_midtones = 0.80000001192096
+shader_parameter/noise_shadows = 0.10000000149012
+shader_parameter/noise_highlights = 0.8
+shader_parameter/enable_halation = false
+shader_parameter/halation_amount = 0.15000000223518
+shader_parameter/halation_threshold = 0.8
+shader_parameter/halation_size = 2.0
+shader_parameter/halation_color_filter = Vector3(1, 0.9, 0.8)
+shader_parameter/enable_sharpen = false
+shader_parameter/sharpen_intensity = 1.0
+shader_parameter/sharpen_offset = 1.0
+shader_parameter/enable_soften = false
+shader_parameter/soften_strength = 1.0
+shader_parameter/soften_blend = 0.5
+shader_parameter/enable_vignette = true
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_size = 0.8
+shader_parameter/vignette_color = Vector3(0, 0, 0)
 
 [sub_resource type="Environment" id="Environment_stkbw"]
 background_mode = 3
@@ -26,8 +89,8 @@ glow_levels/5 = 32.0
 glow_levels/6 = 64.0
 glow_levels/7 = 128.0
 glow_normalized = true
-glow_intensity = 0.87
-glow_strength = 0.7
+glow_intensity = 0.48
+glow_strength = 0.56
 glow_bloom = 0.64
 glow_blend_mode = 1
 
@@ -48,7 +111,7 @@ position_smoothing_enabled = true
 drag_horizontal_offset = -0.49
 
 [node name="Level_01" parent="." instance=ExtResource("4_stkbw")]
-position = Vector2(699, 208)
+position = Vector2(-4, 1)
 
 [node name="KillPlane" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -61,9 +124,6 @@ shape = SubResource("WorldBoundaryShape2D_stkbw")
 position = Vector2(-19, -235)
 shape = SubResource("WorldBoundaryShape2D_oybyx")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_stkbw")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ClockDisplay" parent="CanvasLayer" instance=ExtResource("3_yv3l3")]
@@ -71,5 +131,28 @@ unique_name_in_owner = true
 offset_right = -1776.0
 offset_bottom = -983.0
 mouse_filter = 2
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yv3l3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_0rv0o")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_stkbw")
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
