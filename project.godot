@@ -61,6 +61,10 @@ E={
 ]
 }
 
+[physics]
+
+2d/default_gravity=800.0
+
 [rendering]
 
 renderer/rendering_method="mobile"
