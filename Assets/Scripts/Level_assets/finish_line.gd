@@ -4,7 +4,7 @@ extends Area2D
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	%Timer.start()
+	%Timer2.start()
 	Engine.time_scale=0.1
 
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk4l8evhb6ckc"]
+
+[ext_resource type="Script" uid="uid://h6s6x8oondy5" path="res://Assets/Scripts/UI/clock_display.gd" id="1_llrla"]
+
+[node name="ClockDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_llrla")
+
+[node name="RichTextLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 102.0
+offset_bottom = 51.0
+visible_characters = 4

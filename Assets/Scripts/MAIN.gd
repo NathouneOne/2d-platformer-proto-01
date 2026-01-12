@@ -111,6 +111,5 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 
 
 func _on_kill_plane_body_entered(body: Node2D) -> void:
-	print("body")
 	if body == %Player :
 		get_tree().reload_current_scene()

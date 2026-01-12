@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhi4esrgo13w"]
+[gd_scene load_steps=9 format=3 uid="uid://dhi4esrgo13w"]
 
 [ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/MAIN.gd" id="1_qhfm1"]
 [ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="2_stkbw"]
 [ext_resource type="PackedScene" uid="uid://dd7ffle0ebnwv" path="res://Assets/Scenes/UI/UI_box_wheel_selector.tscn" id="3_oybyx"]
+[ext_resource type="PackedScene" uid="uid://bk4l8evhb6ckc" path="res://Assets/Scenes/UI/clock_display.tscn" id="3_yv3l3"]
 [ext_resource type="PackedScene" uid="uid://dukeajinfui7p" path="res://Assets/Scenes/Levels/level_01.tscn" id="4_stkbw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_stkbw"]
@@ -47,10 +48,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_offset = -0.49
 
-[node name="Timer" type="Timer" parent="."]
-unique_name_in_owner = true
-one_shot = true
-
 [node name="UI_box_wheel_selector" parent="." instance=ExtResource("3_oybyx")]
 unique_name_in_owner = true
 visible = false
@@ -77,5 +74,9 @@ shape = SubResource("WorldBoundaryShape2D_oybyx")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_stkbw")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ClockDisplay" parent="CanvasLayer" instance=ExtResource("3_yv3l3")]
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
