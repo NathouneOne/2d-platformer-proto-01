@@ -13,6 +13,10 @@ const J_BOX = preload("uid://bobxjb73lgyn3")
 const G_BOX = preload("uid://mkowtkrnf7xq")
 const A_BOX = preload("uid://bqg3u2yv56sun")
 
+const G_TEXTURE = preload("uid://cid65dv7rhtkb")
+const J_TEXTURE = preload("uid://cn54on8cehkmr")
+const A_TEXTURE = preload("uid://0bc82ijt3a18")
+
 var clic1 : Vector2
 var clic2 : Vector2
 var selected_box : int = GBOX_SELECTED
@@ -22,7 +26,7 @@ var current_box = G_BOX.instantiate()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Set selector opacity
-	%UI_box_wheel_selector.modulate.a=0.6
+	%Player.get_child(2).texture = G_TEXTURE
 	#var camera_size = get_viewport_rect().size
 	#%Camera2D.global_position.y=camera_size.y/2
 
@@ -58,25 +62,16 @@ func _process(_delta: float) -> void:
 			
 	
 	#Select type of box
-	if Input.is_action_just_pressed("A") : selected_box=GBOX_SELECTED
-	if Input.is_action_just_pressed("Z") : selected_box=JBOX_SELECTED
-	if Input.is_action_just_pressed("E") : selected_box=ABOX_SELECTED
-	
-	#if Input.is_action_just_pressed("right_clic"):
-	#	clic1 = get_global_mouse_position()
-	#	#Slow_mo function 
-	#	Engine.time_scale = SLOWMO
-	#	#Add a dynamic box selection UI here
-	#	%UI_box_wheel_selector.global_position=clic1
-	#	%UI_box_wheel_selector.show()
-	#	
-	#if Input.is_action_just_released("right_clic"):
-	#	#End slow_mo
-	#	Engine.time_scale = 1
-	#	#End dynamic box selection UI here
-	#	if %UI_box_wheel_selector.selection :
-	#		selected_box=%UI_box_wheel_selector.selection
-	#	%UI_box_wheel_selector.hide()
+	if not Input.is_action_pressed("left_clic"):
+		if Input.is_action_just_pressed("A") : 
+			selected_box=GBOX_SELECTED
+			%Player.get_child(2).texture = G_TEXTURE
+		if Input.is_action_just_pressed("Z") : 
+			selected_box=JBOX_SELECTED
+			%Player.get_child(2).texture = J_TEXTURE
+		if Input.is_action_just_pressed("E") : 
+			selected_box=ABOX_SELECTED
+			%Player.get_child(2).texture = A_TEXTURE
 		
 
 
