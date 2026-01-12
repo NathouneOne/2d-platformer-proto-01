@@ -29,8 +29,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	
-	
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
 	
@@ -58,9 +56,6 @@ func _process(_delta: float) -> void:
 			current_box.set_collision_mask(1)
 			
 	
-	
-	
-	
 	#Select type of box
 	if Input.is_action_just_pressed("right_clic"):
 		clic1 = get_global_mouse_position()
@@ -78,7 +73,7 @@ func _process(_delta: float) -> void:
 			selected_box=%UI_box_wheel_selector.selection
 		%UI_box_wheel_selector.hide()
 		
-		
+
 
 #create a typed box, called when left click is pressed and released, and eraser is not selected
 func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type : int) :
