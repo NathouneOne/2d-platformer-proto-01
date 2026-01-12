@@ -19,7 +19,7 @@ func _input(_event: InputEvent) -> void:
 		m_position.y <= %CollisionShape2D.shape.size.y and 
 		m_position.y>=0 ):
 			
-		if Input.is_action_pressed("left_clic") and get_parent().selected_box ==1 :
+		if not Input.is_action_pressed("left_clic") and Input.is_action_pressed("right_clic") :
 			queue_free()
 
 

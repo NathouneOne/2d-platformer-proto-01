@@ -34,46 +34,49 @@ func _process(_delta: float) -> void:
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
 	
-	# Create a box if not in box selection
-	if not Input.is_action_pressed("right_clic") and not selected_box == ERASER_SELECTED:
-		if Input.is_action_just_pressed("left_clic"):
-			clic1 = get_global_mouse_position()
-			clic2 = get_global_mouse_position()
-			current_box = create_box(clic1, clic2, selected_box)
-		
-		if Input.is_action_pressed("left_clic"):
-			clic2 = get_global_mouse_position()
-			update_box(clic1, clic2, current_box)
-		
-		if Input.is_action_just_released("left_clic"):
-			clic2 = get_global_mouse_position()
-			update_box(clic1, clic2, current_box)
-			##if Acceleration box, pass the right/left acceleration variable
-			if selected_box == ABOX_SELECTED :
-				if clic1.x>clic2.x :
-					current_box.angle = 0
-				else :
-					current_box.angle = 1
-			current_box.set_collision_layer(1)
-			current_box.set_collision_mask(1)
+	# Create and update box 
+	if Input.is_action_just_pressed("left_clic"):
+		clic1 = get_global_mouse_position()
+		clic2 = get_global_mouse_position()
+		current_box = create_box(clic1, clic2, selected_box)
+	
+	if Input.is_action_pressed("left_clic"):
+		clic2 = get_global_mouse_position()
+		update_box(clic1, clic2, current_box)
+	
+	if Input.is_action_just_released("left_clic"):
+		clic2 = get_global_mouse_position()
+		update_box(clic1, clic2, current_box)
+		##if Acceleration box, pass the right/left acceleration variable
+		if selected_box == ABOX_SELECTED :
+			if clic1.x>clic2.x :
+				current_box.angle = 0
+			else :
+				current_box.angle = 1
+		current_box.set_collision_layer(1)
+		current_box.set_collision_mask(1)
 			
 	
 	#Select type of box
-	if Input.is_action_just_pressed("right_clic"):
-		clic1 = get_global_mouse_position()
-		#Slow_mo function 
-		Engine.time_scale = SLOWMO
-		#Add a dynamic box selection UI here
-		%UI_box_wheel_selector.global_position=clic1
-		%UI_box_wheel_selector.show()
-		
-	if Input.is_action_just_released("right_clic"):
-		#End slow_mo
-		Engine.time_scale = 1
-		#End dynamic box selection UI here
-		if %UI_box_wheel_selector.selection :
-			selected_box=%UI_box_wheel_selector.selection
-		%UI_box_wheel_selector.hide()
+	if Input.is_action_just_pressed("A") : selected_box=GBOX_SELECTED
+	if Input.is_action_just_pressed("Z") : selected_box=JBOX_SELECTED
+	if Input.is_action_just_pressed("E") : selected_box=ABOX_SELECTED
+	
+	#if Input.is_action_just_pressed("right_clic"):
+	#	clic1 = get_global_mouse_position()
+	#	#Slow_mo function 
+	#	Engine.time_scale = SLOWMO
+	#	#Add a dynamic box selection UI here
+	#	%UI_box_wheel_selector.global_position=clic1
+	#	%UI_box_wheel_selector.show()
+	#	
+	#if Input.is_action_just_released("right_clic"):
+	#	#End slow_mo
+	#	Engine.time_scale = 1
+	#	#End dynamic box selection UI here
+	#	if %UI_box_wheel_selector.selection :
+	#		selected_box=%UI_box_wheel_selector.selection
+	#	%UI_box_wheel_selector.hide()
 		
 
 
