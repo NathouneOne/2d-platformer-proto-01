@@ -12,6 +12,7 @@ material = SubResource("CanvasItemMaterial_pv60e")
 script = ExtResource("1_g6mln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_3v7e2")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var timer: Timer = %Timer
-const TIMER_TIME = 0.5
 const BOX_Y_SIZE = 10
 
 const JBOX_SELECTED = 4
@@ -110,6 +108,6 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 
 
 
-func _on_kill_plane_body_entered(body: Node2D) -> void:
-	if body == %Player :
-		get_tree().reload_current_scene()
+#func _on_kill_plane_body_entered(body: Node2D) -> void:
+#	if body == %Player :
+#		get_tree().reload_current_scene()

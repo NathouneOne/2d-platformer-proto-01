@@ -10,6 +10,7 @@ input_pickable = true
 script = ExtResource("1_roho7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_12l8v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,6 +20,3 @@ offset_right = 10.0
 offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.25071412, 0.45025605, 0.76044625, 1)
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

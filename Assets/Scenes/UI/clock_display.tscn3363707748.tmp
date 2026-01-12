@@ -11,11 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_llrla")
 
-[node name="Label" type="Label" parent="."]
+[node name="RichTextLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
 offset_right = 102.0
 offset_bottom = 51.0
-visible_characters = 6
+visible_characters = 4

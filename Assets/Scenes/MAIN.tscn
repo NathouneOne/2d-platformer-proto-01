@@ -78,5 +78,6 @@ environment = SubResource("Environment_stkbw")
 
 [node name="ClockDisplay" parent="CanvasLayer" instance=ExtResource("3_yv3l3")]
 unique_name_in_owner = true
+mouse_filter = 2
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]

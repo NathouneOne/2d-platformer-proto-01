@@ -8,4 +8,4 @@ func _process(delta: float) -> void:
 	else:
 		elapsed_time+=delta*0.1
 	
-	%RichTextLabel.text=str(elapsed_time)
+	%Label.text=str(float(int(elapsed_time*100)/100.0))
