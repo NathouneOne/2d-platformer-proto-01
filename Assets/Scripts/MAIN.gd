@@ -17,6 +17,13 @@ const G_TEXTURE = preload("uid://cid65dv7rhtkb")
 const J_TEXTURE = preload("uid://cn54on8cehkmr")
 const A_TEXTURE = preload("uid://0bc82ijt3a18")
 
+#Sounds
+const DEATH_HIGH_DEF = preload("uid://1wmdrd0svocb")
+
+const ESC_SCREEN = "uid://crgbo6r4vnr3v"
+const WIN_SCREEN = "uid://dmepa88lyqd8o"
+
+
 var clic1 : Vector2
 var clic2 : Vector2
 var selected_box : int = GBOX_SELECTED
@@ -33,16 +40,31 @@ func _ready() -> void:
 	%Player.get_child(2).texture = G_TEXTURE
 	%Shader.material.set_shader_parameter('aberration',shader_aberration)
 	%Shader.material.set_shader_parameter('strength',shader_strength)
-	#%ColorRect.modulate.a = 0.2
+	Engine.time_scale=1
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
 	
+	if Input.is_action_just_pressed("esc"):
+		Engine.time_scale=1
+		get_tree().change_scene_to_file(ESC_SCREEN)
+		
+		
 	
+	if Input.is_action_pressed("slowmo"):
+		if %SlowMo_charge.get_child(1).size.x > 0 :
+			Engine.time_scale=SLOWMO
+			%SlowMo_charge.get_child(1).size.x -= delta*1000
+		else : 
+			Engine.time_scale=1
+	
+	if Input.is_action_just_released("slowmo") :
+		Engine.time_scale=1
+			
 	#Adapt shader
 	shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
 	shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.1), 0.001)
@@ -140,6 +162,8 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 	box.get_child(0).shape.size = box_size
 	box.get_child(0).position.x=box_size.x/2
 	box.get_child(0).position.y=box_size.y/2
+	
+	
 	if box == StaticBody2D :
 		box.get_child(2).get_child(0).shape.size = box_size
 		box.get_child(2).get_child(0).position.x=box_size.x/2
@@ -150,4 +174,10 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 
 func _on_kill_plane_body_entered(body: Node2D) -> void:
 	if body == %Player :
-		get_tree().reload_current_scene()
+		general.death()
+
+#
+#func _on_timer_timeout() -> void:
+#	Engine.time_scale=1
+#	get_tree().reload_current_scene()
+#

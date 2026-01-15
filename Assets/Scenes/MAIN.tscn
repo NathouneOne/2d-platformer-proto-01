@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhi4esrgo13w"]
+[gd_scene load_steps=11 format=3 uid="uid://dhi4esrgo13w"]
 
 [ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/MAIN.gd" id="1_qhfm1"]
 [ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="2_stkbw"]
 [ext_resource type="PackedScene" uid="uid://bk4l8evhb6ckc" path="res://Assets/Scenes/UI/clock_display.tscn" id="3_yv3l3"]
 [ext_resource type="PackedScene" uid="uid://dukeajinfui7p" path="res://Assets/Scenes/Levels/level_01.tscn" id="4_stkbw"]
 [ext_resource type="Shader" uid="uid://ctyow8d2wxrir" path="res://Assets/Graphics/Shaders/ChromaticAberration.gdshader" id="5_oybyx"]
+[ext_resource type="PackedScene" uid="uid://1ru4ko8rfjpa" path="res://Assets/Scenes/UI/slow_mo_charge.tscn" id="5_yv3l3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_stkbw"]
 distance = -322.0
@@ -64,7 +65,7 @@ position = Vector2(27, 804)
 shape = SubResource("WorldBoundaryShape2D_stkbw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="KillPlane"]
-position = Vector2(-19, -235)
+position = Vector2(-19, -757)
 shape = SubResource("WorldBoundaryShape2D_oybyx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -74,6 +75,9 @@ unique_name_in_owner = true
 offset_right = -1776.0
 offset_bottom = -983.0
 mouse_filter = 2
+
+[node name="SlowMo_charge" parent="CanvasLayer" instance=ExtResource("5_yv3l3")]
+unique_name_in_owner = true
 
 [node name="Shader" type="ColorRect" parent="CanvasLayer"]
 unique_name_in_owner = true

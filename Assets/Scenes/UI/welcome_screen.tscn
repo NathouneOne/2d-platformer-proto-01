@@ -37,7 +37,7 @@ offset_right = 178.0
 offset_bottom = 219.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Understood, I'm ready, oh mighty dev (hihi)"
+text = "READY"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -45,22 +45,21 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -326.0
-offset_top = 170.0
+offset_top = 202.0
 offset_right = 326.0
-offset_bottom = 243.0
+offset_bottom = 530.0
 grow_horizontal = 2
-text = "Welcome to you my friend ! (mostly my friend I guess as the game is still in dev haha je sais pas pourquoi j'écris en anglais)
-
-Commands input : 
+text = "Commands input : 
      A to select the blue platform
      Z to select the green platform
      E to select the red platform
      Left click and drag to create a platform
      Right click and drag to delete existing platforms
+     Hold MAJ to slow time
+     ESC to exit menu
 
 
 
-Enjoy ! 
-(et oubliez pas de me faire tous les retours que vous pouvez plzplzplz)"
+Enjoy ! "
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://1ru4ko8rfjpa"]
+
+[node name="SlowMo_charge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -359.99994
+offset_top = -88.0
+offset_right = 3.824768
+offset_bottom = 30.45337
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.9844718, 0.29547527)
+mouse_filter = 2
+color = Color(0.10716081, 0.0866706, 0.12508973, 0.5803922)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -354.99994
+offset_top = -82.00006
+offset_right = 3.7856445
+offset_bottom = -4.1589355
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.9844718, 0.29547527)
+mouse_filter = 2
+color = Color(0.4, 0.3494, 0.124000005, 1)

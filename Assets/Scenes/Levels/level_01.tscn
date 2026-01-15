@@ -7,8 +7,8 @@
 [node name="Level_01" type="Node2D"]
 
 [node name="walls20" parent="." instance=ExtResource("1_lsyt4")]
-position = Vector2(9430, 232)
-scale = Vector2(1, 9.11)
+position = Vector2(9430, -115)
+scale = Vector2(1, 15.709999)
 
 [node name="walls21" parent="." instance=ExtResource("1_lsyt4")]
 position = Vector2(1425, 1108)
@@ -24,7 +24,7 @@ scale = Vector2(1, 9.11)
 
 [node name="FinishLine" parent="." instance=ExtResource("2_r5n6j")]
 position = Vector2(10649, -2)
-scale = Vector2(1, 1.4800007)
+scale = Vector2(1, 2.3862681)
 
 [node name="Killer_static" parent="." instance=ExtResource("3_ge381")]
 position = Vector2(1775, 921)
