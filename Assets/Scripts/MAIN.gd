@@ -17,8 +17,6 @@ const G_TEXTURE = preload("uid://cid65dv7rhtkb")
 const J_TEXTURE = preload("uid://cn54on8cehkmr")
 const A_TEXTURE = preload("uid://0bc82ijt3a18")
 
-#Sounds
-const DEATHSOUND_HIGH_DEF = preload("uid://1wmdrd0svocb")
 
 const ESC_SCREEN = "uid://crgbo6r4vnr3v"
 const WIN_SCREEN = "uid://dmepa88lyqd8o"
@@ -34,6 +32,9 @@ var shader_aberration = 0.0
 var shader_strength = 0.0
 const SHADER_ABERRATION_DIVIDER = 4000
 const SHADER_STRENGTH_DIVIDER = 20000
+
+## 
+#@export var a = PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

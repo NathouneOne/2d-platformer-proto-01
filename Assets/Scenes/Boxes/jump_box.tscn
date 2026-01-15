@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v7e2"]
 resource_local_to_scene = true
 
-[node name="jump_box" type="Area2D"]
+[node name="jump_box" type="Area2D" groups=["boxes"]]
 material = SubResource("CanvasItemMaterial_pv60e")
 script = ExtResource("1_g6mln")
 
