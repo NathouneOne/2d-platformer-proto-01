@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dukeajinfui7p"]
+[gd_scene load_steps=5 format=3 uid="uid://dukeajinfui7p"]
 
 [ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="1_lsyt4"]
 [ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_r5n6j"]
 [ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="3_ge381"]
+[ext_resource type="Texture2D" uid="uid://d1tg1wot5bf6y" path="res://Assets/Graphics/luderick-grumeau-01-paint-3-copie.jpg" id="4_drucj"]
 
 [node name="Level_01" type="Node2D"]
 
@@ -85,3 +86,13 @@ position = Vector2(9172, 905)
 
 [node name="Killer_static22" parent="." instance=ExtResource("3_ge381")]
 position = Vector2(9462, 972)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.12156863)
+z_index = -2
+position = Vector2(1444.7798, 685.7188)
+scale = Vector2(1.5942879, 1.5942879)
+texture = ExtResource("4_drucj")

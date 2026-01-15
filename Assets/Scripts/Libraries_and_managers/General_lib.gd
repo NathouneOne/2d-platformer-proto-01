@@ -2,8 +2,8 @@ extends Node
 
 var best_score = null
 var is_launched = 0
-var death_sound = preload("res://Assets/Sounds/Death_high_def.wav")
-var win_sound = preload("res://Assets/Sounds/535840__evretro__8-bit-mini-win-sound-effect.wav")
+var death_sound = preload("uid://1wmdrd0svocb")
+var win_sound = preload("uid://dacwlrdkgp3hh")
 
 
 var SFX_player := AudioStreamPlayer2D.new() 
