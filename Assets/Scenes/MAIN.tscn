@@ -92,7 +92,4 @@ mouse_filter = 2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_stkbw")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]

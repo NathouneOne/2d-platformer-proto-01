@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnt5sip5clwbn"
+path="res://.godot/imported/Yussef Kamaal - Calligraphy Brownswood Basement Session.mp3-a22d79a6e0b903eda5e04fc36dba19e5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Yussef Kamaal - Calligraphy Brownswood Basement Session.mp3"
+dest_files=["res://.godot/imported/Yussef Kamaal - Calligraphy Brownswood Basement Session.mp3-a22d79a6e0b903eda5e04fc36dba19e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

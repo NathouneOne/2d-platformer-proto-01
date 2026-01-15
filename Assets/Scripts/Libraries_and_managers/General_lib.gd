@@ -2,21 +2,27 @@ extends Node
 
 var best_score = null
 var is_launched = 0
+
 var death_sound = preload("uid://1wmdrd0svocb")
 var win_sound = preload("uid://dacwlrdkgp3hh")
-
+var soundTrack = preload("uid://bnt5sip5clwbn")
 
 var SFX_player := AudioStreamPlayer2D.new() 
+var SoundTrack_player := AudioStreamPlayer2D.new() 
+
+
 
 func _ready() -> void:
 	add_child(SFX_player)
+	add_child(SoundTrack_player)
+	SoundTrack_player.volume_db = 0
+	SoundTrack_player.stream = soundTrack
+	SoundTrack_player.play()
 
 
 func store_best_score(time):
 	if best_score == null or time<best_score :
 		best_score = time
-	print(best_score)
-
 
 
 func death(sound = null):

@@ -37,10 +37,10 @@ func _physics_process(delta: float) -> void:
 			
 		
 
-	
+
 	move_and_slide()
 	velocity=get_real_velocity()
-
+	general.SoundTrack_player.volume_db = move_toward(general.SoundTrack_player.volume_db, velocity.x/200, 0.001)
 
 #jump handler
 func box_jump(angle : float):

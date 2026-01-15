@@ -4,7 +4,8 @@ const MAIN = "uid://dhi4esrgo13w"
 
 
 func _ready() -> void:
-	%Label2.text = str("Session high score = ", float(int(general.best_score*100)/100.0))
+	if general.best_score != null :
+		%Label2.text = str("Session high score = ", float(int(general.best_score*100)/100.0))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") :

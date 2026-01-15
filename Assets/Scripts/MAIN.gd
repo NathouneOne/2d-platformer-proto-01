@@ -49,7 +49,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	#reposition soundFX player
-	general.SFX_player.global_position = %Player.global_position
+	general.SFX_player.global_position = %Camera2D.global_position
+	general.SoundTrack_player.global_position = %Camera2D.global_position
 	
 	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
