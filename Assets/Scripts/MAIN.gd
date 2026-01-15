@@ -18,7 +18,7 @@ const J_TEXTURE = preload("uid://cn54on8cehkmr")
 const A_TEXTURE = preload("uid://0bc82ijt3a18")
 
 #Sounds
-const DEATH_HIGH_DEF = preload("uid://1wmdrd0svocb")
+const DEATHSOUND_HIGH_DEF = preload("uid://1wmdrd0svocb")
 
 const ESC_SCREEN = "uid://crgbo6r4vnr3v"
 const WIN_SCREEN = "uid://dmepa88lyqd8o"
@@ -43,9 +43,14 @@ func _ready() -> void:
 	Engine.time_scale=0.1
 	general.is_launched=0
 	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	#reposition soundFX player
+	general.SFX_player.global_position = %Player.global_position
+	
 	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
