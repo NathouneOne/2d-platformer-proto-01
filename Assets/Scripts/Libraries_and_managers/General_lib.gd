@@ -1,8 +1,16 @@
 extends Node
 
+var best_score = null
+var is_launched = 0
+
+func store_best_score(time):
+	if best_score == null or time<best_score :
+		best_score = time
+	print(best_score)
 
 
 func death() :
+	
 	var timer := Timer.new()
 	add_child(timer)
 	timer.one_shot=true

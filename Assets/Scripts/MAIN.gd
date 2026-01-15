@@ -40,7 +40,8 @@ func _ready() -> void:
 	%Player.get_child(2).texture = G_TEXTURE
 	%Shader.material.set_shader_parameter('aberration',shader_aberration)
 	%Shader.material.set_shader_parameter('strength',shader_strength)
-	Engine.time_scale=1
+	Engine.time_scale=0.1
+	general.is_launched=0
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -94,7 +95,7 @@ func _process(delta: float) -> void:
 					clic1.y += %Player.get_child(0).shape.size.y/2
 					clic2.y += %Player.get_child(0).shape.size.y/2
 				
-			
+		
 		current_box.set_collision_layer(1)
 		current_box.set_collision_mask(1)
 		
@@ -106,8 +107,11 @@ func _process(delta: float) -> void:
 				current_box.angle = 0
 			else :
 				current_box.angle = 1
-				
-			
+		
+		## if 1st box, retime to normal & set flag to 1
+		if general.is_launched ==0 :
+			general.is_launched =1
+			Engine.time_scale=1
 	
 	#Select type of box
 	if not Input.is_action_pressed("left_clic"):
@@ -126,6 +130,7 @@ func _process(delta: float) -> void:
 #create a typed box, called when left click is pressed and released, and eraser is not selected
 func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type : int) :
 	
+	
 	#select box type
 	var box = G_BOX.instantiate()
 	match box_type:
@@ -142,6 +147,7 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	update_box(box_coordinate_1, box_coordinate_2, box)
 	
 	add_child(box)
+	
 	
 	return box
 
@@ -175,9 +181,3 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 func _on_kill_plane_body_entered(body: Node2D) -> void:
 	if body == %Player :
 		general.death()
-
-#
-#func _on_timer_timeout() -> void:
-#	Engine.time_scale=1
-#	get_tree().reload_current_scene()
-#

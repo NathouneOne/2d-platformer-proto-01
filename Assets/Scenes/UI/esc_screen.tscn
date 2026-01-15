@@ -58,4 +58,20 @@ grow_vertical = 2
 scale = Vector2(1.0053029, 0.9565468)
 text = "GAME PAUSED"
 
+[node name="Label2" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.38483
+offset_top = 41.0
+offset_right = 144.46289
+offset_bottom = 69.22656
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0053029, 0.9565468)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
