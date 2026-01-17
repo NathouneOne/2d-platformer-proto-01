@@ -24,7 +24,7 @@ var current_level_index = 0
 
 var end_level_screen_flag = 0
 
-var best_score = null
+var best_score : Array[float]
 var game_ended =0
 
 # Called when the node enters the scene tree for the first time.
@@ -75,10 +75,13 @@ func _welcome_screen_button() :
 	
 
 func store_best_score(time):
-	if current_level_index != 0 :
-		if best_score == null or time<best_score :
-			best_score = time
-			update_save_file()
+
+	if best_score.size() < current_level_index+1:
+		best_score.append(time)
+	elif time<best_score[current_level_index] :
+		best_score[current_level_index] = time
+	print (best_score)
+	update_save_file()
 
 func update_save_file() :
 	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -90,7 +93,9 @@ func load_save_file() :
 		best_score = file.get_var()
 
 func _reset_save_file() :
-	OS.move_to_trash(SAVE_PATH)
+	OS.move_to_trash(ProjectSettings.globalize_path(SAVE_PATH))
+	best_score.resize(0)
+
 
 func next_level() :
 	end_level_screen_flag = 0

@@ -1,0 +1,223 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkanghvdnre4r"]
+
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="1_j68f5"]
+[ext_resource type="Script" uid="uid://drdblolv32eey" path="res://Assets/Scripts/Levels/level_02.gd" id="1_t17kw"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_ofx7h"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="3_fbpvl"]
+
+[node name="level_02" type="Node2D"]
+script = ExtResource("1_t17kw")
+
+[node name="walls20" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(7615, 1203)
+scale = Vector2(1, 20.12)
+
+[node name="walls21" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(1425, 1108)
+scale = Vector2(1, 9.11)
+
+[node name="walls22" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(1424, 192)
+scale = Vector2(1, 15.58)
+
+[node name="walls24" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(1704, 992)
+scale = Vector2(1, 9.11)
+
+[node name="walls25" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(1703, 76)
+scale = Vector2(1, 15.58)
+
+[node name="walls26" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(2251, 1247)
+scale = Vector2(1, 9.11)
+
+[node name="walls27" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(2250, 331)
+scale = Vector2(1, 15.58)
+
+[node name="walls28" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(2493, 1247)
+scale = Vector2(1, 9.11)
+
+[node name="walls29" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(2492, 331)
+scale = Vector2(1, 15.58)
+
+[node name="walls30" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(4034, -3)
+scale = Vector2(1, 15.58)
+
+[node name="walls31" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(4032, 1197)
+scale = Vector2(1, 15.58)
+
+[node name="walls23" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(4801, 584)
+scale = Vector2(1, 8.205)
+
+[node name="walls32" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(5549, -3)
+scale = Vector2(1, 15.58)
+
+[node name="walls33" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(5547, 1197)
+scale = Vector2(1, 15.58)
+
+[node name="walls34" parent="." instance=ExtResource("1_j68f5")]
+position = Vector2(6326, 540)
+scale = Vector2(1, 13.74)
+
+[node name="FinishLine" parent="." instance=ExtResource("2_ofx7h")]
+position = Vector2(10649, -2)
+scale = Vector2(1, 2.3862681)
+
+[node name="Killer_static" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(1507, 645)
+
+[node name="Killer_static2" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(1611, 778)
+
+[node name="Killer_static3" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(1512, 841)
+
+[node name="Killer_static4" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(1601, 592)
+
+[node name="Killer_static5" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2373, 921)
+
+[node name="Killer_static6" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2632, 1003)
+
+[node name="Killer_static7" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2723, 989)
+
+[node name="Killer_static8" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2807, 957)
+
+[node name="Killer_static10" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2897, 928)
+
+[node name="Killer_static11" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2988, 891)
+
+[node name="Killer_static23" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3059, 854)
+
+[node name="Killer_static9" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3140, 825)
+
+[node name="Killer_static12" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3218, 788)
+
+[node name="Killer_static13" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3297, 757)
+
+[node name="Killer_static14" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3383, 734)
+
+[node name="Killer_static15" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3454, 722)
+
+[node name="Killer_static50" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3766, 628)
+
+[node name="Killer_static49" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3374, 630)
+
+[node name="Killer_static24" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2632, 757)
+
+[node name="Killer_static25" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2723, 743)
+
+[node name="Killer_static26" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2807, 711)
+
+[node name="Killer_static27" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2897, 682)
+
+[node name="Killer_static28" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(2988, 645)
+
+[node name="Killer_static29" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3059, 608)
+
+[node name="Killer_static30" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3140, 579)
+
+[node name="Killer_static31" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3218, 542)
+
+[node name="Killer_static32" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3297, 511)
+
+[node name="Killer_static33" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3383, 488)
+
+[node name="Killer_static34" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3454, 476)
+
+[node name="Killer_static35" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3531, 722)
+
+[node name="Killer_static36" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3525, 476)
+
+[node name="Killer_static37" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3602, 722)
+
+[node name="Killer_static38" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3602, 476)
+
+[node name="Killer_static39" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3679, 722)
+
+[node name="Killer_static40" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3673, 476)
+
+[node name="Killer_static41" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3748, 722)
+
+[node name="Killer_static42" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3748, 476)
+
+[node name="Killer_static43" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3825, 722)
+
+[node name="Killer_static44" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3819, 476)
+
+[node name="Killer_static45" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3896, 722)
+
+[node name="Killer_static46" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3896, 476)
+
+[node name="Killer_static47" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3973, 722)
+
+[node name="Killer_static48" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(3967, 476)
+
+[node name="Killer_static16" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(8811, 170)
+
+[node name="Killer_static17" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(8078, 327)
+
+[node name="Killer_static18" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(10108, 1064)
+
+[node name="Killer_static19" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(9349, 678)
+
+[node name="Killer_static20" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(9974, 314)
+
+[node name="Killer_static21" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(9711, 1315)
+
+[node name="Killer_static22" parent="." instance=ExtResource("3_fbpvl")]
+position = Vector2(9462, 972)
