@@ -6,8 +6,9 @@ const SAVE_PATH = "user://FallingCube_saveFile.save"
 const ESC_SCREEN = preload("uid://crgbo6r4vnr3v")
 const WELCOME_SCREEN = preload("uid://d4lcsj5yhdf7n")
 const GAME = preload("uid://dhi4esrgo13w")
-const END_GAME_SCREEN = preload("uid://b7f7cdoau7ye2")
 const END_LEVEL_SCREEN = preload("uid://nav4fo21ldex")
+const END_GAME_SCREEN = preload("uid://cvjxhoyh3isle")
+
 
 var esc_screen = ESC_SCREEN.instantiate()
 var welcome_screen = WELCOME_SCREEN.instantiate()
@@ -120,6 +121,7 @@ func next_level() :
 		game.queue_free()
 		esc_screen.queue_free()
 		add_child(end_game_screen)
+		get_tree().paused = true
 	
 
 func level_finished() :

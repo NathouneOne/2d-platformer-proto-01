@@ -19,7 +19,7 @@ position = Vector2(1869, 989)
 scale = Vector2(1, 22.23)
 
 [node name="FinishLine" parent="." instance=ExtResource("5_47njr")]
-position = Vector2(2610, -93)
+position = Vector2(3174, -93)
 scale = Vector2(1, 2.125)
 
 [node name="Label" type="Label" parent="."]
@@ -29,6 +29,13 @@ offset_right = 1037.0
 offset_bottom = 111.0
 text = "try pressing \"z\""
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 1992.0
+offset_top = 356.0
+offset_right = 2156.0
+offset_bottom = 379.0
+text = "try pressing \"a\""
+
 [node name="Killer_static" parent="." instance=ExtResource("5_pe4w1")]
 position = Vector2(1807, 268)
 
@@ -36,16 +43,19 @@ position = Vector2(1807, 268)
 position = Vector2(1874, 59)
 
 [node name="Killer_static9" parent="." instance=ExtResource("5_pe4w1")]
-position = Vector2(1942, 72)
+position = Vector2(1952, 63)
 
 [node name="Killer_static10" parent="." instance=ExtResource("5_pe4w1")]
-position = Vector2(2013, 105)
+position = Vector2(2026, 80)
 
 [node name="Killer_static11" parent="." instance=ExtResource("5_pe4w1")]
-position = Vector2(2084, 153)
+position = Vector2(2095, 123)
 
 [node name="Killer_static12" parent="." instance=ExtResource("5_pe4w1")]
-position = Vector2(2147, 226)
+position = Vector2(2149, 175)
+
+[node name="Killer_static13" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(2190, 240)
 
 [node name="Killer_static2" parent="." instance=ExtResource("5_pe4w1")]
 position = Vector2(1808, 16)

@@ -245,7 +245,5 @@ func _on_timer_timeout() -> void:
 func level_init() :
 	
 	%SlowMo_charge.get_child(1).size.x = original_slowmo_size
-
 	is_first_box_posed = 0
-	
 	Engine.time_scale=1
