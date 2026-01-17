@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2DPlatformer_proto_01"
-run/main_scene="uid://d4lcsj5yhdf7n"
+run/main_scene="uid://xf6s1q3dp24e"
 config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"

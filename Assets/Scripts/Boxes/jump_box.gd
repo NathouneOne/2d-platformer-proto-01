@@ -21,12 +21,3 @@ func _input(_event: InputEvent) -> void:
 			
 		if not Input.is_action_pressed("left_clic") and Input.is_action_pressed("right_clic") :
 			queue_free()
-
-
-#func _mouse_enter() -> void:
-#	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
-#		queue_free()
-#		
-#func _mouse_exit() -> void:
-#	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
-#		queue_free()

@@ -16,24 +16,3 @@ func _input(_event: InputEvent) -> void:
 			
 		if not Input.is_action_pressed("left_clic") and Input.is_action_pressed("right_clic") :
 			queue_free()
-
-## eraser handling
-#func _on_mouse_entered() -> void:
-#	
-#	## check if eraser selected
-#	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
-#		queue_free()
-#
-#
-#
-###double check eraser handling because unknown issues, not much better I would say...
-#
-#
-#func _on_mouse_exited() -> void:	## check if eraser selected
-#	if get_parent().selected_box == 1 and Input.is_action_pressed("left_clic"):
-#		queue_free()
-#
-
-
-#func _on_static_2d_box_player_detection_body_entered(body: Node2D) -> void:
-#	pass # Replace with function body.

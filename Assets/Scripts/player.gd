@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
 
+signal player_died
+signal player_win
+
 const SPEED = 300.0
 const AIRCONTROL_FORCE = 800.0
 const JUMP_VELOCITY = -350.0
 const ABOX_ACCEL = 750
 
 const GRAVITY = 700.0
+
+
 
 
 ## Do I need to limit box max lenght ?
@@ -16,8 +21,6 @@ func _physics_process(delta: float) -> void:
 	
 	## Add the gravity.
 	velocity += get_gravity() * delta
-	##Custom gravity so I can easily change const value, might go back to get gravity and change the project parameter when adjusted
-	#velocity.y += GRAVITY * delta
 
 
 	if is_on_floor():
@@ -36,11 +39,8 @@ func _physics_process(delta: float) -> void:
 						velocity.x -= ABOX_ACCEL*delta
 			
 		
-
-
 	move_and_slide()
 	velocity=get_real_velocity()
-	general.SoundTrack_player.volume_db = move_toward(general.SoundTrack_player.volume_db, velocity.x/200, 0.001)
 
 #jump handler
 func box_jump(angle : float):
@@ -53,3 +53,12 @@ func box_jump(angle : float):
 			velocity.y = cos(angle)*JUMP_VELOCITY
 		else :
 			velocity.y = -cos(angle)*velocity.length()*0.75
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+
+	if area.name == "KillPlane" or area.name == "Killer_static" :
+		player_died.emit()
+	elif area.name == "FinishLine" :
+		player_win.emit()

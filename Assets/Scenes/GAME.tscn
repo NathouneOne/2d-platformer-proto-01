@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://dhi4esrgo13w"]
+
+[ext_resource type="Script" uid="uid://dikffibh4xf3r" path="res://Assets/Scripts/GAME.gd" id="1_7ibyi"]
+[ext_resource type="Texture2D" uid="uid://cid65dv7rhtkb" path="res://Assets/Graphics/Textures/player_blue.tres" id="2_g852m"]
+[ext_resource type="Texture2D" uid="uid://cn54on8cehkmr" path="res://Assets/Graphics/Textures/player_green.tres" id="3_c00e5"]
+[ext_resource type="Texture2D" uid="uid://0bc82ijt3a18" path="res://Assets/Graphics/Textures/player_red.tres" id="4_dpv86"]
+[ext_resource type="AudioStream" uid="uid://1wmdrd0svocb" path="res://Assets/Sounds/SFX/Death_high_def.wav" id="5_8ycff"]
+[ext_resource type="AudioStream" uid="uid://dacwlrdkgp3hh" path="res://Assets/Sounds/SFX/535840__evretro__8-bit-mini-win-sound-effect.wav" id="6_tub63"]
+[ext_resource type="PackedScene" uid="uid://dn4ngxigyb5vv" path="res://Assets/Scenes/player.tscn" id="7_ufp70"]
+[ext_resource type="PackedScene" uid="uid://bk4l8evhb6ckc" path="res://Assets/Scenes/UI/clock_display.tscn" id="8_dmwtf"]
+[ext_resource type="PackedScene" uid="uid://1ru4ko8rfjpa" path="res://Assets/Scenes/UI/slow_mo_charge.tscn" id="9_6828r"]
+[ext_resource type="Shader" uid="uid://ctyow8d2wxrir" path="res://Assets/Graphics/Shaders/ChromaticAberration.gdshader" id="10_uiydi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_stkbw"]
+distance = -322.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oybyx"]
+normal = Vector2(0, 1)
+distance = 191.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yv3l3"]
+shader = ExtResource("10_uiydi")
+shader_parameter/aberration = 0.242000011495
+shader_parameter/strength = 0.010000000475
+
+[sub_resource type="Environment" id="Environment_stkbw"]
+background_mode = 3
+tonemap_mode = 2
+tonemap_exposure = 2.32
+tonemap_white = 0.93
+glow_enabled = true
+glow_levels/1 = 2.0
+glow_levels/2 = 4.0
+glow_levels/3 = 8.0
+glow_levels/4 = 16.0
+glow_levels/5 = 32.0
+glow_levels/6 = 64.0
+glow_levels/7 = 128.0
+glow_normalized = true
+glow_intensity = 0.48
+glow_strength = 0.56
+glow_bloom = 0.64
+glow_blend_mode = 1
+
+[node name="GAME" type="Node2D"]
+script = ExtResource("1_7ibyi")
+g_texture = ExtResource("2_g852m")
+j_texture = ExtResource("3_c00e5")
+a_texture = ExtResource("4_dpv86")
+death_sound = ExtResource("5_8ycff")
+win_sound = ExtResource("6_tub63")
+
+[node name="Player" parent="." instance=ExtResource("7_ufp70")]
+unique_name_in_owner = true
+process_mode = 1
+position = Vector2(932, 163)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+unique_name_in_owner = true
+process_mode = 1
+position = Vector2(-934, -163)
+anchor_mode = 0
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_offset = -0.49
+
+[node name="SFX_Player" type="AudioStreamPlayer2D" parent="Player/Camera2D"]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="KillPlane" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlane"]
+position = Vector2(27, 804)
+shape = SubResource("WorldBoundaryShape2D_stkbw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillPlane"]
+position = Vector2(-19, -757)
+shape = SubResource("WorldBoundaryShape2D_oybyx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 1
+
+[node name="ClockDisplay" parent="CanvasLayer" instance=ExtResource("8_dmwtf")]
+unique_name_in_owner = true
+process_mode = 1
+offset_right = -1776.0
+offset_bottom = -983.0
+mouse_filter = 2
+
+[node name="SlowMo_charge" parent="CanvasLayer" instance=ExtResource("9_6828r")]
+unique_name_in_owner = true
+process_mode = 1
+mouse_filter = 2
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yv3l3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_stkbw")
+
+[connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
