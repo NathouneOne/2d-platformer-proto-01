@@ -1,5 +1,8 @@
 extends Node2D
 
+signal level_finished_signal
+
+
 const BOX_Y_SIZE = 10
 
 const JBOX_SELECTED = 4
@@ -34,7 +37,9 @@ const SHADER_STRENGTH_DIVIDER = 20000
 var is_first_box_posed = 0
 var player_starting_position : Vector2
 var game_just_started = 1
-var original_slowmo_size
+var original_slowmo_size = 0.0
+var level_finished = 0
+var level_need_slowmo_at_start = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,13 +52,18 @@ func _ready() -> void:
 	player_starting_position = %Player.global_position
 	original_slowmo_size = %SlowMo_charge.get_child(1).size.x
 	
+	level_init()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	
-	if is_first_box_posed ==0 :
-		Engine.time_scale = 0.1
+	if is_first_box_posed ==0 : 
+		if level_need_slowmo_at_start:
+			Engine.time_scale = 0.1
+		else :
+			Engine.time_scale = 1
 		%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	
 	#F1 for quick reload scene
@@ -153,6 +163,8 @@ func create_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box_type
 	
 	update_box(box_coordinate_1, box_coordinate_2, box)
 	
+	box.add_to_group("boxes")
+	
 	add_child(box)
 	
 	
@@ -185,14 +197,15 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 	box.global_rotation = box_angle
 
 
-func reload_level () :
+func reload_level() :
 	get_tree().call_group("boxes", "queue_free")
-	is_first_box_posed = 0
 	%Player.global_position = player_starting_position
 	%ClockDisplay.elapsed_time = 0
 	%Player.velocity = Vector2(0.0,0.0)
 	%Camera2D.global_position= Vector2(0.0,0.0)
 	%Camera2D.reset_smoothing()
+	level_init()
+	
 
 func player_death() :
 	%SFX_Player.stream = death_sound
@@ -219,8 +232,25 @@ func player_win() :
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 	Engine.time_scale=0.1
+	level_finished = 1
 
 
 
 func _on_timer_timeout() -> void:
 	reload_level()
+	if level_finished :
+		level_finished_signal.emit()
+		level_finished = 0
+	
+
+
+func level_init() :
+	
+	%SlowMo_charge.get_child(1).size.x = original_slowmo_size
+	#if not level_need_slowmo_at_start :
+	#	is_first_box_posed = 0
+	#else :
+	#	is_first_box_posed = 1
+	is_first_box_posed = 0
+	
+	Engine.time_scale=1

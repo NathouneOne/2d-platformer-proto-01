@@ -6,13 +6,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v7e2"]
 resource_local_to_scene = true
+size = Vector2(40, 40)
 
-[node name="jump_box" type="Area2D" groups=["boxes"]]
+[node name="jump_box" type="Area2D"]
 material = SubResource("CanvasItemMaterial_pv60e")
 script = ExtResource("1_g6mln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_3v7e2")
 
 [node name="ColorRect" type="ColorRect" parent="."]

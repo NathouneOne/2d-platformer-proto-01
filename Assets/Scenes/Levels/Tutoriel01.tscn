@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://fu1ibx8pgogc"]
+
+[ext_resource type="Script" uid="uid://bw7o3p0y4uw4u" path="res://Assets/Scripts/Levels/tutoriel_01.gd" id="1_7xm4k"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="1_bravk"]
+[ext_resource type="PackedScene" uid="uid://bqg3u2yv56sun" path="res://Assets/Scenes/Boxes/Accel_box.tscn" id="1_ddclb"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="2_bravk"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_r5noo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xm4k"]
+size = Vector2(378, 438)
+
+[node name="tutoriel01" type="Node2D"]
+script = ExtResource("1_7xm4k")
+
+[node name="Accel_box" parent="." instance=ExtResource("1_ddclb")]
+position = Vector2(943, 558)
+rotation = -0.34906584
+scale = Vector2(19.98, 1)
+
+[node name="jump_box" parent="." instance=ExtResource("2_bravk")]
+position = Vector2(1321.0001, 629)
+scale = Vector2(6.535, 0.435)
+
+[node name="walls" parent="." instance=ExtResource("1_bravk")]
+position = Vector2(2081, 1064.0001)
+scale = Vector2(1, 15.995)
+
+[node name="FinishLine" parent="." instance=ExtResource("2_r5noo")]
+position = Vector2(2610, -93)
+scale = Vector2(1, 2.125)
+
+[node name="slowmo_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slowmo_area"]
+position = Vector2(1814, 486)
+shape = SubResource("RectangleShape2D_7xm4k")
+
+[connection signal="body_entered" from="slowmo_area" to="." method="_on_slowmo_area_body_entered"]
+[connection signal="body_exited" from="slowmo_area" to="." method="_on_slowmo_area_body_exited"]

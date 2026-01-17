@@ -8,7 +8,7 @@ resource_local_to_scene = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roho7"]
 resource_local_to_scene = true
 
-[node name="GroundBox" type="StaticBody2D" groups=["boxes"]]
+[node name="GroundBox" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_roho7")
 
