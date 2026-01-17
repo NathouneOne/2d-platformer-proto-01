@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch0xw4efcbbio"]
+
+[ext_resource type="Script" uid="uid://b182fm7cpwaut" path="res://Assets/Scripts/Levels/tutoriel_02.gd" id="1_pe4w1"]
+[ext_resource type="PackedScene" uid="uid://bqg3u2yv56sun" path="res://Assets/Scenes/Boxes/Accel_box.tscn" id="2_y2ctf"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="4_ocm7n"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="5_47njr"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="5_pe4w1"]
+
+[node name="tutoriel2" type="Node2D"]
+script = ExtResource("1_pe4w1")
+
+[node name="Accel_box" parent="." instance=ExtResource("2_y2ctf")]
+position = Vector2(943.00006, 341)
+rotation = 0.54803336
+scale = Vector2(19.98, 1)
+
+[node name="walls" parent="." instance=ExtResource("4_ocm7n")]
+position = Vector2(1869, 989)
+scale = Vector2(1, 22.23)
+
+[node name="FinishLine" parent="." instance=ExtResource("5_47njr")]
+position = Vector2(2610, -93)
+scale = Vector2(1, 2.125)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 873.0
+offset_top = 88.0
+offset_right = 1037.0
+offset_bottom = 111.0
+text = "try pressing \"z\""
+
+[node name="Killer_static" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1807, 268)
+
+[node name="Killer_static8" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1874, 59)
+
+[node name="Killer_static9" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1942, 72)
+
+[node name="Killer_static10" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(2013, 105)
+
+[node name="Killer_static11" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(2084, 153)
+
+[node name="Killer_static12" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(2147, 226)
+
+[node name="Killer_static2" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1808, 16)
+
+[node name="Killer_static3" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1808, -30)
+
+[node name="Killer_static4" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1807, -81)
+
+[node name="Killer_static5" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1807, -124)
+
+[node name="Killer_static6" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1809, 61)
+
+[node name="Killer_static7" parent="." instance=ExtResource("5_pe4w1")]
+position = Vector2(1809, 323)

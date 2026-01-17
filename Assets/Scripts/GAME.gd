@@ -62,8 +62,6 @@ func _process(delta: float) -> void:
 	if is_first_box_posed ==0 : 
 		if level_need_slowmo_at_start:
 			Engine.time_scale = 0.1
-		else :
-			Engine.time_scale = 1
 		%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	
 	#F1 for quick reload scene
@@ -247,10 +245,7 @@ func _on_timer_timeout() -> void:
 func level_init() :
 	
 	%SlowMo_charge.get_child(1).size.x = original_slowmo_size
-	#if not level_need_slowmo_at_start :
-	#	is_first_box_posed = 0
-	#else :
-	#	is_first_box_posed = 1
+
 	is_first_box_posed = 0
 	
 	Engine.time_scale=1

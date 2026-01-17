@@ -59,9 +59,10 @@ func _welcome_screen_button() :
 	
 	if levels.size() :
 		current_level=levels[current_level_index].instantiate()
-		if current_level.need_slowmo_at_start :
-			game.level_need_slowmo_at_start =1
+		game.level_need_slowmo_at_start = current_level.need_slowmo_at_start
 		game.add_child(current_level)
+		game.game_just_started = 1
+		game.reload_level()
 	
 	game.level_finished_signal.connect(level_finished.bind())
 	
