@@ -1,5 +1,6 @@
 extends Node
 
+const SAVE_PATH = "user://FallingCube_saveFile.save"
 
 ## LOADING SCENES
 const ESC_SCREEN = preload("uid://crgbo6r4vnr3v")
@@ -15,12 +16,12 @@ var game = GAME.instantiate()
 var best_score = null
 
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_child(welcome_screen)
 	welcome_screen.get_child(1).pressed.connect(_welcome_screen_button)
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	load_save_file()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -47,3 +48,14 @@ func _welcome_screen_button() :
 func store_best_score(time):
 	if best_score == null or time<best_score :
 		best_score = time
+		update_save_file()
+
+func update_save_file() :
+	print(OS.get_data_dir())
+	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	save_file.store_var(best_score)
+
+func load_save_file() :
+	if FileAccess.file_exists(SAVE_PATH) :
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		best_score = file.get_var()

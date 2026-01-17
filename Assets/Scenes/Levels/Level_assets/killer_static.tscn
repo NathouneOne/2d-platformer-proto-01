@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ej5mb"]
 radius = 16.0
 
-[node name="Killer_static" type="Area2D"]
+[node name="Killer_static" type="Area2D" groups=["Killer"]]
 process_mode = 1
 script = ExtResource("1_ej5mb")
 

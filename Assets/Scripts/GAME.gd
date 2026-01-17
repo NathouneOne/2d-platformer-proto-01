@@ -34,6 +34,7 @@ const SHADER_STRENGTH_DIVIDER = 20000
 var is_first_box_posed = 0
 var player_starting_position : Vector2
 var game_just_started = 1
+var original_slowmo_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +45,7 @@ func _ready() -> void:
 	%Player.player_died.connect(player_death)
 	%Player.player_win.connect(player_win)
 	player_starting_position = %Player.global_position
+	original_slowmo_size = %SlowMo_charge.get_child(1).size.x
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,6 +54,7 @@ func _process(delta: float) -> void:
 	
 	if is_first_box_posed ==0 :
 		Engine.time_scale = 0.1
+		%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	
 	#F1 for quick reload scene
 	if Input.is_action_just_pressed("reload"):
