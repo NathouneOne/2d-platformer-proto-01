@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+EXPORT/Falling_Cube.exe
+EXPORT/Falling_Cube.x86_64
