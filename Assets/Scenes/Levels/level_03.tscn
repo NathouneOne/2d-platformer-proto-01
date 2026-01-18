@@ -1,0 +1,200 @@
+[gd_scene load_steps=8 format=3 uid="uid://c22h8i08efqyj"]
+
+[ext_resource type="Script" uid="uid://b2678yg46etbt" path="res://Assets/Scripts/Levels/level_03.gd" id="1_h3th2"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="2_dcyui"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="3_fbu3v"]
+[ext_resource type="PackedScene" uid="uid://xps7iqr7sc48" path="res://Assets/Scenes/Levels/Level_assets/killer_circular.tscn" id="3_jausa"]
+[ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="4_h3th2"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="4_ldg1x"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="7_ldg1x"]
+
+[node name="level_03" type="Node2D"]
+script = ExtResource("1_h3th2")
+
+[node name="FinishLine" parent="." instance=ExtResource("3_fbu3v")]
+position = Vector2(17321, -2)
+scale = Vector2(1, 2.3862681)
+
+[node name="Killer_circular" parent="." instance=ExtResource("3_jausa")]
+position = Vector2(914, 234)
+speed = 0.75
+
+[node name="Killer_circular2" parent="." instance=ExtResource("3_jausa")]
+position = Vector2(2100, 138.945)
+speed = 1.0
+distance = 200
+angular_starting_pos_deg = 90
+
+[node name="Killer_circular3" parent="." instance=ExtResource("3_jausa")]
+position = Vector2(2100, 466.06)
+speed = 1.5
+distance = 130
+ReversedDirection = false
+
+[node name="Killer_Linear" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(919, 422)
+
+[node name="Killer_Linear2" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(923, 541)
+ReversedDirection = true
+
+[node name="Killer_Linear3" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(1105, 277)
+speed = 0.75
+angle = 90.0
+
+[node name="Killer_Linear5" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(1171, 218)
+speed = 0.75
+ReversedDirection = true
+angle = 90.0
+
+[node name="walls" parent="." instance=ExtResource("2_dcyui")]
+position = Vector2(3189, 868.99994)
+scale = Vector2(50, 12.765)
+
+[node name="walls2" parent="." instance=ExtResource("2_dcyui")]
+position = Vector2(3189, -264.00018)
+scale = Vector2(50, 12.765)
+
+[node name="walls3" parent="." instance=ExtResource("2_dcyui")]
+position = Vector2(9571.001, 110)
+scale = Vector2(22.48, 18.97)
+
+[node name="Killer_static" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(2102, 442)
+
+[node name="Killer_static2" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(2331, 231)
+
+[node name="Killer_static3" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(2331, 194)
+
+[node name="Killer_static4" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(2331, 158)
+
+[node name="Killer_Linear6" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(2632, 307)
+ReversedDirection = true
+angle = 45.0
+
+[node name="Killer_Linear7" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(3071, 297)
+ReversedDirection = true
+angle = 45.0
+
+[node name="Killer_static5" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3418, 448)
+
+[node name="Killer_static38" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(2850, 445)
+
+[node name="Killer_static6" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3462, 417)
+
+[node name="Killer_static7" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3512, 384)
+
+[node name="Killer_static8" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3572, 359)
+
+[node name="Killer_static9" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3629, 345)
+
+[node name="Killer_static10" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3689, 333)
+
+[node name="Killer_static11" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3750, 343)
+
+[node name="Killer_static12" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3809, 357)
+
+[node name="Killer_static13" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3862, 386)
+
+[node name="Killer_static14" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3917, 415)
+
+[node name="Killer_static15" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3971, 446)
+
+[node name="Killer_static27" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4862, 454)
+
+[node name="Killer_static28" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(5083, 418)
+
+[node name="Killer_static29" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(5299, 387)
+
+[node name="Killer_static30" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(5493, 367)
+
+[node name="Killer_static31" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(7253, 753)
+
+[node name="Killer_static32" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(6955, 616)
+
+[node name="Killer_static33" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(6704, 536)
+
+[node name="Killer_static34" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(5744, 364)
+
+[node name="Killer_static35" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(5997, 376)
+
+[node name="Killer_static36" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(6251, 406)
+
+[node name="Killer_static37" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(6495, 464)
+
+[node name="Killer_static16" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4078, 165)
+
+[node name="Killer_static17" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4127, 191)
+
+[node name="Killer_static18" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4174, 218)
+
+[node name="Killer_static19" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4224, 240)
+
+[node name="Killer_static20" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4275, 270)
+
+[node name="Killer_static21" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4329, 304)
+
+[node name="Killer_static22" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4390, 327)
+
+[node name="Killer_static23" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4454, 352)
+
+[node name="Killer_static24" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4452, 299)
+
+[node name="Killer_static25" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4452, 241)
+
+[node name="Killer_static26" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(4450, 179)
+
+[node name="jump_box2" parent="." instance=ExtResource("7_ldg1x")]
+position = Vector2(4707, 120)
+rotation = 1.3962634
+scale = Vector2(9.84, 0.36)
+
+[node name="jump_box3" parent="." instance=ExtResource("7_ldg1x")]
+position = Vector2(4674, 120)
+rotation = 1.3962634
+scale = Vector2(9.84, 0.36)
+
+[node name="Killer_Linear8" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(8800, 932)
+angle = 90.0

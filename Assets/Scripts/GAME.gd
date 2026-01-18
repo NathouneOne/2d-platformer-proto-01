@@ -12,6 +12,10 @@ const ERASER_SELECTED=1
 
 const SLOWMO = 0.1
 
+# inverse of Slowmo power available (in used/sec)
+# the smaller the bigger 
+const SLOWMO_CHARGE = 500
+
 const J_BOX = preload("uid://bobxjb73lgyn3")
 const G_BOX = preload("uid://mkowtkrnf7xq")
 const A_BOX = preload("uid://bqg3u2yv56sun")
@@ -71,7 +75,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("slowmo"):
 		if %SlowMo_charge.get_child(1).size.x > 0 :
 			Engine.time_scale=SLOWMO
-			%SlowMo_charge.get_child(1).size.x -= delta*1000
+			%SlowMo_charge.get_child(1).size.x -= delta*SLOWMO_CHARGE
 		else : 
 			Engine.time_scale=1
 	
@@ -243,7 +247,7 @@ func _on_timer_timeout() -> void:
 
 
 func level_init() :
-	
+	get_tree().call_group("Killer", "reset_position")
 	%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	is_first_box_posed = 0
 	Engine.time_scale=1

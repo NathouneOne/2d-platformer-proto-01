@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://xps7iqr7sc48"]
+
+[ext_resource type="Script" uid="uid://dcp5hypxlr0uc" path="res://Assets/Scripts/Level_assets/killer_circular.gd" id="1_r7r5e"]
+[ext_resource type="Texture2D" uid="uid://dcqjugngvejwb" path="res://Assets/Graphics/pink_triangle.png" id="2_hgfsy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ej5mb"]
+radius = 16.0
+
+[node name="Killer_circular" type="Area2D" groups=["Killer"]]
+process_mode = 1
+script = ExtResource("1_r7r5e")
+ReversedDirection = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ej5mb")
+
+[node name="PinkTriangle" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 1.1920929e-07)
+scale = Vector2(0.19531251, 0.20742144)
+texture = ExtResource("2_hgfsy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,3 +5,5 @@ EXPORT/Falling_Cube.exe
 EXPORT/Falling_Cube.x86_64
 *.x86_64
 *.exe
+*.exe
+*.x86_64
