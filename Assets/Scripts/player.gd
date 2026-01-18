@@ -13,7 +13,7 @@ const GRAVITY = 700.0
 
 const KILLER_STATIC = preload("uid://2s6vndtoofk4")
 
-
+var isDead = false
 
 ## Do I need to limit box max lenght ?
 
@@ -61,7 +61,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 	if area.get_groups():
 		if area.get_groups()[0] == "Killer":
-			player_died.emit()
+			if not isDead :
+				player_died.emit()
+				isDead = true 
 	elif area.name == "FinishLine" :
 		player_win.emit()
 	

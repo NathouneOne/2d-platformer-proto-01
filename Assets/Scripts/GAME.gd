@@ -208,12 +208,12 @@ func update_box(box_coordinate_1 : Vector2, box_coordinate_2 : Vector2, box : No
 func reload_level() :
 	get_tree().call_group("boxes", "queue_free")
 	%Player.global_position = player_starting_position
+	%Player.isDead = false
 	%ClockDisplay.elapsed_time = 0
 	%Player.velocity = Vector2(0.0,0.0)
 	%Camera2D.global_position= Vector2(0.0,0.0)
 	%Camera2D.reset_smoothing()
 	level_init()
-	
 
 func player_death() :
 	%SFX_Player.stream = death_sound

@@ -7,4 +7,6 @@ func _process(_delta: float) -> void:
 
 
 func reset_position():
-	pass
+	if %CollisionPolygon2D :
+		%CollisionPolygon2D.rotation = 0
+		%PinkTriangle.rotation = 0

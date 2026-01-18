@@ -33,6 +33,8 @@ var game_ended =0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	
 	load_save_file()
 	
 	
