@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c22h8i08efqyj"]
+[gd_scene load_steps=11 format=3 uid="uid://c22h8i08efqyj"]
 
 [ext_resource type="Script" uid="uid://b2678yg46etbt" path="res://Assets/Scripts/Levels/level_03.gd" id="1_h3th2"]
 [ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="2_dcyui"]
@@ -7,16 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="4_h3th2"]
 [ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="4_ldg1x"]
 [ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="7_ldg1x"]
+[ext_resource type="PackedScene" uid="uid://qn1c1feix7jd" path="res://Assets/Scenes/Levels/Level_assets/gravity_zone.tscn" id="8_0p21y"]
+[ext_resource type="PackedScene" uid="uid://i58ytmupa1or" path="res://Assets/Scenes/Levels/Level_assets/gravity_point.tscn" id="9_58pu2"]
+[ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="10_6shlk"]
 
 [node name="level_03" type="Node2D"]
 script = ExtResource("1_h3th2")
 
 [node name="FinishLine" parent="." instance=ExtResource("3_fbu3v")]
-position = Vector2(17321, -2)
+position = Vector2(19523, -2)
 scale = Vector2(1, 2.3862681)
 
 [node name="Killer_circular" parent="." instance=ExtResource("3_jausa")]
-position = Vector2(914, 234)
+position = Vector2(1244, 363)
 speed = 0.75
 
 [node name="Killer_circular2" parent="." instance=ExtResource("3_jausa")]
@@ -31,20 +34,8 @@ speed = 1.5
 distance = 130
 ReversedDirection = false
 
-[node name="Killer_Linear" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(919, 422)
-
-[node name="Killer_Linear2" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(923, 541)
-ReversedDirection = true
-
-[node name="Killer_Linear3" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(1105, 277)
-speed = 0.75
-angle = 90.0
-
 [node name="Killer_Linear5" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(1171, 218)
+position = Vector2(987, 170)
 speed = 0.75
 ReversedDirection = true
 angle = 90.0
@@ -78,16 +69,14 @@ position = Vector2(2632, 307)
 ReversedDirection = true
 angle = 45.0
 
-[node name="Killer_Linear7" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(3071, 297)
-ReversedDirection = true
-angle = 45.0
-
 [node name="Killer_static5" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(3418, 448)
 
 [node name="Killer_static38" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(2850, 445)
+
+[node name="Killer_static39" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(3124, 192)
 
 [node name="Killer_static6" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(3462, 417)
@@ -118,9 +107,6 @@ position = Vector2(3917, 415)
 
 [node name="Killer_static15" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(3971, 446)
-
-[node name="Killer_static27" parent="." instance=ExtResource("4_ldg1x")]
-position = Vector2(4862, 454)
 
 [node name="Killer_static28" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(5083, 418)
@@ -185,16 +171,88 @@ position = Vector2(4452, 241)
 [node name="Killer_static26" parent="." instance=ExtResource("4_ldg1x")]
 position = Vector2(4450, 179)
 
-[node name="jump_box2" parent="." instance=ExtResource("7_ldg1x")]
-position = Vector2(4707, 120)
-rotation = 1.3962634
-scale = Vector2(9.84, 0.36)
-
 [node name="jump_box3" parent="." instance=ExtResource("7_ldg1x")]
-position = Vector2(4674, 120)
+position = Vector2(4696.9995, 120)
 rotation = 1.3962634
 scale = Vector2(9.84, 0.36)
 
 [node name="Killer_Linear8" parent="." instance=ExtResource("4_h3th2")]
 position = Vector2(8800, 932)
 angle = 90.0
+
+[node name="Killer_Linear9" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 738)
+distance = 500
+
+[node name="Killer_Linear10" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 856)
+distance = 500
+
+[node name="Killer_Linear11" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 976)
+distance = 500
+
+[node name="Killer_Linear12" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 1103)
+distance = 500
+
+[node name="Killer_Linear13" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 1223)
+distance = 500
+
+[node name="Killer_Linear14" parent="." instance=ExtResource("4_h3th2")]
+position = Vector2(9985, 1335)
+distance = 500
+
+[node name="Killer_static40" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(11125, 1237)
+scale = Vector2(10.4, 10.4)
+
+[node name="Killer_static41" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(11588.001, 1237)
+scale = Vector2(10.4, 10.4)
+
+[node name="Killer_static43" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(13956, 1237)
+scale = Vector2(10.4, 10.4)
+
+[node name="Killer_static44" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(14550, 1171)
+scale = Vector2(17.135, 17.135)
+
+[node name="Killer_static45" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(15493, 1098)
+scale = Vector2(25.675, 25.675)
+
+[node name="Killer_static46" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(16690, 1064)
+scale = Vector2(35.875, 35.875)
+
+[node name="Killer_static42" parent="." instance=ExtResource("4_ldg1x")]
+position = Vector2(12781.999, 46.00003)
+scale = Vector2(46.49, 46.49)
+
+[node name="gravity_zone" parent="." instance=ExtResource("8_0p21y")]
+position = Vector2(9636, 1048)
+scale = Vector2(65.535, 35.285)
+
+[node name="gravity_point" parent="." instance=ExtResource("9_58pu2")]
+position = Vector2(985, 176)
+scale = Vector2(21.64, 21.64)
+gravity = 800.0
+
+[node name="gravity_point2" parent="." instance=ExtResource("9_58pu2")]
+position = Vector2(10737.999, 918)
+scale = Vector2(36.02, 36.02)
+gravity = -800.0
+zoneColor = Color(0.73333335, 0.33333334, 0.25882354, 0.019607844)
+
+[node name="gravity_point3" parent="." instance=ExtResource("9_58pu2")]
+position = Vector2(4874, 473)
+scale = Vector2(7.84, 7.84)
+gravity = -3000.0
+zoneColor = Color(0.731826, 0.3338184, 0.25801596, 0.019607844)
+
+[node name="gravity_disabled" parent="." instance=ExtResource("10_6shlk")]
+position = Vector2(3165, 303)
+scale = Vector2(162.818, 16.293)

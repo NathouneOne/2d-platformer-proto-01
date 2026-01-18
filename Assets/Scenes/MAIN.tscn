@@ -10,4 +10,4 @@
 [node name="MAIN" type="Node"]
 process_mode = 3
 script = ExtResource("1_8ke8p")
-levels = Array[PackedScene]([ExtResource("2_yv3l3"), ExtResource("2_50suf"), ExtResource("3_stkbw"), ExtResource("3_qhfm1"), ExtResource("5_oybyx")])
+levels = Array[PackedScene]([ExtResource("2_50suf"), ExtResource("3_stkbw"), ExtResource("3_qhfm1"), ExtResource("5_oybyx"), ExtResource("2_yv3l3")])

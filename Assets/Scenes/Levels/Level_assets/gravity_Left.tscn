@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu33ou8xi3di7"]
+
+[ext_resource type="Script" uid="uid://c50377mgt2uju" path="res://Assets/Scripts/Level_assets/gravity_zone.gd" id="1_yu7am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt31f"]
+resource_local_to_scene = true
+
+[node name="gravity_left" type="Area2D"]
+gravity_space_override = 3
+gravity_point_center = Vector2(-1, 0)
+gravity_direction = Vector2(-1, 0)
+gravity = 800.0
+script = ExtResource("1_yu7am")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tt31f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+mouse_filter = 2
+color = Color(0.7536433, 0.42830327, 0.6939839, 0.019607844)
