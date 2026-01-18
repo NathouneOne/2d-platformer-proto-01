@@ -63,6 +63,7 @@ anchor_mode = 0
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 drag_horizontal_offset = -0.49
 
 [node name="SFX_Player" type="AudioStreamPlayer2D" parent="Player/Camera2D"]

@@ -10,11 +10,12 @@ process_mode = 1
 script = ExtResource("1_ej5mb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.9000015, -2.450056)
 polygon = PackedVector2Array(-1, -16, 17, 13, -16, 14)
 script = ExtResource("2_nvvau")
 
 [node name="PinkTriangle" type="Sprite2D" parent="."]
-position = Vector2(0, 1.1920929e-07)
+position = Vector2(0.90000147, -2.4500556)
 scale = Vector2(0.19531251, 0.20742144)
 texture = ExtResource("1_scpvq")
 script = ExtResource("3_2mgti")

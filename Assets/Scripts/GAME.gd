@@ -45,6 +45,8 @@ var original_slowmo_size = 0.0
 var level_finished = 0
 var level_need_slowmo_at_start = 0
 
+var camera_decalage = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%Player.get_child(2).texture = g_texture
@@ -90,6 +92,10 @@ func _process(delta: float) -> void:
 	
 	# Fix camera on y, allowing only X to move.
 	%Camera2D.global_position.y=0
+	# X decalage de la camera pour laisser le temps de voir les choses quand on va vite
+	camera_decalage = move_toward(camera_decalage, clamp(%Player.velocity.x, 50, 600), 0.5)
+	print(camera_decalage) 
+	%Camera2D.global_position.x=%Player.global_position.x-(1920.0/2.0)+camera_decalage
 	
 	# Create and update box 
 	if Input.is_action_just_pressed("left_clic"):

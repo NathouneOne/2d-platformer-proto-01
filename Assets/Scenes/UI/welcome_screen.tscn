@@ -22,7 +22,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.026266154, 0.029377338, 0.039243706, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="level_1" type="Button" parent="."]
 top_level = true
 z_index = 1
 layout_mode = 1
@@ -32,12 +32,46 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -178.0
-offset_top = 149.0
+offset_top = 228.0
 offset_right = 178.0
-offset_bottom = 219.0
+offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "READY"
+text = "Start from level 1"
+
+[node name="continue" type="Button" parent="."]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = 110.0
+offset_right = 178.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "continue"
+
+[node name="select_level" type="Button" parent="."]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = 357.0
+offset_right = 178.0
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select level"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -62,4 +96,9 @@ text = "Commands input :
 
 Enjoy ! "
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level_1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="select_level" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="select_level" to="." method="_on_button_pressed"]

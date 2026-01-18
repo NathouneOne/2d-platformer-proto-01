@@ -13,4 +13,4 @@ func _process(_delta: float) -> void:
 
 
 func _draw() -> void:
-	draw_circle(Vector2(0.0,0.0), %CollisionShape2D.shape.radius, zoneColor, true, 5.0, true)
+	draw_circle(Vector2(0.0,0.0), %CollisionShape2D.shape.radius, zoneColor, true)

@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://kjnthrxd4535"]
+
+[ext_resource type="Script" uid="uid://dn0umkjegbfud" path="res://Assets/Scripts/Levels/level_04.gd" id="1_ul0l1"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_xnp67"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="5_cqklf"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="6_p8bgc"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="7_hyiot"]
+[ext_resource type="PackedScene" uid="uid://da2di3kw5c411" path="res://Assets/Scenes/Levels/Level_assets/Gravity_up.tscn" id="8_24h4q"]
+[ext_resource type="PackedScene" uid="uid://i58ytmupa1or" path="res://Assets/Scenes/Levels/Level_assets/gravity_point.tscn" id="9_o2tj3"]
+[ext_resource type="PackedScene" uid="uid://mkowtkrnf7xq" path="res://Assets/Scenes/Boxes/ground_box.tscn" id="9_vk2wo"]
+[ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="10_rl2gr"]
+
+[node name="level_04" type="Node2D"]
+script = ExtResource("1_ul0l1")
+
+[node name="FinishLine" parent="." instance=ExtResource("2_xnp67")]
+position = Vector2(49526, -2)
+scale = Vector2(1, 2.3862681)
+
+[node name="gravity_point" parent="." instance=ExtResource("9_o2tj3")]
+position = Vector2(847, 177.00002)
+scale = Vector2(34.025, 34.025)
+gravity = -4000.0
+
+[node name="gravity_point2" parent="." instance=ExtResource("9_o2tj3")]
+position = Vector2(8386, 107)
+scale = Vector2(72.18, 72.18)
+gravity_point_unit_distance = 300.0
+gravity = 10000.0
+
+[node name="jump_box" parent="." instance=ExtResource("7_hyiot")]
+position = Vector2(1068, -47)
+rotation = 1.4590952
+scale = Vector2(33.16, 0.25)
+
+[node name="jump_box2" parent="." instance=ExtResource("7_hyiot")]
+position = Vector2(1155, -47)
+rotation = 1.4590952
+scale = Vector2(33.16, 0.25)
+
+[node name="jump_box3" parent="." instance=ExtResource("7_hyiot")]
+position = Vector2(11820, -47)
+rotation = 1.4590952
+scale = Vector2(33.16, 0.25)
+
+[node name="walls" parent="." instance=ExtResource("5_cqklf")]
+position = Vector2(3455, 825)
+scale = Vector2(39.565, 18.125)
+
+[node name="walls2" parent="." instance=ExtResource("5_cqklf")]
+position = Vector2(3455, -565)
+scale = Vector2(39.565, 18.125)
+
+[node name="walls3" parent="." instance=ExtResource("5_cqklf")]
+position = Vector2(27755, 1194)
+scale = Vector2(39.565, 18.125)
+
+[node name="walls4" parent="." instance=ExtResource("5_cqklf")]
+position = Vector2(27755, -464)
+scale = Vector2(39.565, 18.125)
+
+[node name="Killer_static" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(8397, -140)
+scale = Vector2(24.88, 24.88)
+
+[node name="Killer_static2" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(5629, 782)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static3" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(7041.0005, 1052)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static4" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(8435, 1128)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static5" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(9764.001, 1022)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static9" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(18865.002, 1280)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static13" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(31333, -99.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static14" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(32990, -99.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static15" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(34593.004, -99.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static16" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(36124, -99.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static17" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(37601, -99.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static18" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(38649.004, 1296.9999)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static19" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(40189.004, 1575.0001)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static20" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(43762, 1575.0001)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static21" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(41980, 1575.0001)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static12" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(24408, 1029.0001)
+scale = Vector2(36.705, 36.705)
+
+[node name="Killer_static11" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(21767.543, 956.815)
+scale = Vector2(22.61, 22.61)
+
+[node name="Killer_static10" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(15766.001, 57.000004)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static6" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(9692.001, -337.99988)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static7" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(7038, -395)
+scale = Vector2(27.63, 27.63)
+
+[node name="Killer_static8" parent="." instance=ExtResource("6_p8bgc")]
+position = Vector2(7038, -395)
+scale = Vector2(27.63, 27.63)
+
+[node name="gravity_disabled" parent="." instance=ExtResource("10_rl2gr")]
+position = Vector2(19809, 619.0001)
+scale = Vector2(700, 81.75)
+
+[node name="Gravity_up" parent="." instance=ExtResource("8_24h4q")]
+position = Vector2(32954, 786)
+scale = Vector2(600, 99.44)
+
+[node name="GroundBox" parent="." instance=ExtResource("9_vk2wo")]
+position = Vector2(29504.22, 179.92)
+rotation = 0.13962634
+scale = Vector2(55.92, 1)
