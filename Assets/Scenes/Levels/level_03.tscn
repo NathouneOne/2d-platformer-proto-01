@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c22h8i08efqyj"]
+[gd_scene load_steps=11 format=3 uid="uid://c22h8i08efqyj"]
 
 [ext_resource type="Script" uid="uid://b2678yg46etbt" path="res://Assets/Scripts/Levels/level_03.gd" id="1_h3th2"]
 [ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="2_dcyui"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="7_ldg1x"]
 [ext_resource type="PackedScene" uid="uid://i58ytmupa1or" path="res://Assets/Scenes/Levels/Level_assets/gravity_point.tscn" id="9_58pu2"]
 [ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="10_6shlk"]
+[ext_resource type="PackedScene" uid="uid://dcraqjnhnhqhn" path="res://Assets/Scenes/Levels/Level_assets/Collectible_slowmo.tscn" id="10_bbi83"]
 
 [node name="level_03" type="Node2D"]
 script = ExtResource("1_h3th2")
 
 [node name="FinishLine" parent="." instance=ExtResource("3_fbu3v")]
 position = Vector2(19523, -2)
-scale = Vector2(1, 2.3862681)
+scale = Vector2(15.71, 2.761)
 
 [node name="Killer_circular" parent="." instance=ExtResource("3_jausa")]
 position = Vector2(1244, 363)
@@ -247,3 +248,7 @@ zoneColor = Color(0.731826, 0.3338184, 0.25801596, 0.019607844)
 [node name="gravity_disabled" parent="." instance=ExtResource("10_6shlk")]
 position = Vector2(3165, 303)
 scale = Vector2(162.818, 16.293)
+
+[node name="CollectibleSlowmo" parent="." instance=ExtResource("10_bbi83")]
+position = Vector2(5998, 158)
+scale = Vector2(2.735, 2.735)

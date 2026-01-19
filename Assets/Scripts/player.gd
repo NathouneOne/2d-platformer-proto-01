@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 signal player_died
 signal player_win
+signal slowmo_collected
 
 const SPEED = 300.0
 const AIRCONTROL_FORCE = 800.0
@@ -66,4 +67,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				isDead = true 
 	elif area.name == "FinishLine" :
 		player_win.emit()
+	elif area.name == "CollectibleSlowmo" :
+		slowmo_collected.emit()
+		area.queue_free()
+		
 	

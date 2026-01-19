@@ -14,8 +14,8 @@
 script = ExtResource("1_ul0l1")
 
 [node name="FinishLine" parent="." instance=ExtResource("2_xnp67")]
-position = Vector2(49526, -2)
-scale = Vector2(1, 2.3862681)
+position = Vector2(49526, -253.99998)
+scale = Vector2(19.323, 4.912)
 
 [node name="gravity_point" parent="." instance=ExtResource("9_o2tj3")]
 position = Vector2(847, 177.00002)

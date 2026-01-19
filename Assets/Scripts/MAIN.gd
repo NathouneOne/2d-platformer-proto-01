@@ -76,7 +76,7 @@ func store_best_score(time):
 	elif time<best_score[current_level_index] :
 		best_score[current_level_index] = time
 	
-	if current_level_index+1 > max_level_index and max_level_index<levels.size():
+	if current_level_index+1 > max_level_index and current_level_index<levels.size()-2:
 		max_level_index=current_level_index+1
 	update_save_file()
 
