@@ -69,6 +69,7 @@ func _process(delta: float) -> void:
 	if is_first_box_posed ==0 : 
 		if level_need_slowmo_at_start:
 			Engine.time_scale = 0.1
+			Engine.physics_ticks_per_second = 6
 		%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	
 	#F1 for quick reload scene
@@ -78,12 +79,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("slowmo"):
 		if %SlowMo_charge.get_child(1).size.x > 0 :
 			Engine.time_scale=SLOWMO
+			Engine.physics_ticks_per_second = 6
 			%SlowMo_charge.get_child(1).size.x -= delta*SLOWMO_CHARGE
 		else : 
 			Engine.time_scale=1
+			Engine.physics_ticks_per_second = 60
 	
 	if Input.is_action_just_released("slowmo") :
 		Engine.time_scale=1
+		Engine.physics_ticks_per_second = 60
 			
 	#Adapt shader
 	shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
@@ -138,6 +142,7 @@ func _process(delta: float) -> void:
 				if is_first_box_posed ==0 :
 					is_first_box_posed =1
 					Engine.time_scale=1
+					Engine.physics_ticks_per_second = 60
 	else :
 		match selected_box :
 			GBOX_SELECTED : current_box = G_BOX.instantiate()
@@ -233,6 +238,7 @@ func player_death() :
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 	Engine.time_scale=0.1
+	Engine.physics_ticks_per_second = 6
 
 
 
@@ -247,6 +253,7 @@ func player_win() :
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 	Engine.time_scale=0.1
+	Engine.physics_ticks_per_second = 6
 	level_finished = 1
 
 
@@ -264,6 +271,7 @@ func level_init() :
 	%SlowMo_charge.get_child(1).size.x = original_slowmo_size
 	is_first_box_posed = 0
 	Engine.time_scale=1
+	Engine.physics_ticks_per_second = 60
 	
 
 func slowmo_refill () :
