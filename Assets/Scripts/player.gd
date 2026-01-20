@@ -69,6 +69,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		player_win.emit()
 	elif area.name == "CollectibleSlowmo" :
 		slowmo_collected.emit()
-		area.queue_free()
+		area.hide()
 		
 	

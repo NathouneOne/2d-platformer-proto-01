@@ -157,13 +157,27 @@ func level_select_screen_init():
 		welcome_screen.hide()
 	if is_instance_valid(esc_screen) :
 		esc_screen.hide()
-	
-	level_selection_screen.get_child(1).pressed.connect(select_level)
-	level_selection_screen.get_child(2).pressed.connect(select_level)
-	level_selection_screen.get_child(3).pressed.connect(select_level)
-	level_selection_screen.get_child(4).pressed.connect(select_level)
-	level_selection_screen.get_child(5).pressed.connect(select_level)
-	level_selection_screen.get_child(6).pressed.connect(select_level)
+
+	if not level_selection_screen.get_child(1).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(1).pressed.connect(select_level)
+	if not level_selection_screen.get_child(2).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(2).pressed.connect(select_level)
+	if not level_selection_screen.get_child(3).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(3).pressed.connect(select_level)
+	if not level_selection_screen.get_child(4).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(4).pressed.connect(select_level)
+	if not level_selection_screen.get_child(5).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(5).pressed.connect(select_level)
+	if not level_selection_screen.get_child(6).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(6).pressed.connect(select_level)
+	if not level_selection_screen.get_child(7).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(7).pressed.connect(select_level)
+	if not level_selection_screen.get_child(8).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(8).pressed.connect(select_level)
+	if not level_selection_screen.get_child(9).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(9).pressed.connect(select_level)
+	if not level_selection_screen.get_child(10).is_connected("pressed", select_level) :
+		level_selection_screen.get_child(10).pressed.connect(select_level)
 	
 
 func select_level() :
@@ -184,14 +198,14 @@ func select_level() :
 		game.game_just_started = 1
 		game.reload_level()
 	
-	game.level_finished_signal.connect(level_finished.bind())
+	if not game.is_connected("level_finished_signal",level_finished.bind()) :
+		game.level_finished_signal.connect(level_finished.bind())
 	
 	
 	
 	
 	if is_instance_valid(welcome_screen) :
 		welcome_screen.queue_free()
-		
 	level_selection_screen.hide()
 	
 	if not game.visible :

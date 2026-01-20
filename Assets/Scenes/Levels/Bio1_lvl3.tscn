@@ -1,0 +1,301 @@
+[gd_scene load_steps=9 format=3 uid="uid://bla35olhqg83f"]
+
+[ext_resource type="Script" uid="uid://de8uvkmxa8eqx" path="res://Assets/Scripts/Levels/level_01.gd" id="1_e4w08"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_ver7e"]
+[ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="3_64w4h"]
+[ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="3_rgmfx"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="4_idddy"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="5_e4w08"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="6_3tpxf"]
+[ext_resource type="PackedScene" uid="uid://mkowtkrnf7xq" path="res://Assets/Scenes/Boxes/ground_box.tscn" id="6_ver7e"]
+
+[node name="Level_01" type="Node2D" groups=["level"]]
+script = ExtResource("1_e4w08")
+
+[node name="FinishLine" parent="." instance=ExtResource("2_ver7e")]
+position = Vector2(27933, -189)
+scale = Vector2(5.89, 2.581)
+
+[node name="gravity_disabled" parent="." instance=ExtResource("3_64w4h")]
+position = Vector2(4678, 584)
+scale = Vector2(300, 71.48)
+
+[node name="gravity_disabled2" parent="." instance=ExtResource("3_64w4h")]
+position = Vector2(13250.999, 584)
+scale = Vector2(300, 71.48)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1471.0
+offset_top = 242.0
+offset_right = 1567.0
+offset_bottom = 265.0
+text = "NO GRAVITY ->"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 8143.0
+offset_top = 112.0
+offset_right = 8390.725
+offset_bottom = 140.215
+scale = Vector2(3.27, 3.27)
+text = "Press MAJ / SHIFT to SLOW TIME"
+
+[node name="jump_box" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(2684.0002, -151)
+rotation = 1.5707964
+scale = Vector2(36.985, 0.48)
+
+[node name="jump_box2" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(9009, -151)
+rotation = 1.5707964
+scale = Vector2(36.985, 0.48)
+
+[node name="jump_box3" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(9030.999, 16.000053)
+rotation = 1.5358897
+scale = Vector2(31.36, 0.407)
+
+[node name="jump_box4" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(16329, -151)
+rotation = 1.5707964
+scale = Vector2(36.985, 0.48)
+
+[node name="jump_box5" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(16377, 16.000053)
+rotation = 1.5358897
+scale = Vector2(31.36, 0.407)
+
+[node name="jump_box6" parent="." instance=ExtResource("6_3tpxf")]
+position = Vector2(16436, 16.000053)
+rotation = 1.5358897
+scale = Vector2(31.36, 0.407)
+
+[node name="Killer_static" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(2196.0002, 1074.0001)
+scale = Vector2(13.81, 13.81)
+
+[node name="Killer_static2" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(2196.0002, 94.00018)
+scale = Vector2(13.81, 13.81)
+
+[node name="Killer_static3" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(3068, 1074.0001)
+scale = Vector2(13.81, 13.81)
+
+[node name="Killer_static4" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(3068, 94.00018)
+scale = Vector2(13.81, 13.81)
+
+[node name="Killer_static5" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(3846, 1074.0001)
+scale = Vector2(13.81, 13.81)
+
+[node name="Killer_static7" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(4681.0005, 1123)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static51" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(5836.0005, 1123)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static52" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(7018, 1123)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static53" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(8218, 1123)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static41" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(17816, 1186.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static42" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(18953.002, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static44" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(20126, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static45" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(21263, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static46" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(22435.998, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static47" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(23632, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static48" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(24804.998, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static49" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(25976, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static50" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(27148.998, 1015.0001)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static43" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(17834, -246.99988)
+scale = Vector2(23.56, 23.56)
+
+[node name="Killer_static6" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(3846, 94.00018)
+scale = Vector2(13.81, 13.81)
+
+[node name="GroundBox" parent="." instance=ExtResource("6_ver7e")]
+position = Vector2(4399.0005, 601.9999)
+rotation = -0.286234
+scale = Vector2(50.055, 1)
+
+[node name="walls" parent="." instance=ExtResource("4_idddy")]
+position = Vector2(12894, 1330)
+scale = Vector2(122.195, 20.76)
+
+[node name="walls2" parent="." instance=ExtResource("4_idddy")]
+position = Vector2(12894, -634)
+scale = Vector2(122.195, 20.76)
+
+[node name="Killer_Linear" parent="." instance=ExtResource("3_rgmfx")]
+position = Vector2(9334, 623)
+
+[node name="Killer_Linear2" parent="." instance=ExtResource("3_rgmfx")]
+position = Vector2(9337, 63)
+
+[node name="Killer_static8" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(12246, 101)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static15" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13661, 101)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static16" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13544.001, 603)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static17" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13727, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static18" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13912.001, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static39" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13912.001, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static19" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14118, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static20" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14303.001, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static21" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14495, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static22" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14680.001, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static23" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14846, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static24" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15031.001, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static25" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15197, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static26" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15382.001, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static27" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15565, 526)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static28" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15750, 399)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static40" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15750, 399)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static29" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14118, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static30" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14303.001, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static31" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14495, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static32" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14680.001, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static33" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(14846, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static34" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15031.001, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static35" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15197, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static36" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15382.001, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static37" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15565, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static38" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(15750, 106)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static9" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(12431, 183)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static10" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(12641.001, 183)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static11" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(12829.001, 183)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static12" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13084, 183)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static13" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13294.001, 183)
+scale = Vector2(3.335, 3.335)
+
+[node name="Killer_static14" parent="." instance=ExtResource("5_e4w08")]
+position = Vector2(13482.001, 183)
+scale = Vector2(3.335, 3.335)

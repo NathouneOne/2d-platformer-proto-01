@@ -84,12 +84,15 @@ offset_right = 326.0
 offset_bottom = 530.0
 grow_horizontal = 2
 text = "Commands input : 
-     A to select the blue platform
-     Z to select the green platform
-     E to select the red platform
+
      Left click and drag to create a platform
+
      Right click and drag to delete existing platforms
+
      Hold MAJ to slow time
+
+     Space to retry
+
      ESC to exit menu
 
 

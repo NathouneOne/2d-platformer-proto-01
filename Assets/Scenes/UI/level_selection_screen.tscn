@@ -114,7 +114,6 @@ grow_vertical = 2
 text = "6"
 
 [node name="level7" type="Button" parent="."]
-visible = false
 top_level = true
 z_index = 1
 anchors_preset = 8
@@ -128,10 +127,9 @@ offset_right = -164.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
+text = "7"
 
 [node name="level8" type="Button" parent="."]
-visible = false
 top_level = true
 z_index = 1
 anchors_preset = 8
@@ -145,10 +143,9 @@ offset_right = 66.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
+text = "8"
 
 [node name="level9" type="Button" parent="."]
-visible = false
 top_level = true
 z_index = 1
 anchors_preset = 8
@@ -162,10 +159,9 @@ offset_right = 290.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
+text = "9"
 
 [node name="level10" type="Button" parent="."]
-visible = false
 top_level = true
 z_index = 1
 anchors_preset = 8
@@ -283,3 +279,7 @@ text = "Select level :"
 [connection signal="pressed" from="level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="level10" to="." method="_on_level_10_pressed"]

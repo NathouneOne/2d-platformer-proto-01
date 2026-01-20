@@ -1,0 +1,207 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyb3ca2iv6ujw"]
+
+[ext_resource type="Script" uid="uid://de8uvkmxa8eqx" path="res://Assets/Scripts/Levels/level_01.gd" id="1_xew5l"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_hhouu"]
+[ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="3_8s5ar"]
+[ext_resource type="PackedScene" uid="uid://bqg3u2yv56sun" path="res://Assets/Scenes/Boxes/Accel_box.tscn" id="3_ckeuo"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="5_je7un"]
+[ext_resource type="PackedScene" uid="uid://xps7iqr7sc48" path="res://Assets/Scenes/Levels/Level_assets/killer_circular.tscn" id="6_xkx8i"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="7_d27uj"]
+
+[node name="Level_01" type="Node2D" groups=["level"]]
+script = ExtResource("1_xew5l")
+
+[node name="FinishLine" parent="." instance=ExtResource("2_hhouu")]
+position = Vector2(15544.001, -2)
+scale = Vector2(5.89, 2.581)
+
+[node name="Killer_Linear" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(854, 532)
+
+[node name="Killer_Linear2" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1081, 601)
+
+[node name="Killer_Linear3" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1319, 671)
+
+[node name="Killer_Linear4" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1546, 740)
+
+[node name="Killer_Linear23" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3810, 747)
+
+[node name="Killer_Linear5" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1746, 802)
+
+[node name="Killer_Linear22" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3649, 802)
+
+[node name="Killer_Linear6" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1973, 871)
+
+[node name="Killer_Linear15" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2186, 871)
+
+[node name="Killer_Linear16" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2411, 871)
+
+[node name="Killer_Linear17" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2624, 871)
+
+[node name="Killer_Linear18" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2850, 871)
+
+[node name="Killer_Linear19" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3063, 871)
+
+[node name="Killer_Linear20" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3288, 871)
+
+[node name="Killer_Linear21" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3501, 871)
+
+[node name="Killer_Linear7" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1399, 167)
+
+[node name="Killer_Linear8" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1626, 236)
+
+[node name="Killer_Linear9" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(1864, 306)
+
+[node name="Killer_Linear10" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2091, 375)
+
+[node name="Killer_Linear11" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2291, 437)
+
+[node name="Killer_Linear12" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2518, 506)
+
+[node name="Killer_Linear14" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2933, 506)
+
+[node name="Killer_Linear13" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(2725, 506)
+
+[node name="Killer_Linear26" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3169, 506)
+
+[node name="Killer_Linear27" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3584, 506)
+
+[node name="Killer_Linear28" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3376, 506)
+
+[node name="Killer_Linear29" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3772, 506)
+
+[node name="Killer_Linear30" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4166, 506)
+
+[node name="Killer_Linear31" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3958, 506)
+
+[node name="Killer_Linear32" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4362, 506)
+
+[node name="Killer_Linear33" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4777, 506)
+
+[node name="Killer_Linear34" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4569, 506)
+
+[node name="Killer_Linear35" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4166, 721)
+
+[node name="Killer_Linear36" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(3958, 721)
+
+[node name="Killer_Linear37" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4362, 721)
+
+[node name="Killer_Linear38" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4777, 721)
+
+[node name="Killer_Linear39" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4569, 721)
+
+[node name="Killer_Linear40" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5199, 721)
+
+[node name="Killer_Linear41" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4991, 721)
+
+[node name="Killer_Linear42" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5395, 721)
+
+[node name="Killer_Linear43" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5810, 721)
+
+[node name="Killer_Linear44" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5602, 721)
+
+[node name="Killer_Linear45" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5199, 509)
+
+[node name="Killer_Linear46" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(4991, 509)
+
+[node name="Killer_Linear47" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5395, 509)
+
+[node name="Killer_Linear48" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5810, 509)
+
+[node name="Killer_Linear49" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(5602, 509)
+
+[node name="Killer_Linear50" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(6029, 509)
+
+[node name="Killer_Linear51" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(6225, 509)
+
+[node name="Killer_Linear52" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(6640, 509)
+
+[node name="Killer_Linear53" parent="." instance=ExtResource("3_8s5ar")]
+position = Vector2(6432, 509)
+
+[node name="walls" parent="." instance=ExtResource("7_d27uj")]
+position = Vector2(4627, 103)
+scale = Vector2(66.52, 9.675)
+
+[node name="walls2" parent="." instance=ExtResource("7_d27uj")]
+position = Vector2(5352, 1076)
+scale = Vector2(43.607, 9.675)
+
+[node name="Accel_box" parent="." instance=ExtResource("3_ckeuo")]
+position = Vector2(6356.9995, 702.00006)
+rotation = -0.05235988
+scale = Vector2(44.67, 1)
+
+[node name="jump_box" parent="." instance=ExtResource("5_je7un")]
+position = Vector2(6886, 694.00024)
+rotation = 0.2617994
+scale = Vector2(38.48, 0.55)
+
+[node name="Killer_circular" parent="." instance=ExtResource("6_xkx8i")]
+position = Vector2(9018, 1172)
+distance = 500
+
+[node name="Killer_circular2" parent="." instance=ExtResource("6_xkx8i")]
+position = Vector2(10695, 48)
+distance = 500
+
+[node name="Killer_circular3" parent="." instance=ExtResource("6_xkx8i")]
+position = Vector2(12179, 1137)
+distance = 500
+
+[node name="Killer_circular4" parent="." instance=ExtResource("6_xkx8i")]
+position = Vector2(13326, 1137)
+distance = 500
+
+[node name="Killer_circular5" parent="." instance=ExtResource("6_xkx8i")]
+position = Vector2(14448, 1137)
+distance = 500

@@ -1,14 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://xf6s1q3dp24e"]
+[gd_scene load_steps=12 format=3 uid="uid://xf6s1q3dp24e"]
 
 [ext_resource type="Script" uid="uid://cbrxrnn3p07ab" path="res://Assets/Scripts/MAIN.gd" id="1_8ke8p"]
 [ext_resource type="PackedScene" uid="uid://kjnthrxd4535" path="res://Assets/Scenes/Levels/level_04.tscn" id="2_0rv0o"]
+[ext_resource type="PackedScene" uid="uid://cyb3ca2iv6ujw" path="res://Assets/Scenes/Levels/Bio1_lvl2.tscn" id="2_1f3ps"]
+[ext_resource type="PackedScene" uid="uid://ydnox1kybjap" path="res://Assets/Scenes/Levels/Bio1_lvl1.tscn" id="2_3e0gf"]
+[ext_resource type="PackedScene" uid="uid://bla35olhqg83f" path="res://Assets/Scenes/Levels/Bio1_lvl3.tscn" id="2_06a16"]
 [ext_resource type="PackedScene" uid="uid://fu1ibx8pgogc" path="res://Assets/Scenes/Levels/Tutoriel01.tscn" id="2_50suf"]
 [ext_resource type="PackedScene" uid="uid://c22h8i08efqyj" path="res://Assets/Scenes/Levels/level_03.tscn" id="2_yv3l3"]
 [ext_resource type="PackedScene" uid="uid://dukeajinfui7p" path="res://Assets/Scenes/Levels/level_01.tscn" id="3_qhfm1"]
 [ext_resource type="PackedScene" uid="uid://ch0xw4efcbbio" path="res://Assets/Scenes/Levels/Tutoriel02.tscn" id="3_stkbw"]
 [ext_resource type="PackedScene" uid="uid://dkanghvdnre4r" path="res://Assets/Scenes/Levels/level_02.tscn" id="5_oybyx"]
+[ext_resource type="PackedScene" uid="uid://obiguthrb0po" path="res://Assets/Scenes/Levels/Tutoriel03.tscn" id="11_wxxle"]
 
 [node name="MAIN" type="Node"]
 process_mode = 3
 script = ExtResource("1_8ke8p")
-levels = Array[PackedScene]([ExtResource("2_50suf"), ExtResource("3_stkbw"), ExtResource("3_qhfm1"), ExtResource("5_oybyx"), ExtResource("2_yv3l3"), ExtResource("2_0rv0o")])
+levels = Array[PackedScene]([ExtResource("2_50suf"), ExtResource("2_3e0gf"), ExtResource("2_1f3ps"), ExtResource("2_06a16"), ExtResource("3_stkbw"), ExtResource("11_wxxle"), ExtResource("3_qhfm1"), ExtResource("5_oybyx"), ExtResource("2_yv3l3"), ExtResource("2_0rv0o")])
