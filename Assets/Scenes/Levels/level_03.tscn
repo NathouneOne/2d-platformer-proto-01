@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="10_6shlk"]
 [ext_resource type="PackedScene" uid="uid://dcraqjnhnhqhn" path="res://Assets/Scenes/Levels/Level_assets/Collectible_slowmo.tscn" id="10_bbi83"]
 
-[node name="level_03" type="Node2D"]
+[node name="level_03" type="Node2D" groups=["level"]]
 script = ExtResource("1_h3th2")
 
 [node name="FinishLine" parent="." instance=ExtResource("3_fbu3v")]

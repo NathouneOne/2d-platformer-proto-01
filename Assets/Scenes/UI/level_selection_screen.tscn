@@ -2,18 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ivjgicgyad7x" path="res://Assets/Scripts/UI/level_selection_screen.gd" id="1_0sosv"]
 
-[node name="Level_selection_screen" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Level_selection_screen" type="CanvasLayer"]
 script = ExtResource("1_0sosv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
 z_index = -1
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,7 +19,6 @@ color = Color(0.026266154, 0.029377338, 0.039243706, 1)
 [node name="level1" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,7 +35,6 @@ text = "1"
 [node name="level2" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,7 +51,6 @@ text = "2"
 [node name="level3" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -77,7 +68,6 @@ text = "3
 [node name="level4" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -94,7 +84,6 @@ text = "4"
 [node name="level5" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -111,7 +100,6 @@ text = "5"
 [node name="level6" type="Button" parent="."]
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -129,7 +117,6 @@ text = "6"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -147,7 +134,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -165,7 +151,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -183,7 +168,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -201,7 +185,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -219,7 +202,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -237,7 +219,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -255,7 +236,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -273,7 +253,6 @@ text = "1"
 visible = false
 top_level = true
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -288,7 +267,6 @@ grow_vertical = 2
 text = "1"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

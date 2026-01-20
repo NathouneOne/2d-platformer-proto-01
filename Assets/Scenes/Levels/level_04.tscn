@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mkowtkrnf7xq" path="res://Assets/Scenes/Boxes/ground_box.tscn" id="9_vk2wo"]
 [ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="10_rl2gr"]
 
-[node name="level_04" type="Node2D"]
+[node name="level_04" type="Node2D" groups=["level"]]
 script = ExtResource("1_ul0l1")
 
 [node name="FinishLine" parent="." instance=ExtResource("2_xnp67")]

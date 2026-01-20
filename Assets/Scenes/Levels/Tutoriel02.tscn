@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="5_47njr"]
 [ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="5_pe4w1"]
 
-[node name="tutoriel2" type="Node2D"]
+[node name="tutoriel2" type="Node2D" groups=["level"]]
 script = ExtResource("1_pe4w1")
 
 [node name="Accel_box" parent="." instance=ExtResource("2_y2ctf")]

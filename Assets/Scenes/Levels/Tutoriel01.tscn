@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xm4k"]
 size = Vector2(378, 438)
 
-[node name="tutoriel01" type="Node2D"]
+[node name="tutoriel01" type="Node2D" groups=["level"]]
 script = ExtResource("1_7xm4k")
 
 [node name="Accel_box" parent="." instance=ExtResource("1_ddclb")]

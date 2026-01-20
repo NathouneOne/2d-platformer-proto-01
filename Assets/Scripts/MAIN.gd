@@ -46,7 +46,10 @@ func _ready() -> void:
 	welcome_screen.get_child(2).pressed.connect(select_level)
 	welcome_screen.get_child(3).pressed.connect(level_select_screen_init)
 	
-	
+	add_child(esc_screen)
+	esc_screen.get_child(2).pressed.connect(_reset_save_file)
+	esc_screen.get_child(3).pressed.connect(level_select_screen_init)
+	esc_screen.hide()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
@@ -61,10 +64,13 @@ func _process(_delta: float) -> void:
 	##handle pause on esc
 	if Input.is_action_just_pressed("esc"):
 		if not game_ended and (not end_level_screen_flag):
-			if get_child(1).name == "GAME" :
-				get_tree().paused = not get_tree().paused
-				game.visible = not game.visible
-				esc_screen.visible = not esc_screen.visible
+			for i in get_children() :
+				if i.name == "GAME" :
+					get_tree().paused = not get_tree().paused
+					game.visible = not game.visible
+					esc_screen.visible = not game.visible
+					level_selection_screen.hide()
+					break
 	
 	
 
@@ -111,11 +117,8 @@ func next_level() :
 	if current_level_index < levels.size()-1 :
 		current_level_index+=1
 		
-		var level_name = current_level.name
-		for i in game.get_child_count() :
-			if game.get_child(i).name == level_name :
-				game.get_child(i).queue_free()
-
+		get_tree().call_group("level", "queue_free")
+		
 		current_level=levels[current_level_index].instantiate()
 		
 		if current_level.need_slowmo_at_start :
@@ -150,7 +153,10 @@ func restart_level() :
 func level_select_screen_init():
 	
 	level_selection_screen.show()
-	welcome_screen.hide()
+	if is_instance_valid(welcome_screen) :
+		welcome_screen.hide()
+	if is_instance_valid(esc_screen) :
+		esc_screen.hide()
 	
 	level_selection_screen.get_child(1).pressed.connect(select_level)
 	level_selection_screen.get_child(2).pressed.connect(select_level)
@@ -161,8 +167,15 @@ func level_select_screen_init():
 	
 
 func select_level() :
-	add_child(game)
-	camera = game.get_node("Player/Camera2D")
+	var is_game_created = 0
+	for i in get_children() :
+		if i.name == "GAME" :
+			is_game_created =1
+	if not is_game_created :
+		add_child(game)
+		camera = game.get_node("Player/Camera2D")
+		
+	get_tree().call_group("level", "queue_free")
 	
 	if levels.size() :
 		current_level=levels[current_level_index].instantiate()
@@ -174,9 +187,15 @@ func select_level() :
 	game.level_finished_signal.connect(level_finished.bind())
 	
 	
-	add_child(esc_screen)
-	esc_screen.get_child(2).pressed.connect(_reset_save_file)
-	esc_screen.hide()
 	
-	welcome_screen.queue_free()
-	level_selection_screen.queue_free()
+	
+	if is_instance_valid(welcome_screen) :
+		welcome_screen.queue_free()
+		
+	level_selection_screen.hide()
+	
+	if not game.visible :
+		game.visible = true
+	
+	if get_tree().paused :
+		get_tree().paused = false

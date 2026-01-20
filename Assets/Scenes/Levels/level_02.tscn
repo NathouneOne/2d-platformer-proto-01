@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_ofx7h"]
 [ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="3_fbpvl"]
 
-[node name="level_02" type="Node2D"]
+[node name="level_02" type="Node2D" groups=["level"]]
 script = ExtResource("1_t17kw")
 
 [node name="walls20" parent="." instance=ExtResource("1_j68f5")]
