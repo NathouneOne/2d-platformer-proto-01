@@ -148,13 +148,9 @@ position = Vector2(5603, 1081)
 scale = Vector2(10.375, 17.23)
 
 [node name="walls2" parent="." instance=ExtResource("2_nxvs3")]
-position = Vector2(6892, 1029)
+position = Vector2(6792, 1087.0001)
 scale = Vector2(10.375, 23.945)
 
 [node name="walls3" parent="." instance=ExtResource("2_nxvs3")]
-position = Vector2(7902, 1014)
-scale = Vector2(10.375, 26.735)
-
-[node name="walls4" parent="." instance=ExtResource("2_nxvs3")]
-position = Vector2(7902, 1014)
+position = Vector2(7902, 1077)
 scale = Vector2(10.375, 26.735)

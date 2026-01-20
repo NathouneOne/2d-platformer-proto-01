@@ -18,10 +18,6 @@ script = ExtResource("1_h3th2")
 position = Vector2(19523, -2)
 scale = Vector2(15.71, 2.761)
 
-[node name="Killer_circular" parent="." instance=ExtResource("3_jausa")]
-position = Vector2(1244, 363)
-speed = 0.75
-
 [node name="Killer_circular2" parent="." instance=ExtResource("3_jausa")]
 position = Vector2(2100, 138.945)
 speed = 1.0
@@ -33,12 +29,6 @@ position = Vector2(2100, 466.06)
 speed = 1.5
 distance = 130
 ReversedDirection = false
-
-[node name="Killer_Linear5" parent="." instance=ExtResource("4_h3th2")]
-position = Vector2(987, 170)
-speed = 0.75
-ReversedDirection = true
-angle = 90.0
 
 [node name="walls" parent="." instance=ExtResource("2_dcyui")]
 position = Vector2(3189, 868.99994)
@@ -234,9 +224,9 @@ rotation = 1.1431906
 scale = Vector2(41.115, 41.115)
 
 [node name="gravity_point" parent="." instance=ExtResource("9_58pu2")]
-position = Vector2(985, 176)
+position = Vector2(913, 161.705)
 scale = Vector2(21.64, 21.64)
-gravity = 800.0
+gravity = -8000.0
 
 [node name="gravity_point3" parent="." instance=ExtResource("9_58pu2")]
 position = Vector2(4900, 465.00003)

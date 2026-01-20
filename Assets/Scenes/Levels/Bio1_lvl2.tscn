@@ -16,49 +16,49 @@ position = Vector2(15544.001, -2)
 scale = Vector2(5.89, 2.581)
 
 [node name="Killer_Linear" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(854, 532)
+position = Vector2(854, 583)
 
 [node name="Killer_Linear2" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(1081, 601)
+position = Vector2(1081, 652)
 
 [node name="Killer_Linear3" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(1319, 671)
+position = Vector2(1319, 722)
 
 [node name="Killer_Linear4" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(1546, 740)
+position = Vector2(1546, 791)
 
 [node name="Killer_Linear23" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3810, 747)
+position = Vector2(3810, 798)
 
 [node name="Killer_Linear5" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(1746, 802)
+position = Vector2(1746, 853)
 
 [node name="Killer_Linear22" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3649, 802)
+position = Vector2(3649, 853)
 
 [node name="Killer_Linear6" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(1973, 871)
+position = Vector2(1973, 922)
 
 [node name="Killer_Linear15" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(2186, 871)
+position = Vector2(2186, 922)
 
 [node name="Killer_Linear16" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(2411, 871)
+position = Vector2(2411, 922)
 
 [node name="Killer_Linear17" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(2624, 871)
+position = Vector2(2624, 922)
 
 [node name="Killer_Linear18" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(2850, 871)
+position = Vector2(2850, 922)
 
 [node name="Killer_Linear19" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3063, 871)
+position = Vector2(3063, 922)
 
 [node name="Killer_Linear20" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3288, 871)
+position = Vector2(3288, 922)
 
 [node name="Killer_Linear21" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3501, 871)
+position = Vector2(3501, 922)
 
 [node name="Killer_Linear7" parent="." instance=ExtResource("3_8s5ar")]
 position = Vector2(1399, 167)
@@ -112,34 +112,34 @@ position = Vector2(4777, 506)
 position = Vector2(4569, 506)
 
 [node name="Killer_Linear35" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(4166, 721)
+position = Vector2(4166, 772)
 
 [node name="Killer_Linear36" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(3958, 721)
+position = Vector2(3958, 772)
 
 [node name="Killer_Linear37" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(4362, 721)
+position = Vector2(4362, 772)
 
 [node name="Killer_Linear38" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(4777, 721)
+position = Vector2(4777, 772)
 
 [node name="Killer_Linear39" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(4569, 721)
+position = Vector2(4569, 772)
 
 [node name="Killer_Linear40" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(5199, 721)
+position = Vector2(5199, 772)
 
 [node name="Killer_Linear41" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(4991, 721)
+position = Vector2(4991, 772)
 
 [node name="Killer_Linear42" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(5395, 721)
+position = Vector2(5395, 772)
 
 [node name="Killer_Linear43" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(5810, 721)
+position = Vector2(5810, 772)
 
 [node name="Killer_Linear44" parent="." instance=ExtResource("3_8s5ar")]
-position = Vector2(5602, 721)
+position = Vector2(5602, 772)
 
 [node name="Killer_Linear45" parent="." instance=ExtResource("3_8s5ar")]
 position = Vector2(5199, 509)
@@ -173,21 +173,21 @@ position = Vector2(4627, 103)
 scale = Vector2(66.52, 9.675)
 
 [node name="walls2" parent="." instance=ExtResource("7_d27uj")]
-position = Vector2(5352, 1076)
+position = Vector2(5352, 1127)
 scale = Vector2(43.607, 9.675)
 
 [node name="Accel_box" parent="." instance=ExtResource("3_ckeuo")]
-position = Vector2(6356.9995, 702.00006)
+position = Vector2(6356.9995, 753.00006)
 rotation = -0.05235988
 scale = Vector2(44.67, 1)
 
 [node name="jump_box" parent="." instance=ExtResource("5_je7un")]
-position = Vector2(6886, 694.00024)
+position = Vector2(6886, 745.00024)
 rotation = 0.2617994
 scale = Vector2(38.48, 0.55)
 
 [node name="Killer_circular" parent="." instance=ExtResource("6_xkx8i")]
-position = Vector2(9018, 1172)
+position = Vector2(9018, 1223)
 distance = 500
 
 [node name="Killer_circular2" parent="." instance=ExtResource("6_xkx8i")]

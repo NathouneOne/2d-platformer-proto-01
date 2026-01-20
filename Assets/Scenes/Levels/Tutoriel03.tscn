@@ -33,17 +33,101 @@ position = Vector2(1874, 23)
 [node name="Killer_static9" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(1952, 27)
 
+[node name="Killer_static21" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2802, 27)
+
+[node name="Killer_static22" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2893, 27)
+
+[node name="Killer_static23" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2986, 27)
+
+[node name="Killer_static24" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3086, 27)
+
+[node name="Killer_static25" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3177, 27)
+
+[node name="Killer_static26" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3280, 27)
+
+[node name="Killer_static27" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3387, 27)
+
+[node name="Killer_static28" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3478, 27)
+
+[node name="Killer_static29" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3571, 27)
+
+[node name="Killer_static30" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3671, 27)
+
+[node name="Killer_static31" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3762, 27)
+
+[node name="Killer_static32" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3865, 27)
+
+[node name="Killer_static33" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2986, 398)
+
+[node name="Killer_static34" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3086, 398)
+
+[node name="Killer_static35" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3177, 398)
+
+[node name="Killer_static36" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3280, 398)
+
+[node name="Killer_static37" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3387, 398)
+
+[node name="Killer_static38" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3478, 398)
+
+[node name="Killer_static39" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3571, 398)
+
+[node name="Killer_static40" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3671, 398)
+
+[node name="Killer_static41" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3762, 398)
+
+[node name="Killer_static42" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(3865, 398)
+
 [node name="Killer_static10" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(2026, 44)
+
+[node name="Killer_static20" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2693, 44)
 
 [node name="Killer_static11" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(2095, 87)
 
+[node name="Killer_static19" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2590, 87)
+
 [node name="Killer_static12" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(2149, 139)
 
+[node name="Killer_static18" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2511, 139)
+
 [node name="Killer_static13" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(2190, 204)
+
+[node name="Killer_static15" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2269, 204)
+
+[node name="Killer_static16" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2347, 204)
+
+[node name="Killer_static17" parent="." instance=ExtResource("5_fsk5x")]
+position = Vector2(2426, 204)
 
 [node name="Killer_static14" parent="." instance=ExtResource("5_fsk5x")]
 position = Vector2(2361, 1058)
