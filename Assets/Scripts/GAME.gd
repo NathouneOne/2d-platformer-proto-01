@@ -64,98 +64,98 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
-	if is_first_box_posed ==0 : 
-		if level_need_slowmo_at_start:
-			Engine.time_scale = 0.1
-		%SlowMo_charge.get_child(1).size.x = original_slowmo_size
-	
-	#F1 for quick reload scene
-	if Input.is_action_just_pressed("reload"):
-		reload_level()
-	
-	if Input.is_action_pressed("slowmo"):
-		if %SlowMo_charge.get_child(1).size.x > 0 :
-			Engine.time_scale=SLOWMO
-			%SlowMo_charge.get_child(1).size.x -= delta*SLOWMO_CHARGE
-		else : 
-			Engine.time_scale=1
-	
-	if Input.is_action_just_released("slowmo") :
-		Engine.time_scale=1
-			
-	#Adapt shader
-	shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
-	shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.1), 0.001)
-	%Shader.material.set_shader_parameter('aberration',shader_aberration)
-	%Shader.material.set_shader_parameter('strength',shader_strength)
-	
-	# Fix camera on y, allowing only X to move.
-	%Camera2D.global_position.y=0
-	# X decalage de la camera pour laisser le temps de voir les choses quand on va vite
-	camera_decalage = move_toward(camera_decalage, clamp(%Player.velocity.x, 50, 600), 0.5)
-	%Camera2D.global_position.x=%Player.global_position.x-(1920.0/2.0)+camera_decalage
-	
-	# Create and update box 
-	if is_instance_valid(current_box) :
-		if Input.is_action_just_pressed("left_clic"):
-			clic1 = get_global_mouse_position()
-			clic2 = get_global_mouse_position()
-			current_box = create_box(clic1, clic2, selected_box)
-		
-		if Input.is_action_pressed("left_clic"):
-			clic2 = get_global_mouse_position()
-			update_box(clic1, clic2, current_box)
-		
-		if Input.is_action_just_released("left_clic"):
-			if game_just_started:
-				game_just_started =0
-			else :
-				clic2 = get_global_mouse_position()
-				
-				#Trying to replace box on release under player if collision to avoid unwanted jumps
-				if current_box==StaticBody2D :
-					for i in current_box.get_child(2).get_overlapping_bodies() :
-						if i == %Player :
-							clic1.y += %Player.get_child(0).shape.size.y/2
-							clic2.y += %Player.get_child(0).shape.size.y/2
-						
-			
-				current_box.set_collision_layer(1)
-				current_box.set_collision_mask(1)
-				
-				update_box(clic1, clic2, current_box)
-				
-				##if Acceleration box, pass the right/left acceleration variable
-				if selected_box == ABOX_SELECTED :
-					if clic1.x>clic2.x :
-						current_box.angle = 0
-					else :
-						current_box.angle = 1
-				
-				## if 1st box, retime to normal & set flag to 1
-				if is_first_box_posed ==0 :
-					is_first_box_posed =1
-					Engine.time_scale=1
+	if game_just_started:
+		game_just_started =0
 	else :
-		match selected_box :
-			GBOX_SELECTED : current_box = G_BOX.instantiate()
-			ABOX_SELECTED : current_box = A_BOX.instantiate()
-			JBOX_SELECTED : current_box = J_BOX.instantiate()
+			
+		if is_first_box_posed ==0 : 
+			if level_need_slowmo_at_start:
+				Engine.time_scale = 0.1
+			#%SlowMo_charge.get_child(1).size.x = original_slowmo_size
+		
+		#F1 for quick reload scene
+		if Input.is_action_just_pressed("reload"):
+			reload_level()
+		
+		if Input.is_action_pressed("slowmo"):
+			if %SlowMo_charge.get_child(1).size.x > 0 :
+				Engine.time_scale=SLOWMO
+				%SlowMo_charge.get_child(1).size.x -= delta*SLOWMO_CHARGE
+			else : 
+				Engine.time_scale=1
+		
+		if Input.is_action_just_released("slowmo") :
+			Engine.time_scale=1
+				
+		#Adapt shader
+		shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
+		shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.1), 0.001)
+		%Shader.material.set_shader_parameter('aberration',shader_aberration)
+		%Shader.material.set_shader_parameter('strength',shader_strength)
+		
+		# Fix camera on y, allowing only X to move.
+		%Camera2D.global_position.y=0
+		# X decalage de la camera pour laisser le temps de voir les choses quand on va vite
+		camera_decalage = move_toward(camera_decalage, clamp(%Player.velocity.x, 50, 600), 0.5)
+		%Camera2D.global_position.x=%Player.global_position.x-(1920.0/2.0)+camera_decalage
+		
+		# Create and update box 
+		if is_instance_valid(current_box) :
+			if Input.is_action_just_pressed("left_clic"):
+				clic1 = get_global_mouse_position()
+				clic2 = get_global_mouse_position()
+				current_box = create_box(clic1, clic2, selected_box)
+			
+			if Input.is_action_pressed("left_clic"):
+				clic2 = get_global_mouse_position()
+				update_box(clic1, clic2, current_box)
+			
+			if Input.is_action_just_released("left_clic"):
 
-	
-	#Select type of box
-	if not Input.is_action_pressed("left_clic"):
-		if Input.is_action_just_pressed("A") : 
-			selected_box=GBOX_SELECTED
-			%Player.get_child(2).texture = g_texture
-		if Input.is_action_just_pressed("Z") : 
-			selected_box=JBOX_SELECTED
-			%Player.get_child(2).texture = j_texture
-		if Input.is_action_just_pressed("E") : 
-			selected_box=ABOX_SELECTED
-			%Player.get_child(2).texture = a_texture
+					clic2 = get_global_mouse_position()
+					
+					#Trying to replace box on release under player if collision to avoid unwanted jumps
+					if current_box==StaticBody2D :
+						for i in current_box.get_child(2).get_overlapping_bodies() :
+							if i == %Player :
+								clic1.y += %Player.get_child(0).shape.size.y/2
+								clic2.y += %Player.get_child(0).shape.size.y/2
+							
+				
+					current_box.set_collision_layer(1)
+					current_box.set_collision_mask(1)
+					
+					update_box(clic1, clic2, current_box)
+					
+					##if Acceleration box, pass the right/left acceleration variable
+					if selected_box == ABOX_SELECTED :
+						if clic1.x>clic2.x :
+							current_box.angle = 0
+						else :
+							current_box.angle = 1
+					
+					## if 1st box, retime to normal & set flag to 1
+					if is_first_box_posed ==0 :
+						is_first_box_posed =1
+						Engine.time_scale=1
+		else :
+			match selected_box :
+				GBOX_SELECTED : current_box = G_BOX.instantiate()
+				ABOX_SELECTED : current_box = A_BOX.instantiate()
+				JBOX_SELECTED : current_box = J_BOX.instantiate()
+
+		
+		#Select type of box
+		if not Input.is_action_pressed("left_clic"):
+			if Input.is_action_just_pressed("A") : 
+				selected_box=GBOX_SELECTED
+				%Player.get_child(2).texture = g_texture
+			if Input.is_action_just_pressed("Z") : 
+				selected_box=JBOX_SELECTED
+				%Player.get_child(2).texture = j_texture
+			if Input.is_action_just_pressed("E") : 
+				selected_box=ABOX_SELECTED
+				%Player.get_child(2).texture = a_texture
 		
 
 

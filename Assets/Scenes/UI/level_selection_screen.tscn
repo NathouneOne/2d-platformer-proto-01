@@ -37,7 +37,6 @@ offset_right = -389.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level2" type="Button" parent="."]
@@ -55,7 +54,6 @@ offset_right = -164.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "2"
 
 [node name="level3" type="Button" parent="."]
@@ -73,7 +71,6 @@ offset_right = 66.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "3
 "
 
@@ -92,7 +89,6 @@ offset_right = 290.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "4"
 
 [node name="level5" type="Button" parent="."]
@@ -110,7 +106,6 @@ offset_right = 523.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "5"
 
 [node name="level6" type="Button" parent="."]
@@ -128,7 +123,6 @@ offset_right = -389.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "6"
 
 [node name="level7" type="Button" parent="."]
@@ -147,7 +141,6 @@ offset_right = -164.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level8" type="Button" parent="."]
@@ -166,7 +159,6 @@ offset_right = 66.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level9" type="Button" parent="."]
@@ -185,7 +177,6 @@ offset_right = 290.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level10" type="Button" parent="."]
@@ -204,7 +195,6 @@ offset_right = 523.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level11" type="Button" parent="."]
@@ -223,7 +213,6 @@ offset_right = -389.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level12" type="Button" parent="."]
@@ -242,7 +231,6 @@ offset_right = -164.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level13" type="Button" parent="."]
@@ -261,7 +249,6 @@ offset_right = 66.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level14" type="Button" parent="."]
@@ -280,7 +267,6 @@ offset_right = 290.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="level15" type="Button" parent="."]
@@ -299,7 +285,6 @@ offset_right = 523.0
 offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "1"
 
 [node name="Label" type="Label" parent="."]

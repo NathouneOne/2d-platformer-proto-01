@@ -41,7 +41,6 @@ offset_right = 116.0
 offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "Next level"
 
 [node name="restart_Button" type="Button" parent="."]
@@ -60,7 +59,6 @@ offset_right = 116.0
 offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "Restart level"
 
 [node name="quit_Button" type="Button" parent="."]

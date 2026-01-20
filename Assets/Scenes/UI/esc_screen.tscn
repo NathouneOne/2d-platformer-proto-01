@@ -32,7 +32,6 @@ offset_right = 116.0
 offset_bottom = 219.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "Return to desktop"
 
 [node name="Button2" type="Button" parent="."]
@@ -50,7 +49,6 @@ offset_right = 116.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 text = "Reset high score"
 
 [node name="Label" type="Label" parent="."]
