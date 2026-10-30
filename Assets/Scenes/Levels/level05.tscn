@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://cyb3ca2iv6ujw"]
+
+[ext_resource type="Script" uid="uid://de8uvkmxa8eqx" path="res://Assets/Scripts/Levels/level_01.gd" id="1_xew5l"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_hhouu"]
+[ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="3_8s5ar"]
+[ext_resource type="PackedScene" uid="uid://bqg3u2yv56sun" path="res://Assets/Scenes/Boxes/Accel_box.tscn" id="3_ckeuo"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="5_je7un"]
+[ext_resource type="PackedScene" uid="uid://xps7iqr7sc48" path="res://Assets/Scenes/Levels/Level_assets/killer_circular.tscn" id="6_xkx8i"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="7_d27uj"]
+[ext_resource type="PackedScene" uid="uid://dcraqjnhnhqhn" path="res://Assets/Scenes/Levels/Level_assets/Collectible_slowmo.tscn" id="8_skuk3"]
+
+[node name="Level_01" type="Node2D" unique_id=1702234666 groups=["level"]]
+script = ExtResource("1_xew5l")
+
+[node name="FinishLine" parent="." unique_id=1676621480 instance=ExtResource("2_hhouu")]
+position = Vector2(15544.001, -2)
+scale = Vector2(5.89, 2.581)
+
+[node name="Killer_Linear" parent="." unique_id=1869000018 instance=ExtResource("3_8s5ar")]
+position = Vector2(854, 583)
+
+[node name="Killer_Linear2" parent="." unique_id=451871195 instance=ExtResource("3_8s5ar")]
+position = Vector2(1081, 652)
+
+[node name="Killer_Linear3" parent="." unique_id=301998781 instance=ExtResource("3_8s5ar")]
+position = Vector2(1319, 722)
+
+[node name="Killer_Linear4" parent="." unique_id=1481914988 instance=ExtResource("3_8s5ar")]
+position = Vector2(1546, 791)
+
+[node name="Killer_Linear23" parent="." unique_id=2029624633 instance=ExtResource("3_8s5ar")]
+position = Vector2(3810, 908.99976)
+
+[node name="Killer_Linear5" parent="." unique_id=160913506 instance=ExtResource("3_8s5ar")]
+position = Vector2(1746, 853)
+
+[node name="Killer_Linear22" parent="." unique_id=1821517830 instance=ExtResource("3_8s5ar")]
+position = Vector2(3649, 919)
+
+[node name="Killer_Linear6" parent="." unique_id=1080525597 instance=ExtResource("3_8s5ar")]
+position = Vector2(1973, 922)
+
+[node name="Killer_Linear15" parent="." unique_id=1294331454 instance=ExtResource("3_8s5ar")]
+position = Vector2(2186, 922)
+
+[node name="Killer_Linear16" parent="." unique_id=1371606306 instance=ExtResource("3_8s5ar")]
+position = Vector2(2411, 922)
+
+[node name="Killer_Linear17" parent="." unique_id=2140220394 instance=ExtResource("3_8s5ar")]
+position = Vector2(2624, 922)
+
+[node name="Killer_Linear18" parent="." unique_id=86843935 instance=ExtResource("3_8s5ar")]
+position = Vector2(2850, 922)
+
+[node name="Killer_Linear19" parent="." unique_id=329852277 instance=ExtResource("3_8s5ar")]
+position = Vector2(3063, 922)
+
+[node name="Killer_Linear20" parent="." unique_id=1008142312 instance=ExtResource("3_8s5ar")]
+position = Vector2(3288, 922)
+
+[node name="Killer_Linear21" parent="." unique_id=917793565 instance=ExtResource("3_8s5ar")]
+position = Vector2(3501, 922)
+
+[node name="Killer_Linear7" parent="." unique_id=659231338 instance=ExtResource("3_8s5ar")]
+position = Vector2(1399, 167)
+
+[node name="Killer_Linear8" parent="." unique_id=1547575661 instance=ExtResource("3_8s5ar")]
+position = Vector2(1626, 236)
+
+[node name="Killer_Linear9" parent="." unique_id=1598723702 instance=ExtResource("3_8s5ar")]
+position = Vector2(1864, 306)
+
+[node name="Killer_Linear10" parent="." unique_id=1831729235 instance=ExtResource("3_8s5ar")]
+position = Vector2(2091, 375)
+
+[node name="Killer_Linear11" parent="." unique_id=256242241 instance=ExtResource("3_8s5ar")]
+position = Vector2(2291, 437)
+
+[node name="Killer_Linear12" parent="." unique_id=1364174805 instance=ExtResource("3_8s5ar")]
+position = Vector2(2518, 448)
+
+[node name="Killer_Linear14" parent="." unique_id=1698698952 instance=ExtResource("3_8s5ar")]
+position = Vector2(2933, 448)
+
+[node name="Killer_Linear13" parent="." unique_id=708195502 instance=ExtResource("3_8s5ar")]
+position = Vector2(2725, 448)
+
+[node name="Killer_Linear26" parent="." unique_id=953812511 instance=ExtResource("3_8s5ar")]
+position = Vector2(3169, 448)
+
+[node name="Killer_Linear27" parent="." unique_id=715355264 instance=ExtResource("3_8s5ar")]
+position = Vector2(3584, 448)
+
+[node name="Killer_Linear28" parent="." unique_id=18061141 instance=ExtResource("3_8s5ar")]
+position = Vector2(3376, 448)
+
+[node name="Killer_Linear29" parent="." unique_id=1283540081 instance=ExtResource("3_8s5ar")]
+position = Vector2(3772, 448)
+
+[node name="Killer_Linear30" parent="." unique_id=699861021 instance=ExtResource("3_8s5ar")]
+position = Vector2(4166, 448)
+
+[node name="Killer_Linear31" parent="." unique_id=2044827913 instance=ExtResource("3_8s5ar")]
+position = Vector2(3958, 448)
+
+[node name="Killer_Linear32" parent="." unique_id=676973538 instance=ExtResource("3_8s5ar")]
+position = Vector2(4362, 448)
+
+[node name="Killer_Linear33" parent="." unique_id=1331189360 instance=ExtResource("3_8s5ar")]
+position = Vector2(4777, 448)
+
+[node name="Killer_Linear34" parent="." unique_id=1478784585 instance=ExtResource("3_8s5ar")]
+position = Vector2(4569, 448)
+
+[node name="Killer_Linear35" parent="." unique_id=1963854835 instance=ExtResource("3_8s5ar")]
+position = Vector2(4166, 823)
+
+[node name="Killer_Linear36" parent="." unique_id=1499689550 instance=ExtResource("3_8s5ar")]
+position = Vector2(3958, 855)
+
+[node name="Killer_Linear37" parent="." unique_id=1916568861 instance=ExtResource("3_8s5ar")]
+position = Vector2(4362, 823)
+
+[node name="Killer_Linear38" parent="." unique_id=689365993 instance=ExtResource("3_8s5ar")]
+position = Vector2(4777, 823)
+
+[node name="Killer_Linear39" parent="." unique_id=808266758 instance=ExtResource("3_8s5ar")]
+position = Vector2(4569, 823)
+
+[node name="Killer_Linear40" parent="." unique_id=44742388 instance=ExtResource("3_8s5ar")]
+position = Vector2(5199, 823)
+
+[node name="Killer_Linear41" parent="." unique_id=153231659 instance=ExtResource("3_8s5ar")]
+position = Vector2(4991, 823)
+
+[node name="Killer_Linear42" parent="." unique_id=1815595824 instance=ExtResource("3_8s5ar")]
+position = Vector2(5395, 823)
+
+[node name="Killer_Linear43" parent="." unique_id=928656140 instance=ExtResource("3_8s5ar")]
+position = Vector2(5810, 864)
+
+[node name="Killer_Linear44" parent="." unique_id=1132303966 instance=ExtResource("3_8s5ar")]
+position = Vector2(5602, 823)
+
+[node name="Killer_Linear45" parent="." unique_id=596863380 instance=ExtResource("3_8s5ar")]
+position = Vector2(5199, 451)
+
+[node name="Killer_Linear46" parent="." unique_id=364633760 instance=ExtResource("3_8s5ar")]
+position = Vector2(4991, 451)
+
+[node name="Killer_Linear47" parent="." unique_id=465702377 instance=ExtResource("3_8s5ar")]
+position = Vector2(5395, 451)
+
+[node name="Killer_Linear48" parent="." unique_id=1022602725 instance=ExtResource("3_8s5ar")]
+position = Vector2(5810, 451)
+
+[node name="Killer_Linear49" parent="." unique_id=1981025822 instance=ExtResource("3_8s5ar")]
+position = Vector2(5602, 451)
+
+[node name="Killer_Linear50" parent="." unique_id=1040122116 instance=ExtResource("3_8s5ar")]
+position = Vector2(6029, 451)
+
+[node name="Killer_Linear51" parent="." unique_id=1871113064 instance=ExtResource("3_8s5ar")]
+position = Vector2(6225, 451)
+
+[node name="Killer_Linear52" parent="." unique_id=1196880325 instance=ExtResource("3_8s5ar")]
+position = Vector2(6640, 451)
+
+[node name="Killer_Linear53" parent="." unique_id=1925285184 instance=ExtResource("3_8s5ar")]
+position = Vector2(6432, 451)
+
+[node name="walls" parent="." unique_id=1207393958 instance=ExtResource("7_d27uj")]
+position = Vector2(4627, 60.999992)
+scale = Vector2(66.52, 9.675)
+
+[node name="walls2" parent="." unique_id=1257898820 instance=ExtResource("7_d27uj")]
+position = Vector2(5352, 1237.9998)
+scale = Vector2(43.607, 9.675)
+
+[node name="Accel_box" parent="." unique_id=1794305854 instance=ExtResource("3_ckeuo")]
+position = Vector2(6356.9995, 863.9998)
+rotation = -0.05235988
+scale = Vector2(44.67, 1)
+
+[node name="jump_box" parent="." unique_id=171328212 instance=ExtResource("5_je7un")]
+position = Vector2(6886, 856)
+rotation = 0.2617994
+scale = Vector2(38.48, 0.55)
+
+[node name="Killer_circular" parent="." unique_id=1573129271 instance=ExtResource("6_xkx8i")]
+position = Vector2(9018, 1223)
+distance = 500
+
+[node name="Killer_circular2" parent="." unique_id=1179602621 instance=ExtResource("6_xkx8i")]
+position = Vector2(10695, 48)
+distance = 500
+
+[node name="Killer_circular3" parent="." unique_id=912114210 instance=ExtResource("6_xkx8i")]
+position = Vector2(12179, 1137)
+distance = 500
+
+[node name="Killer_circular4" parent="." unique_id=1960260371 instance=ExtResource("6_xkx8i")]
+position = Vector2(13326, 1137)
+distance = 500
+
+[node name="Killer_circular5" parent="." unique_id=1301741871 instance=ExtResource("6_xkx8i")]
+position = Vector2(14448, 1137)
+distance = 500
+
+[node name="CollectibleSlowmo" parent="." unique_id=1897054632 instance=ExtResource("8_skuk3")]
+position = Vector2(8591, 605)
+
+[node name="Label" type="Label" parent="." unique_id=1512906940]
+offset_left = 8510.0
+offset_top = 552.0
+offset_right = 8668.0
+offset_bottom = 580.0
+text = "SlowMotion recharge"

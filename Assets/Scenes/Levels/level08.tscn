@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://dkanghvdnre4r"]
+
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="1_j68f5"]
+[ext_resource type="Script" uid="uid://drdblolv32eey" path="res://Assets/Scripts/Levels/level_02.gd" id="1_t17kw"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_ofx7h"]
+[ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="3_fbpvl"]
+[ext_resource type="PackedScene" uid="uid://dcraqjnhnhqhn" path="res://Assets/Scenes/Levels/Level_assets/Collectible_slowmo.tscn" id="5_ptvb3"]
+
+[node name="level_02" type="Node2D" unique_id=2124653977 groups=["level"]]
+script = ExtResource("1_t17kw")
+
+[node name="walls20" parent="." unique_id=498340939 instance=ExtResource("1_j68f5")]
+position = Vector2(7615, 1203)
+scale = Vector2(1, 20.12)
+
+[node name="walls21" parent="." unique_id=1222088492 instance=ExtResource("1_j68f5")]
+position = Vector2(1425, 1147)
+scale = Vector2(1, 9.11)
+
+[node name="walls22" parent="." unique_id=639627983 instance=ExtResource("1_j68f5")]
+position = Vector2(1424, 137)
+scale = Vector2(1, 15.58)
+
+[node name="walls24" parent="." unique_id=604405834 instance=ExtResource("1_j68f5")]
+position = Vector2(1704, 1031)
+scale = Vector2(1, 9.11)
+
+[node name="walls25" parent="." unique_id=76092902 instance=ExtResource("1_j68f5")]
+position = Vector2(1703, 21)
+scale = Vector2(1, 15.58)
+
+[node name="walls26" parent="." unique_id=130227930 instance=ExtResource("1_j68f5")]
+position = Vector2(2251, 1280)
+scale = Vector2(1, 9.11)
+
+[node name="walls27" parent="." unique_id=1728022276 instance=ExtResource("1_j68f5")]
+position = Vector2(2250, 276)
+scale = Vector2(1, 15.58)
+
+[node name="walls28" parent="." unique_id=674635169 instance=ExtResource("1_j68f5")]
+position = Vector2(2493, 1280)
+scale = Vector2(1, 9.11)
+
+[node name="walls29" parent="." unique_id=503546070 instance=ExtResource("1_j68f5")]
+position = Vector2(2492, 276)
+scale = Vector2(1, 15.58)
+
+[node name="walls30" parent="." unique_id=1326861960 instance=ExtResource("1_j68f5")]
+position = Vector2(4034, -3)
+scale = Vector2(1, 15.58)
+
+[node name="walls31" parent="." unique_id=1777283630 instance=ExtResource("1_j68f5")]
+position = Vector2(4032, 1197)
+scale = Vector2(1, 15.58)
+
+[node name="walls23" parent="." unique_id=1669308001 instance=ExtResource("1_j68f5")]
+position = Vector2(4801, 584)
+scale = Vector2(1, 6.14)
+
+[node name="walls32" parent="." unique_id=700439307 instance=ExtResource("1_j68f5")]
+position = Vector2(5549, -3)
+scale = Vector2(1, 15.58)
+
+[node name="walls33" parent="." unique_id=845418082 instance=ExtResource("1_j68f5")]
+position = Vector2(5547, 1197)
+scale = Vector2(1, 15.58)
+
+[node name="walls34" parent="." unique_id=78472274 instance=ExtResource("1_j68f5")]
+position = Vector2(6326, 585)
+scale = Vector2(1, 6.54)
+
+[node name="FinishLine" parent="." unique_id=2115522344 instance=ExtResource("2_ofx7h")]
+position = Vector2(10649, -2)
+scale = Vector2(4.9200096, 2.3862681)
+
+[node name="Killer_static" parent="." unique_id=2087380918 instance=ExtResource("3_fbpvl")]
+position = Vector2(1507, 590)
+
+[node name="Killer_static2" parent="." unique_id=510058349 instance=ExtResource("3_fbpvl")]
+position = Vector2(1611, 817)
+
+[node name="Killer_static3" parent="." unique_id=1331183039 instance=ExtResource("3_fbpvl")]
+position = Vector2(1512, 880)
+
+[node name="Killer_static4" parent="." unique_id=461677381 instance=ExtResource("3_fbpvl")]
+position = Vector2(1601, 537)
+
+[node name="Killer_static5" parent="." unique_id=1214494157 instance=ExtResource("3_fbpvl")]
+position = Vector2(2373, 935)
+
+[node name="Killer_static6" parent="." unique_id=1418564595 instance=ExtResource("3_fbpvl")]
+position = Vector2(2632, 1003)
+
+[node name="Killer_static7" parent="." unique_id=699991977 instance=ExtResource("3_fbpvl")]
+position = Vector2(2723, 989)
+
+[node name="Killer_static8" parent="." unique_id=402482249 instance=ExtResource("3_fbpvl")]
+position = Vector2(2807, 957)
+
+[node name="Killer_static10" parent="." unique_id=872269765 instance=ExtResource("3_fbpvl")]
+position = Vector2(2897, 928)
+
+[node name="Killer_static11" parent="." unique_id=1095736799 instance=ExtResource("3_fbpvl")]
+position = Vector2(2988, 891)
+
+[node name="Killer_static23" parent="." unique_id=288940235 instance=ExtResource("3_fbpvl")]
+position = Vector2(3059, 854)
+
+[node name="Killer_static9" parent="." unique_id=1888682996 instance=ExtResource("3_fbpvl")]
+position = Vector2(3140, 825)
+
+[node name="Killer_static12" parent="." unique_id=1160920314 instance=ExtResource("3_fbpvl")]
+position = Vector2(3218, 788)
+
+[node name="Killer_static13" parent="." unique_id=898050147 instance=ExtResource("3_fbpvl")]
+position = Vector2(3297, 757)
+
+[node name="Killer_static14" parent="." unique_id=21815984 instance=ExtResource("3_fbpvl")]
+position = Vector2(3383, 734)
+
+[node name="Killer_static15" parent="." unique_id=2107447550 instance=ExtResource("3_fbpvl")]
+position = Vector2(3454, 722)
+
+[node name="Killer_static24" parent="." unique_id=1022436357 instance=ExtResource("3_fbpvl")]
+position = Vector2(2632, 757)
+
+[node name="Killer_static25" parent="." unique_id=531669620 instance=ExtResource("3_fbpvl")]
+position = Vector2(2723, 743)
+
+[node name="Killer_static26" parent="." unique_id=1854855361 instance=ExtResource("3_fbpvl")]
+position = Vector2(2807, 711)
+
+[node name="Killer_static27" parent="." unique_id=255685613 instance=ExtResource("3_fbpvl")]
+position = Vector2(2897, 682)
+
+[node name="Killer_static28" parent="." unique_id=1565516514 instance=ExtResource("3_fbpvl")]
+position = Vector2(2988, 645)
+
+[node name="Killer_static29" parent="." unique_id=676274897 instance=ExtResource("3_fbpvl")]
+position = Vector2(3059, 608)
+
+[node name="Killer_static30" parent="." unique_id=140160754 instance=ExtResource("3_fbpvl")]
+position = Vector2(3140, 579)
+
+[node name="Killer_static31" parent="." unique_id=153676510 instance=ExtResource("3_fbpvl")]
+position = Vector2(3218, 542)
+
+[node name="Killer_static32" parent="." unique_id=909098976 instance=ExtResource("3_fbpvl")]
+position = Vector2(3297, 511)
+
+[node name="Killer_static33" parent="." unique_id=1770560869 instance=ExtResource("3_fbpvl")]
+position = Vector2(3383, 488)
+
+[node name="Killer_static34" parent="." unique_id=80590587 instance=ExtResource("3_fbpvl")]
+position = Vector2(3454, 476)
+
+[node name="Killer_static35" parent="." unique_id=673508765 instance=ExtResource("3_fbpvl")]
+position = Vector2(3531, 722)
+
+[node name="Killer_static36" parent="." unique_id=117329886 instance=ExtResource("3_fbpvl")]
+position = Vector2(3525, 476)
+
+[node name="Killer_static37" parent="." unique_id=1968195333 instance=ExtResource("3_fbpvl")]
+position = Vector2(3602, 722)
+
+[node name="Killer_static38" parent="." unique_id=556001785 instance=ExtResource("3_fbpvl")]
+position = Vector2(3602, 476)
+
+[node name="Killer_static39" parent="." unique_id=1561879063 instance=ExtResource("3_fbpvl")]
+position = Vector2(3679, 722)
+
+[node name="Killer_static40" parent="." unique_id=676849319 instance=ExtResource("3_fbpvl")]
+position = Vector2(3673, 476)
+
+[node name="Killer_static41" parent="." unique_id=1433019520 instance=ExtResource("3_fbpvl")]
+position = Vector2(3748, 722)
+
+[node name="Killer_static42" parent="." unique_id=30314837 instance=ExtResource("3_fbpvl")]
+position = Vector2(3748, 476)
+
+[node name="Killer_static43" parent="." unique_id=104413797 instance=ExtResource("3_fbpvl")]
+position = Vector2(3825, 722)
+
+[node name="Killer_static44" parent="." unique_id=170197398 instance=ExtResource("3_fbpvl")]
+position = Vector2(3819, 476)
+
+[node name="Killer_static45" parent="." unique_id=1403899837 instance=ExtResource("3_fbpvl")]
+position = Vector2(3896, 722)
+
+[node name="Killer_static46" parent="." unique_id=1981101029 instance=ExtResource("3_fbpvl")]
+position = Vector2(3896, 476)
+
+[node name="Killer_static47" parent="." unique_id=1720869546 instance=ExtResource("3_fbpvl")]
+position = Vector2(3973, 722)
+
+[node name="Killer_static48" parent="." unique_id=1351950382 instance=ExtResource("3_fbpvl")]
+position = Vector2(3967, 476)
+
+[node name="Killer_static16" parent="." unique_id=76168821 instance=ExtResource("3_fbpvl")]
+position = Vector2(8811, 170)
+
+[node name="Killer_static17" parent="." unique_id=1755344602 instance=ExtResource("3_fbpvl")]
+position = Vector2(8078, 327)
+
+[node name="Killer_static18" parent="." unique_id=854411880 instance=ExtResource("3_fbpvl")]
+position = Vector2(10108, 1064)
+
+[node name="Killer_static19" parent="." unique_id=1894106189 instance=ExtResource("3_fbpvl")]
+position = Vector2(9349, 678)
+
+[node name="Killer_static20" parent="." unique_id=1451165078 instance=ExtResource("3_fbpvl")]
+position = Vector2(9974, 314)
+
+[node name="Killer_static21" parent="." unique_id=2033323182 instance=ExtResource("3_fbpvl")]
+position = Vector2(9711, 1315)
+
+[node name="Killer_static22" parent="." unique_id=1471998568 instance=ExtResource("3_fbpvl")]
+position = Vector2(9462, 972)
+
+[node name="CollectibleSlowmo" parent="." unique_id=330647665 instance=ExtResource("5_ptvb3")]
+position = Vector2(4126, 608)

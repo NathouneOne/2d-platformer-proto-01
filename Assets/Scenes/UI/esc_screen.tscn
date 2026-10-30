@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://crgbo6r4vnr3v"]
+[gd_scene format=3 uid="uid://crgbo6r4vnr3v"]
 
 [ext_resource type="Script" uid="uid://dou5bjq1sfy1t" path="res://Assets/Scripts/UI/esc_screen.gd" id="1_omucg"]
 
-[node name="Esc_Screen" type="CanvasLayer"]
+[node name="Esc_Screen" type="CanvasLayer" unique_id=747726134]
 process_mode = 2
 script = ExtResource("1_omucg")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=972968200]
 z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,85 +17,66 @@ scale = Vector2(0.99818736, 0.9966178)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Button" type="Button" parent="."]
-process_mode = 2
-top_level = true
-z_index = 4
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = 149.0
-offset_right = 116.0
-offset_bottom = 219.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Return to desktop"
-
-[node name="Button2" type="Button" parent="."]
-process_mode = 2
-top_level = true
-z_index = 4
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = 250.0
-offset_right = 116.0
-offset_bottom = 320.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Reset high score"
-
-[node name="Button3" type="Button" parent="."]
-process_mode = 2
-top_level = true
-z_index = 4
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = 344.0
-offset_right = 116.0
-offset_bottom = 414.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Select level"
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=956447204]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -58.0
-offset_top = -19.0
+offset_top = -13.067841
 offset_right = 58.0
-offset_bottom = 19.0
+offset_bottom = 13.067841
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0053029, 0.9565468)
 text = "GAME PAUSED"
 
-[node name="Label2" type="Label" parent="."]
-unique_name_in_owner = true
-anchors_preset = 8
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=486594078]
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.38483
-offset_top = -403.99997
-offset_right = 144.46289
-offset_bottom = -375.7734
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = 719.0
+offset_right = 97.0
+offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.0053029, 0.9565468)
+size_flags_vertical = 4
+theme_override_constants/separation = 40
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Select_level" type="Button" parent="VBoxContainer" unique_id=1681559070]
+process_mode = 2
+z_index = 4
+layout_mode = 2
+text = "Select level"
+
+[node name="options" type="Button" parent="VBoxContainer" unique_id=1357053166]
+process_mode = 2
+z_index = 4
+layout_mode = 2
+text = "Options"
+
+[node name="Return_to_desktop" type="Button" parent="VBoxContainer" unique_id=1011252854]
+process_mode = 2
+z_index = 4
+layout_mode = 2
+text = "Return to desktop"
+
+[node name="Label2" type="Label" parent="." unique_id=2059384106]
+unique_name_in_owner = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_right = 268.0
+offset_bottom = -630.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+
+[connection signal="pressed" from="VBoxContainer/Select_level" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Return_to_desktop" to="." method="_on_button_pressed"]

@@ -6,7 +6,7 @@ signal player_win
 signal slowmo_collected
 
 const SPEED = 300.0
-const AIRCONTROL_FORCE = 800.0
+#const AIRCONTROL_FORCE = 800.0
 const JUMP_VELOCITY = -350.0
 const ABOX_ACCEL = 750
 

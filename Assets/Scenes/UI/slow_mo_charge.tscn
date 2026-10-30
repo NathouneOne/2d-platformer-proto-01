@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1ru4ko8rfjpa"]
 
-[node name="SlowMo_charge" type="Control"]
+[node name="SlowMo_charge" type="Control" unique_id=765037589]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,7 +8,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1708404210]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -16,16 +16,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -359.99994
-offset_top = -88.0
+offset_top = -146.0
 offset_right = 3.824768
-offset_bottom = 30.45337
+offset_bottom = -27.54663
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.9844718, 0.29547527)
 mouse_filter = 2
 color = Color(0.10716081, 0.0866706, 0.12508973, 0.5803922)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=825689532]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -33,9 +33,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -354.99994
-offset_top = -82.00006
+offset_top = -140.00006
 offset_right = 3.7856445
-offset_bottom = -4.1589355
+offset_bottom = -62.158936
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.9844718, 0.29547527)

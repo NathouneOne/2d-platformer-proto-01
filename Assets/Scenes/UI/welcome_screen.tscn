@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4lcsj5yhdf7n"]
+[gd_scene format=3 uid="uid://d4lcsj5yhdf7n"]
 
 [ext_resource type="Script" uid="uid://cqgk5q5ldjgil" path="res://Assets/Scripts/UI/welcome_screen.gd" id="1_kh213"]
+[ext_resource type="Texture2D" uid="uid://c6luwwaakk08r" path="res://Assets/Graphics/Logo/logo.png" id="2_3qeh3"]
 
-[node name="WelcomeScreen" type="Control"]
+[node name="WelcomeScreen" type="Control" unique_id=356746568]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kh213")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=390673727]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -22,86 +23,54 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.026266154, 0.029377338, 0.039243706, 1)
 
-[node name="level_1" type="Button" parent="."]
-top_level = true
-z_index = 1
+[node name="Logo" type="Sprite2D" parent="." unique_id=638771181]
+position = Vector2(960, 387)
+scale = Vector2(0.8340517, 0.8340517)
+texture = ExtResource("2_3qeh3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=786619223]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = 228.0
-offset_right = 178.0
-offset_bottom = 298.0
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -397.0
+offset_right = 161.0
+offset_bottom = -74.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="level_1" type="Button" parent="VBoxContainer" unique_id=147309044]
+z_index = 1
+layout_mode = 2
 text = "Start from level 1"
 
-[node name="continue" type="Button" parent="."]
-top_level = true
+[node name="continue" type="Button" parent="VBoxContainer" unique_id=1885728803]
 z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = 110.0
-offset_right = 178.0
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "continue"
+layout_mode = 2
+text = "Continue"
 
-[node name="select_level" type="Button" parent="."]
-top_level = true
+[node name="select_level" type="Button" parent="VBoxContainer" unique_id=12578134]
 z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = 357.0
-offset_right = 178.0
-offset_bottom = 427.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Select level"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -326.0
-offset_top = 202.0
-offset_right = 326.0
-offset_bottom = 530.0
-grow_horizontal = 2
-text = "Commands input : 
+[node name="options" type="Button" parent="VBoxContainer" unique_id=1555113354]
+z_index = 1
+layout_mode = 2
+text = "Options"
 
-     Left click and drag to create a platform
+[node name="Exit to Deskstop" type="Button" parent="VBoxContainer" unique_id=1341051609]
+z_index = 1
+layout_mode = 2
+text = "Exit to Deskstop"
 
-     Right click and drag to delete existing platforms
-
-     Hold MAJ to slow time
-
-     Space to retry
-
-     ESC to exit menu
-
-
-
-Enjoy ! "
-
-[connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="level_1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="continue" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="select_level" to="." method="_on_select_level_pressed"]
-[connection signal="pressed" from="select_level" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/select_level" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit to Deskstop" to="." method="_on_exit_to_deskstop_pressed"]

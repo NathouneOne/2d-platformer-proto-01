@@ -14,7 +14,7 @@ const SLOWMO = 0.1
 
 # inverse of Slowmo power available (in used/sec)
 # the smaller the bigger 
-const SLOWMO_CHARGE = 500
+const SLOWMO_CHARGE = 400
 
 const J_BOX = preload("uid://bobxjb73lgyn3")
 const G_BOX = preload("uid://mkowtkrnf7xq")
@@ -61,9 +61,14 @@ func _ready() -> void:
 	
 	level_init()
 	
+	%IconBlue.modulate.a=1
+	%IconGreen.modulate.a=0.1
+	%IconRed.modulate.a=0.1
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	%UI.visible=visible
 	if game_just_started:
 		game_just_started =0
 	else :
@@ -89,7 +94,7 @@ func _process(delta: float) -> void:
 				
 		#Adapt shader
 		shader_aberration = move_toward(shader_aberration, clamp(abs(%Player.velocity.x/SHADER_ABERRATION_DIVIDER), 0, 1.5), 0.01)
-		shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.1), 0.001)
+		shader_strength = move_toward(shader_strength, clamp(abs(%Player.velocity.x/SHADER_STRENGTH_DIVIDER), 0, 0.05), 0.001)
 		%Shader.material.set_shader_parameter('aberration',shader_aberration)
 		%Shader.material.set_shader_parameter('strength',shader_strength)
 		
@@ -100,7 +105,7 @@ func _process(delta: float) -> void:
 		%Camera2D.global_position.x=%Player.global_position.x-(1920.0/2.0)+camera_decalage
 		
 		# Create and update box 
-		if is_instance_valid(current_box) :
+		if is_instance_valid(current_box) and not get_tree().paused :
 			if Input.is_action_just_pressed("left_clic"):
 				clic1 = get_global_mouse_position()
 				clic2 = get_global_mouse_position()
@@ -149,12 +154,21 @@ func _process(delta: float) -> void:
 		if not Input.is_action_pressed("left_clic"):
 			if Input.is_action_just_pressed("A") : 
 				selected_box=GBOX_SELECTED
+				%IconBlue.modulate.a=1
+				%IconGreen.modulate.a=0.1
+				%IconRed.modulate.a=0.1
 				%Player.get_child(2).texture = g_texture
 			if Input.is_action_just_pressed("Z") : 
 				selected_box=JBOX_SELECTED
+				%IconBlue.modulate.a=0.1
+				%IconGreen.modulate.a=1
+				%IconRed.modulate.a=0.1
 				%Player.get_child(2).texture = j_texture
 			if Input.is_action_just_pressed("E") : 
 				selected_box=ABOX_SELECTED
+				%IconBlue.modulate.a=0.1
+				%IconGreen.modulate.a=0.1
+				%IconRed.modulate.a=1
 				%Player.get_child(2).texture = a_texture
 		
 

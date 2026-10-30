@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://bsjtupqqc7nma"]
+
+[ext_resource type="Script" uid="uid://de8uvkmxa8eqx" path="res://Assets/Scripts/Levels/level_01.gd" id="1_q23wv"]
+[ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_p8mj5"]
+[ext_resource type="PackedScene" uid="uid://bobxjb73lgyn3" path="res://Assets/Scenes/Boxes/jump_box.tscn" id="4_fdigh"]
+[ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="5_b42ht"]
+[ext_resource type="PackedScene" uid="uid://q7xl8yhad1q1" path="res://Assets/Scenes/Levels/Level_assets/walls.tscn" id="5_ky8i1"]
+[ext_resource type="PackedScene" uid="uid://c2du7j4rn8iqb" path="res://Assets/Scenes/Levels/Level_assets/gravity_disabled.tscn" id="7_uh0iy"]
+[ext_resource type="PackedScene" uid="uid://xps7iqr7sc48" path="res://Assets/Scenes/Levels/Level_assets/killer_circular.tscn" id="8_jakt2"]
+[ext_resource type="PackedScene" uid="uid://da2di3kw5c411" path="res://Assets/Scenes/Levels/Level_assets/Gravity_up.tscn" id="8_m1oxb"]
+
+[node name="level_04" type="Node2D" unique_id=1785868901 groups=["level"]]
+script = ExtResource("1_q23wv")
+
+[node name="FinishLine" parent="." unique_id=1241400762 instance=ExtResource("2_p8mj5")]
+position = Vector2(29388, -253.99998)
+scale = Vector2(19.323, 4.912)
+
+[node name="jump_box" parent="." unique_id=2106563568 instance=ExtResource("4_fdigh")]
+position = Vector2(1607, -50)
+rotation = 1.4573499
+scale = Vector2(34.65, 0.495)
+
+[node name="jump_box2" parent="." unique_id=512237244 instance=ExtResource("4_fdigh")]
+position = Vector2(1726.0001, -50)
+rotation = 1.4573499
+scale = Vector2(34.65, 0.495)
+
+[node name="walls" parent="." unique_id=408217802 instance=ExtResource("5_ky8i1")]
+position = Vector2(3012, -87)
+scale = Vector2(35.975, 7.345)
+
+[node name="walls2" parent="." unique_id=428336347 instance=ExtResource("5_ky8i1")]
+position = Vector2(3012, 1142)
+scale = Vector2(35.975, 14.705)
+
+[node name="Killer_Linear3" parent="." unique_id=1656155864 instance=ExtResource("5_b42ht")]
+position = Vector2(2074, 619)
+
+[node name="Killer_Linear4" parent="." unique_id=306633410 instance=ExtResource("5_b42ht")]
+position = Vector2(2407, 619)
+
+[node name="Killer_Linear5" parent="." unique_id=1501719317 instance=ExtResource("5_b42ht")]
+position = Vector2(2754, 619)
+
+[node name="Killer_Linear6" parent="." unique_id=1695511637 instance=ExtResource("5_b42ht")]
+position = Vector2(3183, 619)
+
+[node name="Killer_Linear7" parent="." unique_id=675941052 instance=ExtResource("5_b42ht")]
+position = Vector2(3604, 619)
+
+[node name="Killer_Linear8" parent="." unique_id=624327530 instance=ExtResource("5_b42ht")]
+position = Vector2(4011, 619)
+
+[node name="Killer_Linear9" parent="." unique_id=1109883641 instance=ExtResource("5_b42ht")]
+position = Vector2(3711, 212)
+
+[node name="Killer_Linear10" parent="." unique_id=1787564147 instance=ExtResource("5_b42ht")]
+position = Vector2(2222, 206)
+
+[node name="Killer_Linear11" parent="." unique_id=169039885 instance=ExtResource("5_b42ht")]
+position = Vector2(2945.0002, 242.99998)
+scale = Vector2(2.515, 2.515)
+
+[node name="Gravity_up" parent="." unique_id=1051391368 instance=ExtResource("8_m1oxb")]
+position = Vector2(2962, 408)
+scale = Vector2(35.125, 24.55)
+
+[node name="Gravity_up2" parent="." unique_id=1292418051 instance=ExtResource("8_m1oxb")]
+position = Vector2(6328, 584)
+scale = Vector2(200, 166.895)
+
+[node name="Gravity_up3" parent="." unique_id=273492453 instance=ExtResource("8_m1oxb")]
+position = Vector2(15835, 584)
+scale = Vector2(250, 166.895)
+
+[node name="gravity_disabled" parent="." unique_id=1207892705 instance=ExtResource("7_uh0iy")]
+position = Vector2(26002, 655)
+scale = Vector2(300, 200)
+
+[node name="Label" type="Label" parent="." unique_id=789802542]
+offset_left = 22643.0
+offset_top = 339.0
+offset_right = 22753.0
+offset_bottom = 362.0
+text = "No Gravity ->"
+
+[node name="Killer_circular" parent="." unique_id=1282216383 instance=ExtResource("8_jakt2")]
+position = Vector2(12605, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular2" parent="." unique_id=1553525199 instance=ExtResource("8_jakt2")]
+position = Vector2(12935, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular3" parent="." unique_id=1004406649 instance=ExtResource("8_jakt2")]
+position = Vector2(13257, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular4" parent="." unique_id=364916332 instance=ExtResource("8_jakt2")]
+position = Vector2(13570, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular5" parent="." unique_id=2103059651 instance=ExtResource("8_jakt2")]
+position = Vector2(13921, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular6" parent="." unique_id=715896215 instance=ExtResource("8_jakt2")]
+position = Vector2(14251, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular7" parent="." unique_id=981177981 instance=ExtResource("8_jakt2")]
+position = Vector2(14573, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular8" parent="." unique_id=1218378537 instance=ExtResource("8_jakt2")]
+position = Vector2(14886, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular9" parent="." unique_id=2087220569 instance=ExtResource("8_jakt2")]
+position = Vector2(15228, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular10" parent="." unique_id=191813246 instance=ExtResource("8_jakt2")]
+position = Vector2(15558, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular11" parent="." unique_id=820165361 instance=ExtResource("8_jakt2")]
+position = Vector2(15880, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular12" parent="." unique_id=699814633 instance=ExtResource("8_jakt2")]
+position = Vector2(16193, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular13" parent="." unique_id=974731266 instance=ExtResource("8_jakt2")]
+position = Vector2(16544, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular14" parent="." unique_id=245419177 instance=ExtResource("8_jakt2")]
+position = Vector2(16874, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular15" parent="." unique_id=1870717901 instance=ExtResource("8_jakt2")]
+position = Vector2(17196, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular16" parent="." unique_id=450623704 instance=ExtResource("8_jakt2")]
+position = Vector2(17509, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular17" parent="." unique_id=941870767 instance=ExtResource("8_jakt2")]
+position = Vector2(17847, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular18" parent="." unique_id=907579288 instance=ExtResource("8_jakt2")]
+position = Vector2(18177, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular19" parent="." unique_id=225647345 instance=ExtResource("8_jakt2")]
+position = Vector2(18499, 126)
+scale = Vector2(6.785, 6.785)
+
+[node name="Killer_circular20" parent="." unique_id=1007036025 instance=ExtResource("8_jakt2")]
+position = Vector2(18812, 126)
+scale = Vector2(6.785, 6.785)

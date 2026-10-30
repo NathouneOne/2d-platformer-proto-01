@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk6fgtrn4x1ky"]
+[gd_scene format=3 uid="uid://bk6fgtrn4x1ky"]
 
 [ext_resource type="Script" uid="uid://ivjgicgyad7x" path="res://Assets/Scripts/UI/level_selection_screen.gd" id="1_0sosv"]
 
-[node name="Level_selection_screen" type="CanvasLayer"]
+[node name="Level_selection_screen" type="CanvasLayer" unique_id=387703668]
 script = ExtResource("1_0sosv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1576519054]
 process_mode = 3
 z_index = -1
 anchors_preset = 15
@@ -16,270 +16,182 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.026266154, 0.029377338, 0.039243706, 1)
 
-[node name="level1" type="Button" parent="."]
-top_level = true
-z_index = 1
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1546880105]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -521.0
-offset_top = -209.0
-offset_right = -389.0
-offset_bottom = -99.0
+offset_left = -433.0
+offset_top = -348.0
+offset_right = 433.0
+offset_bottom = 348.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 5
+
+[node name="level1" type="Button" parent="GridContainer" unique_id=1082784715]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "1"
 
-[node name="level2" type="Button" parent="."]
-top_level = true
+[node name="level2" type="Button" parent="GridContainer" unique_id=245022306]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -296.0
-offset_top = -209.0
-offset_right = -164.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "2"
 
-[node name="level3" type="Button" parent="."]
-top_level = true
+[node name="level3" type="Button" parent="GridContainer" unique_id=549431478]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -209.0
-offset_right = 66.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "3
 "
 
-[node name="level4" type="Button" parent="."]
-top_level = true
+[node name="level4" type="Button" parent="GridContainer" unique_id=809827321]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 158.0
-offset_top = -209.0
-offset_right = 290.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "4"
 
-[node name="level5" type="Button" parent="."]
-top_level = true
+[node name="level5" type="Button" parent="GridContainer" unique_id=1240984960]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 391.0
-offset_top = -209.0
-offset_right = 523.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "5"
 
-[node name="level6" type="Button" parent="."]
-top_level = true
+[node name="level6" type="Button" parent="GridContainer" unique_id=156901044]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -521.0
-offset_top = -39.0
-offset_right = -389.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "6"
 
-[node name="level7" type="Button" parent="."]
-top_level = true
+[node name="level7" type="Button" parent="GridContainer" unique_id=1243454490]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -296.0
-offset_top = -39.0
-offset_right = -164.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "7"
 
-[node name="level8" type="Button" parent="."]
-top_level = true
+[node name="level8" type="Button" parent="GridContainer" unique_id=637644182]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -39.0
-offset_right = 66.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "8"
 
-[node name="level9" type="Button" parent="."]
-top_level = true
+[node name="level9" type="Button" parent="GridContainer" unique_id=1918867968]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 158.0
-offset_top = -39.0
-offset_right = 290.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "9"
 
-[node name="level10" type="Button" parent="."]
-top_level = true
+[node name="level10" type="Button" parent="GridContainer" unique_id=1133505133]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 391.0
-offset_top = -39.0
-offset_right = 523.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 text = "10"
 
-[node name="level11" type="Button" parent="."]
-visible = false
-top_level = true
+[node name="level11" type="Button" parent="GridContainer" unique_id=1715554253]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -521.0
-offset_top = 126.0
-offset_right = -389.0
-offset_bottom = 236.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "11
+"
 
-[node name="level12" type="Button" parent="."]
-visible = false
-top_level = true
+[node name="level12" type="Button" parent="GridContainer" unique_id=201251689]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -296.0
-offset_top = 126.0
-offset_right = -164.0
-offset_bottom = 236.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "12
+"
 
-[node name="level13" type="Button" parent="."]
-visible = false
-top_level = true
+[node name="level13" type="Button" parent="GridContainer" unique_id=344998099]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = 126.0
-offset_right = 66.0
-offset_bottom = 236.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "13
+"
 
-[node name="level14" type="Button" parent="."]
-visible = false
-top_level = true
+[node name="level14" type="Button" parent="GridContainer" unique_id=2071376382]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 158.0
-offset_top = 126.0
-offset_right = 290.0
-offset_bottom = 236.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "14"
 
-[node name="level15" type="Button" parent="."]
-visible = false
-top_level = true
+[node name="level15" type="Button" parent="GridContainer" unique_id=785696887]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 391.0
-offset_top = 126.0
-offset_right = 523.0
-offset_bottom = 236.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "15"
 
-[node name="Label" type="Label" parent="."]
+[node name="level16" type="Button" parent="GridContainer" unique_id=2121945459]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "16"
+
+[node name="level17" type="Button" parent="GridContainer" unique_id=1639067311]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "17"
+
+[node name="level18" type="Button" parent="GridContainer" unique_id=78835968]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "18"
+
+[node name="level19" type="Button" parent="GridContainer" unique_id=1552946167]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "19"
+
+[node name="level20" type="Button" parent="GridContainer" unique_id=1150179886]
+z_index = 1
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "20"
+
+[node name="Label" type="Label" parent="." unique_id=739140792]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -49.5
-offset_top = 133.0
+offset_top = 85.0
 offset_right = 49.5
-offset_bottom = 193.0
+offset_bottom = 145.0
 grow_horizontal = 2
 text = "Select level :"
 
-[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="level4" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="level5" to="." method="_on_level_5_pressed"]
-[connection signal="pressed" from="level6" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="level7" to="." method="_on_level_7_pressed"]
-[connection signal="pressed" from="level8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="level9" to="." method="_on_level_9_pressed"]
-[connection signal="pressed" from="level10" to="." method="_on_level_10_pressed"]
+[node name="BackButton" type="Button" parent="." unique_id=728250874]
+offset_left = 61.0
+offset_top = 32.0
+offset_right = 191.0
+offset_bottom = 74.0
+text = "Back"
+
+[connection signal="pressed" from="GridContainer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="GridContainer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="GridContainer/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="GridContainer/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="GridContainer/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="GridContainer/level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="GridContainer/level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="GridContainer/level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="GridContainer/level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="GridContainer/level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="GridContainer/level11" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="GridContainer/level12" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="GridContainer/level13" to="." method="_on_level_13_pressed"]
+[connection signal="pressed" from="GridContainer/level14" to="." method="_on_level_14_pressed"]
+[connection signal="pressed" from="GridContainer/level15" to="." method="_on_level_15_pressed"]
+[connection signal="pressed" from="GridContainer/level16" to="." method="_on_level_16_pressed"]
+[connection signal="pressed" from="GridContainer/level17" to="." method="_on_level_17_pressed"]
+[connection signal="pressed" from="GridContainer/level18" to="." method="_on_level_18_pressed"]
+[connection signal="pressed" from="GridContainer/level19" to="." method="_on_level_19_pressed"]
+[connection signal="pressed" from="GridContainer/level20" to="." method="_on_level_20_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

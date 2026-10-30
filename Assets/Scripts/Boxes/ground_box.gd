@@ -7,6 +7,7 @@ const ISGROUND=1
 func _ready() -> void:
 	input_pickable = true
 
+#erase
 func _input(_event: InputEvent) -> void:
 	var m_position=get_local_mouse_position()
 	if (m_position.x <= %CollisionShape2D.shape.size.x and 

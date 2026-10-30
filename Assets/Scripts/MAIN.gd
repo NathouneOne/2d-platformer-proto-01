@@ -9,6 +9,7 @@ const GAME = preload("uid://dhi4esrgo13w")
 const END_LEVEL_SCREEN = preload("uid://nav4fo21ldex")
 const END_GAME_SCREEN = preload("uid://cvjxhoyh3isle")
 const LEVEL_SELECTION_SCREEN = preload("uid://bk6fgtrn4x1ky")
+const OPTION_SCREEN = preload("uid://cfsv57pc7jgq0")
 
 
 var esc_screen = ESC_SCREEN.instantiate()
@@ -17,6 +18,7 @@ var game = GAME.instantiate()
 var end_game_screen = END_GAME_SCREEN.instantiate()
 var end_level_screen = END_LEVEL_SCREEN.instantiate()
 var level_selection_screen = LEVEL_SELECTION_SCREEN.instantiate()
+var option_screen = OPTION_SCREEN.instantiate()
 
 var max_level_index = 0
 
@@ -34,29 +36,34 @@ var game_ended =0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	
 	load_save_file()
-	
 	
 	add_child(welcome_screen)
 	add_child(level_selection_screen)
 	level_selection_screen.hide()
+	level_selection_screen.backbutton.connect(hide_level_selection)
 	
-	welcome_screen.get_child(1).pressed.connect(select_level)
-	welcome_screen.get_child(2).pressed.connect(select_level)
-	welcome_screen.get_child(3).pressed.connect(level_select_screen_init)
+	welcome_screen.level1button.connect(select_level)
+	welcome_screen.continuebutton.connect(select_level)
+	welcome_screen.levelselectbutton.connect(level_select_screen_init)
+	welcome_screen.option_button.connect(option_screen_init)
 	
 	add_child(esc_screen)
-	esc_screen.get_child(2).pressed.connect(_reset_save_file)
-	esc_screen.get_child(3).pressed.connect(level_select_screen_init)
+	esc_screen.select_level_button.connect(level_select_screen_init)
+	esc_screen.option_button.connect(option_screen_init)
 	esc_screen.hide()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 	add_child(end_level_screen)
-	end_level_screen.get_child(1).pressed.connect(next_level)
-	end_level_screen.get_child(2).pressed.connect(restart_level)
+	end_level_screen.next_level.connect(next_level)
+	end_level_screen.restart_level.connect(restart_level)
 	end_level_screen.hide()
+	
+	add_child(option_screen)
+	option_screen.reset_button.connect(_reset_save_file)
+	option_screen.backbutton.connect(option_screen_hide)
+	option_screen.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -70,6 +77,7 @@ func _process(_delta: float) -> void:
 					game.visible = not game.visible
 					esc_screen.visible = not game.visible
 					level_selection_screen.hide()
+					option_screen.hide()
 					break
 	
 	
@@ -158,27 +166,18 @@ func level_select_screen_init():
 	if is_instance_valid(esc_screen) :
 		esc_screen.hide()
 
-	if not level_selection_screen.get_child(1).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(1).pressed.connect(select_level)
-	if not level_selection_screen.get_child(2).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(2).pressed.connect(select_level)
-	if not level_selection_screen.get_child(3).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(3).pressed.connect(select_level)
-	if not level_selection_screen.get_child(4).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(4).pressed.connect(select_level)
-	if not level_selection_screen.get_child(5).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(5).pressed.connect(select_level)
-	if not level_selection_screen.get_child(6).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(6).pressed.connect(select_level)
-	if not level_selection_screen.get_child(7).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(7).pressed.connect(select_level)
-	if not level_selection_screen.get_child(8).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(8).pressed.connect(select_level)
-	if not level_selection_screen.get_child(9).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(9).pressed.connect(select_level)
-	if not level_selection_screen.get_child(10).is_connected("pressed", select_level) :
-		level_selection_screen.get_child(10).pressed.connect(select_level)
-	
+	if not level_selection_screen.is_connected("levelSelected", select_level) :
+		level_selection_screen.levelSelected.connect(select_level)
+
+func option_screen_init():
+	option_screen.show()
+	if is_instance_valid(welcome_screen) :
+		welcome_screen.hide()
+	if is_instance_valid(esc_screen) :
+		esc_screen.hide()
+
+	if not option_screen.is_connected("backbutton", option_screen_hide) :
+		option_screen.backbutton.connect(option_screen_hide)
 
 func select_level() :
 	var is_game_created = 0
@@ -213,3 +212,19 @@ func select_level() :
 	
 	if get_tree().paused :
 		get_tree().paused = false
+	
+
+func hide_level_selection():
+	level_selection_screen.hide()
+	if is_instance_valid(welcome_screen) :
+		welcome_screen.show()
+	elif is_instance_valid(esc_screen) :
+		esc_screen.show()
+	
+
+func option_screen_hide():
+	option_screen.hide()
+	if is_instance_valid(welcome_screen) :
+		welcome_screen.show()
+	elif is_instance_valid(esc_screen):
+		esc_screen.show()

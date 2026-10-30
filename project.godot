@@ -8,13 +8,19 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="2DPlatformer_proto_01"
 run/main_scene="uid://xf6s1q3dp24e"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://icon.svg"
+boot_splash/stretch_mode=0
+boot_splash/image="uid://c6luwwaakk08r"
+config/icon="uid://c6luwwaakk08r"
 
 [autoload]
 
@@ -24,7 +30,8 @@ general="*res://Assets/Scripts/Libraries_and_managers/General_lib.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=4
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://d3pyhvahxcssu"
 mouse_cursor/custom_image_hotspot=Vector2(10, 10)

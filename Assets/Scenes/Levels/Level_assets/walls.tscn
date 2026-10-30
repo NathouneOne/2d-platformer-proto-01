@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://q7xl8yhad1q1"]
+[gd_scene format=3 uid="uid://q7xl8yhad1q1"]
 
 [ext_resource type="Script" uid="uid://ddaqsfsqp1fe3" path="res://Assets/Scripts/Level_assets/walls.gd" id="1_rs37p"]
 
@@ -6,19 +6,19 @@
 size = Vector2(64, 64)
 
 [sub_resource type="Gradient" id="Gradient_jj2rk"]
-offsets = PackedFloat32Array(0, 0.82738096)
-colors = PackedColorArray(0.40561146, 0.3366663, 0.39933836, 0.5647059, 0.5679106, 0.54868466, 0.58306533, 1)
+offsets = PackedFloat32Array(0, 0.99425286)
+colors = PackedColorArray(0.12016482, 0.2861397, 0.21388793, 0.5647059, 0.42331803, 0.11163857, 0.52061546, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rs37p"]
 gradient = SubResource("Gradient_jj2rk")
 fill = 2
 fill_from = Vector2(0.5, 0.49137932)
 
-[node name="walls" type="StaticBody2D"]
+[node name="walls" type="StaticBody2D" unique_id=401352710]
 script = ExtResource("1_rs37p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1977334538]
 shape = SubResource("RectangleShape2D_jj2rk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=569070903]
 texture = SubResource("GradientTexture2D_rs37p")
