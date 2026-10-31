@@ -108,6 +108,7 @@ text = "12
 "
 
 [node name="level13" type="Button" parent="GridContainer" unique_id=344998099]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
@@ -115,42 +116,49 @@ text = "13
 "
 
 [node name="level14" type="Button" parent="GridContainer" unique_id=2071376382]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "14"
 
 [node name="level15" type="Button" parent="GridContainer" unique_id=785696887]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "15"
 
 [node name="level16" type="Button" parent="GridContainer" unique_id=2121945459]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "16"
 
 [node name="level17" type="Button" parent="GridContainer" unique_id=1639067311]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "17"
 
 [node name="level18" type="Button" parent="GridContainer" unique_id=78835968]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "18"
 
 [node name="level19" type="Button" parent="GridContainer" unique_id=1552946167]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "19"
 
 [node name="level20" type="Button" parent="GridContainer" unique_id=1150179886]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2

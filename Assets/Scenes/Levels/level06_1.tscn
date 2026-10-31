@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://banac07dv0uhv"]
 
-[ext_resource type="Script" uid="uid://dn0umkjegbfud" path="res://Assets/Scripts/Levels/level_04.gd" id="1_1faux"]
+[ext_resource type="Script" uid="uid://de8uvkmxa8eqx" path="res://Assets/Scripts/Levels/level_01.gd" id="1_ueriv"]
 [ext_resource type="PackedScene" uid="uid://c5upg4beflf0y" path="res://Assets/Scenes/Levels/Level_assets/finish_line.tscn" id="2_cno64"]
 [ext_resource type="PackedScene" uid="uid://da2di3kw5c411" path="res://Assets/Scenes/Levels/Level_assets/Gravity_up.tscn" id="3_b6hdt"]
 [ext_resource type="PackedScene" uid="uid://bnreujd38p6om" path="res://Assets/Scenes/Levels/Level_assets/killer_linear.tscn" id="4_e8ouk"]
 [ext_resource type="PackedScene" uid="uid://2s6vndtoofk4" path="res://Assets/Scenes/Levels/Level_assets/killer_static.tscn" id="5_cno64"]
 
 [node name="Level066" type="Node2D" unique_id=1785868901 groups=["level"]]
-script = ExtResource("1_1faux")
+script = ExtResource("1_ueriv")
 
 [node name="FinishLine" parent="." unique_id=1241400762 instance=ExtResource("2_cno64")]
 position = Vector2(11055.001, -290)

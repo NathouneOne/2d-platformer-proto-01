@@ -17,4 +17,4 @@
 [node name="MAIN" type="Node" unique_id=1154098993]
 process_mode = 3
 script = ExtResource("1_8ke8p")
-levels = Array[PackedScene]([ExtResource("2_50suf"), ExtResource("3_stkbw"), ExtResource("11_wxxle"), ExtResource("2_3e0gf"), ExtResource("2_1f3ps"), ExtResource("3_qhfm1"), ExtResource("8_hec2y"), ExtResource("9_oxno0"), null, null, null, ExtResource("2_06a16"), null, null, null, null, null, ExtResource("5_oybyx"), ExtResource("2_yv3l3"), ExtResource("2_0rv0o")])
+levels = Array[PackedScene]([ExtResource("2_50suf"), ExtResource("3_stkbw"), ExtResource("11_wxxle"), ExtResource("2_3e0gf"), ExtResource("2_1f3ps"), ExtResource("3_qhfm1"), ExtResource("8_hec2y"), ExtResource("9_oxno0"), ExtResource("2_06a16"), ExtResource("5_oybyx"), ExtResource("2_yv3l3"), ExtResource("2_0rv0o"), null, null, null, null, null, null, null, null])
